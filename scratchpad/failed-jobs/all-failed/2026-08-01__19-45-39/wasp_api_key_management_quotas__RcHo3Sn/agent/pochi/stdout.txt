@@ -1,0 +1,147 @@
+- Initializing MCP connections...
+You
+# Developer API Key Management Portal with Custom Quotas and Rate Limits ## Background Developers of modern SaaS platforms require a secure, reliable way to generate API keys, define custom usage quotas, and enforce rate limits on incoming API requests. Wasp.sh (v0.24.0) provides a spec-driven full-stack framework with built-in authentication, database integration via Prisma, and custom HTTP API endpoints. In this task, you will build a complete Developer API Key Management Portal that tracks key usage, logs API requests, and enforces both lifetime usage quotas and rolling rate limits. ## Requirements ### 1. Database Schema (`schema.prisma`) Define the following entities in your `schema.prisma` file: * `User`: * `id`: Int, primary key, autoincrement. * `username`: String, unique. * `password`: String. * `apiKeys`: Relation to `ApiKey` (one-to-many). * `ApiKey`: * `id`: Int, primary key, autoincrement. * `key`: String, unique (a secure random token starting with `sk_`, e.g., `sk_` followed by 32 characters or a UUID). * `name`: String. * `quota`: Int (the maximum number of successful requests allowed for this key). * `usage`: Int, defaults to 0. * `userId`: Int. * `user`: Relation to `User`. * `logs`: Relation to `ApiLog` (one-to-many, with cascade delete). * `createdAt`: DateTime, defaults to `now()`. * `ApiLog`: * `id`: Int, primary key, autoincrement. * `endpoint`: String (e.g., `"GET /api/request"`). * `status`: Int (HTTP status code, e.g., 200, 401, or 429). * `apiKeyId`: Int. * `apiKey`: Relation to `ApiKey`. * `timestamp`: DateTime, defaults to `now()`. ### 2. Wasp Configuration (`main.wasp.ts`) Configure the Wasp application spec with the following: * **Wasp Version**: Target Wasp `^0.24.0` using the TypeScript configuration spec (`main.wasp.ts`) and `@wasp.sh/spec` package. * **Authentication**: Enable `usernameAndPassword` auth, using `User` as the user entity, and redirecting failed authentication to `/login`. * **Routes & Pages**: * `/` -> `MainPage` (requires authentication). * `/login` -> `LoginPage` (public). * `/signup` -> `SignupPage` (public). * **Operations**: * Query `getApiKeys` (associated with the `ApiKey` and `ApiLog` entities). * Action `createApiKey` (associated with the `ApiKey` entity). * Action `deleteApiKey` (associated with the `ApiKey` and `ApiLog` entities). * **Custom API Endpoint**: * Declare a custom API endpoint in `main.wasp.ts` using the `api` constructor: `api("GET", "/api/request", apiRequestHandler, { entities: ["ApiKey", "ApiLog"], auth: false })` * **Database Seeds**: * Register a seed function named `devSeedSimple` under `db.seeds`. ### 3. Server-Side Operations & Custom API Middleware * **Query `getApiKeys`**: * Returns all API keys belonging to the logged-in user, including their nested logs (sorted by `timestamp` descending). * **Action `createApiKey`**: * Input: `{ name: string, quota: number }` * Behavior: Generates a secure random key starting with `sk_` (e.g. `sk_` + UUID or random 32-character string), creates a new `ApiKey` record linked to the authenticated user, and returns it. * **Action `deleteApiKey`**: * Input: `{ id: number }` * Behavior: Deletes the API key with the given ID belonging to the authenticated user. * **Custom API Endpoint `GET /api/request` (implemented in `src/apis.ts`)**: * Authenticates the request via the `Authorization` header using the `Bearer <api_key>` format (or optionally via query parameter `?apiKey=<api_key>` as a fallback). * If the API key is missing or does not exist in the database: * Returns HTTP 401 Unauthorized with JSON `{ "error": "Invalid API key" }`. * Note: Since the key is invalid, do not create an `ApiLog` record in the database. * If the API key is valid: * **Rate Limit Check**: Enforce a rolling rate limit of **maximum 3 requests within the last 10 seconds** per API key. * Query the `ApiLog` table for entries associated with this `apiKeyId` where the `timestamp` is within the last 10 seconds. * If the count of logs in the last 10 seconds is **3 or more**: * Create an `ApiLog` entry in the database with `endpoint: "GET /api/request"`, `status: 429`, and linked to the `ApiKey`. * Returns HTTP 429 Too Many Requests with JSON `{ "error": "Rate limit exceeded" }`. * **Quota Check**: Enforce the lifetime usage quota. * If `usage` is greater than or equal to `quota`: * Create an `ApiLog` entry in the database with `endpoint: "GET /api/request"`, `status: 429`, and linked to the `ApiKey`. * Returns HTTP 429 Too Many Requests with JSON `{ "error": "Quota exceeded" }`. * **Successful Request**: * Increment the key's `usage` by 1 in the database. * Create an `ApiLog` entry in the database with `endpoint: "GET /api/request"`, `status: 200`, and linked to the `ApiKey`. * Returns HTTP 200 OK with JSON `{ "success": true, "message": "Request successful", "usage": newUsage, "quota": quota }`. ### 4. Client-Side UI & Test Hooks Implement the pages with the following test hooks (`data-testid`) to ensure deterministic browser verification: * **Login Page (`/login`) & Signup Page (`/signup`)**: Use Wasp's built-in `LoginForm` and `SignupForm` components from `wasp/client/auth`. * **Main Page (`/`)**: * Add a logout button or link. * **Create API Key Form**: * Input field for key name: `<input type="text" id="key-name" data-testid="key-name" />` * Input field for quota: `<input type="number" id="key-quota" data-testid="key-quota" />` * Button to generate key: `<button id="generate-key-btn" data-testid="generate-key-btn">Generate Key</button>` * **API Keys List**: * Render each API key item inside an element with `data-testid="api-key-item"`. * Within each `api-key-item`, display: * Key Name: `data-testid="key-name-display"` * Key Value: `data-testid="key-value-display"` (must render the exact generated `sk_...` key so the test can copy/use it) * Key Usage: `data-testid="key-usage-display"` (must display the current usage and quota, e.g., `0 / 5` or `5 / 5`) * Delete Button: `data-testid="delete-key-btn"` * Logs List: `data-testid="key-logs-list"` containing elements with `data-testid="log-item"` for each request log showing its endpoint and status code (e.g., `GET /api/request - 200` or `GET /api/request - 429`). * **Test API Key Section**: * Add an interactive section to let users/tests easily make requests to the custom API endpoint from the browser. * Input field for API Key: `<input type="text" id="test-api-key" data-testid="test-api-key" />` * Button to send request: `<button id="send-test-request-btn" data-testid="send-test-request-btn">Send Test Request</button>` * Response Status Display: element with `data-testid="test-response-status"` (must display the exact HTTP status code returned, e.g., `200` or `429` or `401`). * Response Body Display: element with `data-testid="test-response-body"` (must display the response JSON text or error message). * **Refresh Button**: * Provide a button with `data-testid="refresh-btn"` that manually refetches/reloads the API keys and logs from the server. ### 5. Database Seeding * Implement a seed function `devSeedSimple` that creates a test user with username `devuser` and password `password123`. * Use `sanitizeAndSerializeProviderData` from `'wasp/server/auth'` to hash the password for the auth identities. ## Implementation Hints * **Project Path**: `/home/user/app` * **Start Command**: `wasp start` * **Port**: `3000` * **Database**: SQLite (default). Run migrations using `wasp db migrate-dev` before starting. * **Wasp Spec Imports**: Ensure all references in `main.wasp.ts` (like pages, queries, actions, custom APIs) use `with { type: "ref" }` imports.   
+
+Pochi
+💭 Thinking for 114 characters   
+📂 Listing files in /home/user/app recursively ✔ 
+💭 Thinking for 95 characters   
+📖 Reading /home/user/app/AGENTS.md ✔ 
+📖 Reading /home/user/app/main.wasp.ts ✔ 
+📖 Reading /home/user/app/schema.prisma ✔ 
+📖 Reading /home/user/app/package.json ✔ 
+📖 Reading /home/user/app/src/MainPage.tsx ✔ 
+💭 Thinking for 247 characters   
+🌐 Fetching https://wasp.sh/llms.txt ✔ 
+📂 Listing files in /home/user/app/.wasp/spec recursively ✔ 
+💭 Thinking for 132 characters   
+🌐 Fetching https://wasp.sh/llms-0.24.txt ✔ 
+💭 Thinking for 234 characters   
+🌐 Fetching https://wasp.sh/docs/0.24/api/@wasp.sh/spec.md ✔ 
+🌐 Fetching https://wasp.sh/docs/0.24/auth/username-and-pass.md ✔ 
+🌐 Fetching https://wasp.sh/docs/0.24/advanced/apis.md ✔ 
+🌐 Fetching https://wasp.sh/docs/0.24/data-model/databases.md ✔ 
+💭 Thinking for 281 characters   
+🌐 Fetching https://wasp.sh/docs/0.24/data-model/operations/queries.md ✔ 
+🌐 Fetching https://wasp.sh/docs/0.24/data-model/operations/actions.md ✔ 
+🌐 Fetching https://wasp.sh/docs/0.24/auth/overview.md ✔ 
+💭 Thinking for 349 characters   
+🌐 Fetching https://wasp.sh/docs/0.24/api/@wasp.sh/spec/functions/api.md ✔ 
+🌐 Fetching https://wasp.sh/docs/0.24/api/@wasp.sh/spec/functions/query.md ✔ 
+💭 Thinking for 199 characters   
+🌐 Fetching https://wasp.sh/docs/0.24/auth/entities.md ✔ 
+💭 Thinking for 121 characters   
+Now I have all the information needed. Let me write the schema.prisma file.   
+✏️  Writing /home/user/app/schema.prisma ✔ 
+💭 Thinking for 249 characters   
+✏️  Writing /home/user/app/main.wasp.ts ✔ 
+💭 Thinking for 548 characters   
+✏️  Writing /home/user/app/src/queries.ts ✔ 
+✏️  Writing /home/user/app/src/actions.ts ✔ 
+💭 Thinking for 629 characters   
+✏️  Writing /home/user/app/src/apis.ts ✔ 
+💭 Thinking for 232 characters   
+✏️  Writing /home/user/app/src/dbSeeds.ts ✔ 
+💭 Thinking for 820 characters   
+✏️  Writing /home/user/app/src/dbSeeds.ts ✔ 
+💭 Thinking for 351 characters   
+✏️  Writing /home/user/app/src/pages/auth.tsx ✔ 
+💭 Thinking for 918 characters   
+✏️  Writing /home/user/app/src/MainPage.tsx ✔ 
+💭 Thinking for 836 characters   
+📖 Reading /home/user/app/src/Main.css ✔ 
+💭 Thinking for 28 characters   
+🔧 Applying diff to /home/user/app/src/Main.css ✔ 
+💭 Thinking for 86 characters   
+💫 Executing cd /home/user/app && wasp compile 2>&1 | tail -150 ✔ 
+Compilation succeeded. Now let's run the database migration and seed.   
+💫 Executing cd /home/user/app && wasp db migrate-dev --name init 2>&1 | tail -100 ✔ 
+Migration succeeded. Now let's run the seed command.   
+💫 Executing cd /home/user/app && wasp db seed devSeedSimple 2>&1 | tail -100 ✔ 
+Seed executed successfully. Now let's start the app in the background and verify it works end-to-end.   
+🛠️ Tool startBackgroundJob ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+💭 Thinking for 38 characters   
+💫 Executing sleep 25 && echo done ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+Server is up on port 3001, client on port 3000. Let's test the login flow and the API endpoint using curl.   
+💫 Executing curl -s -X POST http://localhost:3001/auth/username/login -H "Content-Type: application/json" -d '{"username":"devuser","password":"password123"}' ✔ 
+Login works. Now let's test the custom API endpoint end-to-end: invalid key, then create a key via curl using the session, and test rate limiting/quota.   
+💫 Executing curl -s -i http://localhost:3001/api/request -H "REDACTED" | head -20 ✔ 
+Invalid key returns 401 correctly. Now let's create an API key via the createApiKey operation to test the full flow. I'll use curl against the generated operations endpoint.   
+💫 Executing SESSION=$(curl -s -X POST http://localhost:3001/auth/username/login -H "Content-Type: application/json" -d '{"username":"devuser","password":"password123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['sessionId'])")
+echo "session=$SESSION"
+curl -s -X POST http://localhost:3001/operations/create-api-key -H "Content-Type: application/json" -H "Authorization: Bearer $SESSION" -d '{"args":{"name":"Test Key","quota":5}}' ✔ 
+💭 Thinking for 331 characters   
+🔍 Searching for superjson|req.body in /home/user/app/.wasp/out/server/src/middleware ✔ 
+💭 Thinking for 203 characters   
+💫 Executing SESSION=$(curl -s -X POST http://localhost:3001/auth/username/login -H "Content-Type: application/json" -d '{"username":"devuser","password":"password123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['sessionId'])")
+echo "session=$SESSION"
+curl -s -X POST http://localhost:3001/operations/create-api-key -H "Content-Type: application/json" -H "Authorization: Bearer $SESSION" -d '{"json":{"name":"Test Key","quota":5}}' ✔ 
+The action works correctly. Now let's test the API request endpoint with the generated key for quota and rate limit enforcement.   
+💫 Executing KEY="REDACTED"
+for i in 1 2 3 4 5 6; do
+  echo "--- Request $i ---"
+  curl -s -o /tmp/body.json -w "status=%{http_code}\n" http://localhost:3001/api/request -H "Authorization: Bearer $KEY"
+  cat /tmp/body.json; echo
+done ✔ 
+Rate limiting works exactly as specified (3 requests allowed, then 429). Now let's wait for the rate-limit window to expire and confirm the quota check works too.   
+💫 Executing sleep 11 && echo waited ✔ 
+💫 Executing KEY="REDACTED"
+echo "--- Request (after cooldown, usage=3/5, should succeed and hit quota=4) ---"
+curl -s -o /tmp/body.json -w "status=%{http_code}\n" http://localhost:3001/api/request -H "Authorization: Bearer $KEY"
+cat /tmp/body.json; echo
+sleep 11
+echo "--- Request (usage=4/5, should succeed, usage=5) ---"
+curl -s -o /tmp/body.json -w "status=%{http_code}\n" http://localhost:3001/api/request -H "Authorization: Bearer $KEY"
+cat /tmp/body.json; echo
+sleep 11
+echo "--- Request (usage=5/5, quota exceeded) ---"
+curl -s -o /tmp/body.json -w "status=%{http_code}\n" http://localhost:3001/api/request -H "Authorization: Bearer $KEY"
+cat /tmp/body.json; echo ✔ 
+Both rate-limit and quota enforcement work correctly. Now let's verify the `getApiKeys` query returns the logs properly, and check via query param fallback auth too.   
+💫 Executing curl -s -o /tmp/body.json -w "status=%{http_code}\n" "http://localhost:3001/api/request?apiKey=REDACTED"
+cat /tmp/body.json; echo
+echo "---"
+SESSION=$(curl -s -X POST http://localhost:3001/auth/username/login -H "Content-Type: application/json" -d '{"username":"devuser","password":"password123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['sessionId'])")
+curl -s -X GET "http://localhost:3001/operations/get-api-keys" -H "Authorization: Bearer $SESSION" | python3 -m json.tool ✖ "Command exited with code 1"
+💭 Thinking for 298 characters   
+🔍 Searching for get-api-keys|getApiKeys in /home/user/app/.wasp/out/server/src ✔ 
+Queries also use POST. Let me retry with POST.   
+💫 Executing SESSION=$(curl -s -X POST http://localhost:3001/auth/username/login -H "Content-Type: application/json" -d '{"username":"devuser","password":"password123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['sessionId'])")
+curl -s -X POST "http://localhost:3001/operations/get-api-keys" -H "Content-Type: application/json" -H "Authorization: Bearer $SESSION" -d '{}' | python3 -m json.tool ✔ 
+Everything works correctly: query returns keys with logs sorted by timestamp descending, quota/rate-limit/usage tracking all function as expected. Let's also test deleteApiKey and confirm signup page/login page render properly via a quick curl to the client.   
+💫 Executing curl -s -o /dev/null -w "login page status=%{http_code}\n" http://localhost:3000/login
+curl -s -o /dev/null -w "signup page status=%{http_code}\n" http://localhost:3000/signup
+curl -s -o /dev/null -w "root page status=%{http_code}\n" http://localhost:3000/ ✔ 
+All pages load. Let's also verify the deleteApiKey action and check for any TypeScript errors in the build.   
+💫 Executing SESSION=$(curl -s -X POST http://localhost:3001/auth/username/login -H "Content-Type: application/json" -d '{"username":"devuser","password":"password123"}' | python3 -c "import sys,json;print(json.load(sys.stdin)['sessionId'])")
+curl -s -X POST "http://localhost:3001/operations/delete-api-key" -H "Content-Type: application/json" -H "Authorization: Bearer $SESSION" -d '{"json":{"id":1}}'
+echo
+curl -s -X POST "http://localhost:3001/operations/get-api-keys" -H "Content-Type: application/json" -H "Authorization: Bearer $SESSION" -d '{}' ✔ 
+deleteApiKey works correctly, cascading delete removed the logs too, and the query now returns an empty list. Let's check the server logs for any TS compilation errors that might have occurred silently.   
+🛠️ Tool readBackgroundJobOutput ✔ 
+That's the earlier expected error from my initial malformed test request (before I fixed the payload format), not a real bug. No TypeScript compilation errors are present. Let's kill the background server now since verification is complete.   
+🛠️ Tool killBackgroundJob ✔ 
+💭 Thinking for 377 characters   
+🎉 Task Completed
+Built the complete Developer API Key Management Portal in `/home/user/app`:
+
+- **`schema.prisma`**: Added `User`, `ApiKey`, `ApiLog` models exactly as specified (with cascade delete on `ApiKey -> ApiLog`).
+- **`main.wasp.ts`**: Configured `usernameAndPassword` auth (redirect to `/login`), routes `/`, `/login`, `/signup`, the `getApiKeys` query, `createApiKey`/`deleteApiKey` actions, the `GET /api/request` custom API (unauthenticated, with `ApiKey`/`ApiLog` entities), and registered `devSeedSimple` under `db.seeds`.
+- **`src/queries.ts`** / **`src/actions.ts`**: Implemented `getApiKeys` (own keys + logs sorted desc), `createApiKey` (generates `sk_<uuid>` key), `deleteApiKey` (ownership-checked).
+- **`src/apis.ts`**: Implements the `GET /api/request` handler — Bearer/query-param auth extraction, invalid-key 401 (no log written), rolling 10s/3-request rate limit → 429 + log, lifetime quota check → 429 + log, successful request increments usage and logs 200.
+- **`src/dbSeeds.ts`**: Creates `devuser`/`password123` using `sanitizeAndSerializeProviderData`.
+- **`src/pages/auth.tsx`**: Login/Signup pages using Wasp's `LoginForm`/`SignupForm`.
+- **`src/MainPage.tsx`**: Full UI with all required `data-testid` hooks — key generation form, API key list (name/value/usage/delete/logs), test-request panel showing exact status/body, refresh button, and logout.
+
+Verified end-to-end via `wasp compile`, `wasp db migrate-dev`, `wasp db seed devSeedSimple`, and a live `wasp start` session:
+- Login issues a session; `/`, `/login`, `/signup` all return 200.
+- `createApiKey` generates a key; `getApiKeys` returns it with nested logs sorted by timestamp desc.
+- Custom API: invalid key → 401 (no log row created); 4th request within 10s → 429 "Rate limit exceeded"; after usage reached quota → 429 "Quota exceeded"; successful requests return incrementing `usage`/`quota` and log status 200/429 correctly; query-param `?apiKey=` fallback also works.
+- `deleteApiKey` removes the key and cascades its logs.
+
+The app is fully functional and ready to run with `wasp start` on port 3000/3001.   
+- Waiting for background jobs to complete (timeout: 60000ms)...
+✖ Async wait timeout reached. Remaining: 1 job(s)
+  

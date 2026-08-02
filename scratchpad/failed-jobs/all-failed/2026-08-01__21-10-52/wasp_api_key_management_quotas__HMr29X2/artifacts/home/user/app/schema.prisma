@@ -1,0 +1,38 @@
+datasource db {
+  provider = "sqlite"
+  // Wasp requires that the url is set to the DATABASE_URL environment variable.
+  url      = env("DATABASE_URL")
+}
+
+// Wasp requires the `prisma-client-js` generator to be present.
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  username String   @unique
+  password String
+  apiKeys  ApiKey[]
+}
+
+model ApiKey {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  name      String
+  quota     Int
+  usage     Int      @default(0)
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  logs      ApiLog[]
+  createdAt DateTime @default(now())
+}
+
+model ApiLog {
+  id        Int      @id @default(autoincrement())
+  endpoint  String
+  status    Int
+  apiKeyId  Int
+  apiKey    ApiKey   @relation(fields: [apiKeyId], references: [id], onDelete: Cascade)
+  timestamp DateTime @default(now())
+}

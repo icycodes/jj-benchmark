@@ -1,0 +1,25 @@
+import { HttpError } from "wasp/server";
+import { defineUserSignupFields } from "wasp/server/auth";
+import type { OnBeforeSignupHook } from "wasp/server/auth";
+
+export const userSignupFields = defineUserSignupFields({
+  role: (data: any) => {
+    const role = data?.role;
+    if (role === "ANALYST" || role === "MANAGER" || role === "ADMIN") {
+      return role;
+    }
+    return "ANALYST";
+  },
+});
+
+export const onBeforeSignup: OnBeforeSignupHook = async ({
+  providerId,
+  req,
+}) => {
+  const username = providerId.providerUserId || req.body?.username;
+  const role = req.body?.role;
+
+  if (role === "ADMIN" && (!username || !username.endsWith("_admin"))) {
+    throw new HttpError(400, "Username must end with _admin for ADMIN role");
+  }
+};

@@ -1,0 +1,41 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-08-01T14:07:35.846725+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 1,
+            "passed": 0,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1785592672136,
+            "stop": 1785593255846
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_task_verification",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 583616,
+                "start": 1785592672229,
+                "stop": 1785593255845,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\nbrowser_verifier = <pochi_verifier.verifier.PochiVerifier object at 0x74696d5f7860>\n\n    def test_task_verification(start_app, browser_verifier):\n        reason = \"Multiple users must be able to edit the document concurrently and see changes in real-time.\"\n        truth = (\n            \"1. Open Session 1 and navigate to http://127.0.0.1:3000/signup. Register a user with username 'alice' and password 'password123'.\\n\"\n            \"2. Open Session 2 and navigate to http://127.0.0.1:3000/signup. Register a user with username 'bob' and password 'password123'.\\n\"\n            \"3. In Session 1, log in as 'alice' with password 'password123' if not logged in. You should be redirected to the homepage '/'.\\n\"\n            \"4. In Session 2, log in as 'bob' with password 'password123' if not logged in. You should be redirected to the homepage '/'.\\n\"\n            \"5. In Session 1, create a document titled 'Shared Notes' using the creation form (input id='document-title-input' and button id='create-document-btn' or text 'Create Document').\\n\"\n            \"6. In Session 1, click on the newly created document link to navigate to '/document/1'.\\n\"\n            \"7. In Session 1, share the document with 'bob' giving him 'EDIT' permission using the share form (input id='share-username-input', select id='share-role-select' set to 'EDIT', and button id='share-document-btn' or text 'Share').\\n\"\n            \"8. In Session 2, navigate to the homepage '/', verify that 'Shared Notes' is listed under shared documents, and click the link to navigate to '/document/1'.\\n\"\n            \"9. In Session 1, type 'Hello from Alice!' in the textarea with id='document-content-textarea'.\\n\"\n            \"10. In Session 2, verify that the content of the textarea with id='document-content-textarea' updates to 'Hello from Alice!' in real-time.\\n\"\n            \"11. In Session 2, append ' and Bob!' to the content (so it becomes 'Hello from Alice! and Bob!') and click the button with id='save-version-btn' or text 'Save Version'.\\n\"\n            \"12. Verify that in Session 1, the textarea updates to 'Hello from Alice! and Bob!', and both sessions see a new version in the version list under id='version-history-list' with author 'bob'.\\n\"\n            \"13. In Session 1, click the 'Restore' button or class='restore-version-btn' next to the first version (which should have content 'Hello from Alice!').\\n\"\n            \"14. Verify that the textarea content in both Session 1 and Session 2 updates to 'Hello from Alice!' in real-time.\\n\"\n            \"15. Open Session 3, navigate to http://127.0.0.1:3000/signup, and register a user with username 'charlie' and password 'password123'.\\n\"\n            \"16. In Session 1, share the document with 'charlie' giving him 'VIEW' permission.\\n\"\n            \"17. In Session 3, log in as 'charlie' and navigate to http://127.0.0.1:3000/document/1.\\n\"\n            \"18. Verify that the textarea with id='document-content-textarea' is disabled or read-only (has the 'disabled' or 'readOnly' attribute), and the 'Save Version' and 'Restore' buttons are not visible or are disabled.\"\n        )\n    \n>       result = browser_verifier.verify(\n            reason=reason,\n            truth=truth,\n            use_browser_agent=True,\n            trajectory_dir=\"/logs/verifier/pochi/test_task_verification\"\n        )\n\n/tests/test_final_state.py:97: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.12/dist-packages/pochi_verifier/verifier.py:176: in verify\n    return self._parse_result(proc.stdout, proc.stderr)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pochi_verifier.verifier.PochiVerifier object at 0x74696d5f7860>\nstdout = '- Initializing MCP connections...\\nYou\\n# System Instructions Follow these rules and steps exactly. ## Tool Rules You...owser --session charlie reload && agent-browser --session charlie wait 1000 && agent-browser --session charlie get url'\nstderr = '\\x1b[37m2026-08-01 13:58:12.500\\x1b[39m\\x1b[0m\\x1b[0m\\t\\x1b[32m\\x1b[1mDEBUG\\x1b[22m\\x1b[39m\\x1b[0m\\x1b[0m\\t\\x1b[37m/$...ss\" | \"fail\",\\n        \"reason\": \"A detailed explanation of why the test passed or failed.\"\\n    }\\n    ```\\n\\nEOF\\n\\n'\n\n    def _parse_result(self, stdout: str, stderr: str) -> VerificationResult:\n        \"\"\"Parses the stdout from pochi to extract the verification result.\"\"\"\n    \n        lines = stdout.splitlines()\n        json_lines = []\n        capturing = False\n        start_line_index = -1\n    \n        # Find the start of the JSON block\n        for i, line in enumerate(lines):\n            stripped_line = line.strip()\n            if stripped_line == \"\ud83c\udf89 Task Completed\":\n                if i + 1 < len(lines) and lines[i+1].strip() == '{':\n                    start_line_index = i + 2\n                    capturing = True\n                    break\n    \n        if not capturing:\n>           raise PochiOutputError(\"Cannot find the start of the JSON block.\")\nE           pochi_verifier.verifier.PochiOutputError: Cannot find the start of the JSON block.\n\n/usr/local/lib/python3.12/dist-packages/pochi_verifier/verifier.py:205: PochiOutputError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

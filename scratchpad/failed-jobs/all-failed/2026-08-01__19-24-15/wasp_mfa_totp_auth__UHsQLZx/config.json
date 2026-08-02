@@ -1,0 +1,23 @@
+{
+    "task": {
+        "path": "/home/kw/code/zealt/wasp-benchmark/scratchpad/pending-tasks/wasp_mfa_totp_auth",
+        "source": "pending-tasks"
+    },
+    "trial_name": "wasp_mfa_totp_auth__UHsQLZx",
+    "trials_dir": "jobs/2026-08-01__19-24-15",
+    "agent": {
+        "name": "agents.pochi:Pochi",
+        "model_name": "google/gemini-3.5-flash",
+        "env": {
+            "POCHI_API_KEY": "${POCHI_API_KEY}"
+        }
+    },
+    "environment": {
+        "type": "daytona",
+        "override_memory_mb": 2048
+    },
+    "artifacts": [
+        "/home/user"
+    ],
+    "job_id": "55deabe9-ca5d-459e-b952-2ad1e8fdc1fb"
+}

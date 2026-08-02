@@ -1,0 +1,6 @@
+{
+  "library_name": "Wasp",
+  "task_name": "wasp_chat_app_read_receipts",
+  "research_plan_path": "plan.md",
+  "output_dir": "scratchpad/pending-tasks"
+}

@@ -1,0 +1,41 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-08-01T13:45:40.446728+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 1,
+            "passed": 0,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1785591710044,
+            "stop": 1785591940446
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_task_verification",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 230347,
+                "start": 1785591710099,
+                "stop": 1785591940446,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\nbrowser_verifier = <pochi_verifier.verifier.PochiVerifier object at 0x7baa21ce81a0>\n\n    def test_task_verification(start_app, browser_verifier):\n        reason = \"Full-text search, multi-faceted filtering, sorting, and cursor-based pagination must be correctly implemented and verified.\"\n        truth = (\n            \"Navigate to http://127.0.0.1:3000. Perform the following actions: \"\n            \"1. Initial Load: Verify that the product list (container with data-testid=\\\"product-list\\\") contains all 6 seeded products. \"\n            \"Verify that the facet categories container (data-testid=\\\"facet-categories\\\") and facet brands container (data-testid=\\\"facet-brands\\\") show correct initial counts: Electronics (2), Home & Kitchen (2), Furniture (2), VoltCharge (2), NutriBlend (2), ErgoComfort (2). \"\n            \"2. Full-Text Search: Type 'chair' into the search input (data-testid=\\\"search-input\\\"). \"\n            \"Verify that only the 2 chairs are displayed: 'Ergonomic Office Desk Chair' and 'Leather Executive Swivel Chair'. \"\n            \"Verify that the facet counts update dynamically to: Furniture (2), ErgoComfort (2), and other categories/brands show 0. \"\n            \"3. Multi-Faceted Filtering: With 'chair' still in the search input, check the 'In Stock' checkbox (data-testid=\\\"instock-checkbox\\\"). \"\n            \"Verify that only 'Leather Executive Swivel Chair' is displayed (since the Ergonomic chair is out of stock). \"\n            \"Verify that the facet counts update to: Furniture (1), ErgoComfort (1). \"\n            \"4. Sorting: Clear the search input and uncheck 'In Stock'. Select 'price_asc' in the sort select (data-testid=\\\"sort-select\\\"). \"\n            \"Verify that the products are listed in ascending order of price: 'SuperFast Wireless Charger' ($29.99), 'VoltCharge Portable Power Bank' ($39.99), 'NutriBlend Compact Juicer' ($49.99), etc. \"\n            \"5. Pagination: Select 'price_asc' and verify pagination. (Note: if pagination limit is hardcoded to 2 in the test or UI, we verify that clicking the 'Load More' button with data-testid=\\\"load-more-button\\\" appends the next page of products successfully).\"\n        )\n        result = browser_verifier.verify(\n            reason=reason,\n            truth=truth,\n            use_browser_agent=True,\n            trajectory_dir=\"/logs/verifier/pochi/test_task_verification\"\n        )\n>       assert result.status == \"pass\", f\"Browser verification failed: {result.reason}\"\nE       AssertionError: Browser verification failed: The verification failed during the first step (Initial Load). Upon navigating to http://127.0.0.1:3000, the product list container (data-testid='product-list') was completely empty, and the message 'No products match your criteria' was displayed. The facet categories (data-testid='facet-categories') and facet brands (data-testid='facet-brands') containers were also empty. Further inspection showed that the frontend successfully queried the backend API on port 3001 (POST /operations/get-products-with-filters), but the backend returned an empty product array, indicating that the database is not seeded with the 6 expected products. Since the seeded products are missing, we cannot execute the subsequent verification steps.\nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\n/tests/test_final_state.py:77: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

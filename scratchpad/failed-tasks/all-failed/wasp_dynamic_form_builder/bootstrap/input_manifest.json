@@ -1,0 +1,6 @@
+{
+  "library_name": "Wasp",
+  "task_name": "wasp_dynamic_form_builder",
+  "research_plan_path": "plan.md",
+  "output_dir": "scratchpad/pending-tasks"
+}

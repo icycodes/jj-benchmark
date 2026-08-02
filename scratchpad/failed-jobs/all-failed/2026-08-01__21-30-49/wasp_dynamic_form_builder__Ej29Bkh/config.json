@@ -1,0 +1,23 @@
+{
+    "task": {
+        "path": "/home/kw/code/zealt/wasp-benchmark/scratchpad/pending-tasks/wasp_dynamic_form_builder",
+        "source": "pending-tasks"
+    },
+    "trial_name": "wasp_dynamic_form_builder__Ej29Bkh",
+    "trials_dir": "jobs/2026-08-01__21-30-49",
+    "agent": {
+        "name": "agents.pochi:Pochi",
+        "model_name": "google/gemini-3.5-flash",
+        "env": {
+            "POCHI_API_KEY": "${POCHI_API_KEY}"
+        }
+    },
+    "environment": {
+        "type": "daytona",
+        "override_memory_mb": 2048
+    },
+    "artifacts": [
+        "/home/user"
+    ],
+    "job_id": "07d0171c-a0e6-423b-a0ee-e2ad469fb3b5"
+}

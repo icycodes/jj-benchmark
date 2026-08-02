@@ -1,0 +1,165 @@
+[37m2026-08-01 13:31:14.334[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	pochi v0.6.20
+[37m2026-08-01 13:31:14.339[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:7[39m[0m[0m[1m[37m	PochiConfigManager[39m[22m[0m[0m	add workspace config: /root/.pochi/config.jsonc
+[37m2026-08-01 13:31:14.447[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:7[39m[0m[0m[1m[37m	BuiltInBundle[39m[22m[0m[0m	Materializing 16 built-in files to /tmp/pochi-builtin-ef402bc2bbe8f440
+[37m2026-08-01 13:31:19.021[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:532913[39m[0m[0m[1m[37m	loadAgents[39m[22m[0m[0m	Loaded 6 custom agents (6 valid, 0 invalid)
+[37m2026-08-01 13:31:19.108[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:532914[39m[0m[0m[1m[37m	loadSkills[39m[22m[0m[0m	Loaded 3 skills (3 valid, 0 invalid)
+[37m2026-08-01 13:31:19.195[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:443306[39m[0m[0m[1m[37m	PochiVendor[39m[22m[0m[0m	JWT is expiring or missing, fetching a new one
+[37m2026-08-01 13:31:20.325[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:419194[39m[0m[0m[1m[37m	MCPHub[39m[22m[0m[0m	MCP servers configuration changed via signal:
+[37m2026-08-01 13:31:20.325[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:419306[39m[0m[0m[1m[37m	MCPHub[39m[22m[0m[0m	Build MCPHub Status
+[37m2026-08-01 13:31:20.455[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:7[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	Starting task runner...
+[37m2026-08-01 13:31:20.553[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:490790[39m[0m[0m[1m[37m	generateTaskTitle[39m[22m[0m[0m	Generating task title, old: null, new: # Customer Support Ticket System with SLA Countdowns & Automatic Assignment
+[37m2026-08-01 13:31:28.812[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531016[39m[0m[0m[1m[37m	listFiles[39m[22m[0m[0m	handling listFile with dirPath /home/user/app and recursive [33mtrue[39m
+[37m2026-08-01 13:31:31.299[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/main.wasp.ts" resolvedPath="/home/user/app/main.wasp.ts" isVirtual=false cacheExists=true shouldCache=true startLine=undefined endLine=undefined
+[37m2026-08-01 13:31:31.299[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-08-01 13:31:31.300[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/main.wasp.ts" mtime=1785577564424 contentLen=316
+[37m2026-08-01 13:31:33.227[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:490790[39m[0m[0m[1m[37m	generateTaskTitle[39m[22m[0m[0m	Generating task title, old: # Customer Support Ticket System with SLA Countdowns & Automatic Assignment, new: Build a Customer Support Ticket System with SLA Countdowns and Automatic Assignment
+[37m2026-08-01 13:31:33.306[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/schema.prisma" resolvedPath="/home/user/app/schema.prisma" isVirtual=false cacheExists=true shouldCache=true startLine=undefined endLine=undefined
+[37m2026-08-01 13:31:33.306[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-08-01 13:31:33.306[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/schema.prisma" mtime=1785577564422 contentLen=273
+[37m2026-08-01 13:31:35.477[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/package.json" resolvedPath="/home/user/app/package.json" isVirtual=false cacheExists=true shouldCache=true startLine=undefined endLine=undefined
+[37m2026-08-01 13:31:35.477[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-08-01 13:31:35.478[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/package.json" mtime=1785577564424 contentLen=464
+[37m2026-08-01 13:31:38.514[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:530993[39m[0m[0m[1m[37m	globFiles[39m[22m[0m[0m	handling globFiles with searchPath: /home/user/app/.wasp/spec/ and pattern **/*.d.ts
+[37m2026-08-01 13:31:38.525[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37mnative:7[39m[0m[0m[1m[37m	globFiles[39m[22m[0m[0m	Found 160 files matching pattern **/*.d.ts
+[37m2026-08-01 13:31:40.743[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/.wasp/spec/dist/src/spec/publicApi/index.d.ts" resolvedPath="/home/user/app/.wasp/spec/dist/src/spec/publicApi/index.d.ts" isVirtual=false cacheExists=true shouldCache=true startLine=1 endLine=100
+[37m2026-08-01 13:31:40.743[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-08-01 13:31:40.744[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/.wasp/spec/dist/src/spec/publicApi/index.d.ts" mtime=1785577564444 contentLen=257
+[37m2026-08-01 13:31:42.797[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/.wasp/spec/dist/src/spec/publicApi/constructors.d.ts" resolvedPath="/home/user/app/.wasp/spec/dist/src/spec/publicApi/constructors.d.ts" isVirtual=false cacheExists=true shouldCache=true startLine=1 endLine=100
+[37m2026-08-01 13:31:42.797[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-08-01 13:31:42.798[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/.wasp/spec/dist/src/spec/publicApi/constructors.d.ts" mtime=1785577564444 contentLen=2874
+[37m2026-08-01 13:31:44.991[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/.wasp/spec/dist/src/spec/publicApi/constructors.d.ts" resolvedPath="/home/user/app/.wasp/spec/dist/src/spec/publicApi/constructors.d.ts" isVirtual=false cacheExists=true shouldCache=true startLine=101 endLine=200
+[37m2026-08-01 13:31:44.992[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState={startLine=1, endLine=100, timestamp=1785577564444}
+[37m2026-08-01 13:31:44.992[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/.wasp/spec/dist/src/spec/publicApi/constructors.d.ts" mtime=1785577564444 contentLen=2863
+[37m2026-08-01 13:31:47.211[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" resolvedPath="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" isVirtual=false cacheExists=true shouldCache=true startLine=1 endLine=150
+[37m2026-08-01 13:31:47.211[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-08-01 13:31:47.212[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" mtime=1785577564444 contentLen=4710
+[37m2026-08-01 13:31:49.602[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" resolvedPath="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" isVirtual=false cacheExists=true shouldCache=true startLine=151 endLine=300
+[37m2026-08-01 13:31:49.603[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState={startLine=1, endLine=150, timestamp=1785577564444}
+[37m2026-08-01 13:31:49.604[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" mtime=1785577564444 contentLen=4634
+[37m2026-08-01 13:31:51.976[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" resolvedPath="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" isVirtual=false cacheExists=true shouldCache=true startLine=301 endLine=450
+[37m2026-08-01 13:31:51.976[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState={startLine=151, endLine=300, timestamp=1785577564444}
+[37m2026-08-01 13:31:51.977[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" mtime=1785577564444 contentLen=4919
+[37m2026-08-01 13:31:54.154[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" resolvedPath="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" isVirtual=false cacheExists=true shouldCache=true startLine=451 endLine=600
+[37m2026-08-01 13:31:54.154[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState={startLine=301, endLine=450, timestamp=1785577564444}
+[37m2026-08-01 13:31:54.155[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" mtime=1785577564444 contentLen=4521
+[37m2026-08-01 13:31:56.141[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" resolvedPath="/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" isVirtual=false cacheExists=true shouldCache=true startLine=601 endLine=750
+[37m2026-08-01 13:31:56.141[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState={startLine=451, endLine=600, timestamp=1785577564444}
+[37m2026-08-01 13:31:56.142[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/.wasp/spec/dist/src/spec/publicApi/waspSpec.d.ts" mtime=1785577564444 contentLen=4263
+[37m2026-08-01 13:31:58.147[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: path="/home/user/app/src/MainPage.tsx" resolvedPath="/home/user/app/src/MainPage.tsx" isVirtual=false cacheExists=true shouldCache=true startLine=undefined endLine=undefined
+[37m2026-08-01 13:31:58.147[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: existingState=undefined
+[37m2026-08-01 13:31:58.148[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531688[39m[0m[0m[1m[37m	FileStateCache[39m[22m[0m[0m	withReadFileCache: populating cache for "/home/user/app/src/MainPage.tsx" mtime=1785577564423 contentLen=930
+[37m2026-08-01 13:33:30.213[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531736[39m[0m[0m[1m[37m	RipgrepUtils[39m[22m[0m[0m	searchFiles /home/user/app hash [90mundefined[39m
+[37m2026-08-01 13:33:30.214[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531736[39m[0m[0m[1m[37m	RipgrepUtils[39m[22m[0m[0m	command /usr/bin/rg [
+  [32m'--json'[39m,
+  [32m'--case-sensitive'[39m,
+  [32m'--binary'[39m,
+  [32m'--sortr'[39m,
+  [32m'modified'[39m,
+  [32m'hash'[39m,
+  [32m'/home/user/app'[39m
+]
+[37m2026-08-01 13:33:30.303[39m[0m[0m	[31m[1mERROR[22m[39m[0m[0m	[37m/$bunfs/pochi:463782[39m[0m[0m[1m[37m	RipgrepUtils[39m[22m[0m[0m	Failed to parse rg JSON output line: {"type":"match","data":{"path":{"text":"/home/user/app/node_modules/@prisma/engines/schema-engine-debian-openssl-3.0.x"},"lines":{"bytes":"gThoYXNoD4TQBgo="},"line_number":1814350,"absolute_offset":8904328,"submatches":[{"match":{"text":"hash"},"start":2,"end":6}]}}
+
+[97m[101m[1m TypeError [22m[49m[39m[0m[0m undefined is not an object (evaluating 'matchData.lines.text.replace'), 463741, 36, 463741, 36, /$bunfs/root/pochi[0m[0m
+error stack:
+  • [33mpochi[39m[0m[0m	parseRipgrepLine[0m[0m
+	[37m/$bunfs/pochi:463741[39m[0m[0m
+  • [33mpochi[39m[0m[0m	processLine[0m[0m
+	[37m/$bunfs/pochi:463782[39m[0m[0m
+  • [33mpochi[39m[0m[0m	<anonymous>[0m[0m
+	[37m/$bunfs/pochi:463813[39m[0m[0m
+  • [33mevents[39m[0m[0m	emit[0m[0m
+	[37mevents:95[39m[0m[0m
+  • [33mreadable[39m[0m[0m	addChunk[0m[0m
+	[37mstreams/readable:264[39m[0m[0m
+  • [33mreadable[39m[0m[0m	readableAddChunkPushByteMode[0m[0m
+	[37mstreams/readable:242[39m[0m[0m
+  • [33mnative-readable[39m[0m[0m	handleNumberResult[0m[0m
+	[37mstreams/native-readable:69[39m[0m[0m
+  • [33mnative-readable[39m[0m[0m	<anonymous>[0m[0m
+	[37mstreams/native-readable:43[39m[0m[0m
+  • [33mnative[39m[0m[0m	processTicksAndRejections[0m[0m
+	[37mnative:7[39m[0m[0m[0m[0m
+[37m2026-08-01 13:33:30.307[39m[0m[0m	[31m[1mERROR[22m[39m[0m[0m	[37m/$bunfs/pochi:463782[39m[0m[0m[1m[37m	RipgrepUtils[39m[22m[0m[0m	Failed to parse rg JSON output line: {"type":"match","data":{"path":{"text":"/home/user/app/node_modules/@prisma/engines/schema-engine-debian-openssl-3.0.x"},"lines":{"bytes":"bG9va19zZXRTZWFyY2hlcnBhdHRlcm5zU3RhbmRhcmRQYXR0ZXJuc2hhc2hfbGVuLCBncm91cD3///9/Cg=="},"line_number":2074433,"absolute_offset":11010320,"submatches":[{"match":{"text":"hash"},"start":40,"end":44}]}}
+
+[97m[101m[1m TypeError [22m[49m[39m[0m[0m undefined is not an object (evaluating 'matchData.lines.text.replace'), 463741, 36, 463741, 36, /$bunfs/root/pochi[0m[0m
+error stack:
+  • [33mpochi[39m[0m[0m	parseRipgrepLine[0m[0m
+	[37m/$bunfs/pochi:463741[39m[0m[0m
+  • [33mpochi[39m[0m[0m	processLine[0m[0m
+	[37m/$bunfs/pochi:463782[39m[0m[0m
+  • [33mpochi[39m[0m[0m	<anonymous>[0m[0m
+	[37m/$bunfs/pochi:463813[39m[0m[0m
+  • [33mevents[39m[0m[0m	emit[0m[0m
+	[37mevents:95[39m[0m[0m
+  • [33mreadable[39m[0m[0m	addChunk[0m[0m
+	[37mstreams/readable:264[39m[0m[0m
+  • [33mreadable[39m[0m[0m	readableAddChunkPushByteMode[0m[0m
+	[37mstreams/readable:242[39m[0m[0m
+  • [33mnative-readable[39m[0m[0m	handleNumberResult[0m[0m
+	[37mstreams/native-readable:69[39m[0m[0m
+  • [33mnative-readable[39m[0m[0m	<anonymous>[0m[0m
+	[37mstreams/native-readable:43[39m[0m[0m
+  • [33mnative[39m[0m[0m	processTicksAndRejections[0m[0m
+	[37mnative:7[39m[0m[0m[0m[0m
+[37m2026-08-01 13:33:30.308[39m[0m[0m	[31m[1mERROR[22m[39m[0m[0m	[37m/$bunfs/pochi:463782[39m[0m[0m[1m[37m	RipgrepUtils[39m[22m[0m[0m	Failed to parse rg JSON output line: {"type":"match","data":{"path":{"text":"/home/user/app/node_modules/@prisma/engines/schema-engine-debian-openssl-3.0.x"},"lines":{"bytes":"4u3/JOLt/w7i7f8Y4u3/iOLt/8Ti7f+S4u3/quLt/6D57f/G/O3/6fnt/7T57f/G/O3/KPrt/1Mh7v+GIe7/YCHu/3Qh7v8vOO7/xjju/3g47v+SOO7/STju/+A47v/6OO7/rDju/xQ57v9eOO7/T0Pu/95C7v/eQu7/3kLu/1VM7v/ATO7/e0zu/5pM7v94Yu7/v2Pu/3pj7v+UY+7/j2fu/8No7v93aO7/nWju/95n7v8aae7/NGnu/0qz7v/Ps+7/bLPu/5Wz7v8Cte7/z7bu/2y27v+Vtu7/s7ju/zi57v/VuO7//rju/y+67v+7uu7/VLru/4W67v87vO7/abzu/1W87v9bvO7/R7zu/3C87v92vO7/Ybzu/4a87v9NvO7/frzu/z+87v9pvu7/7r7u/4u+7v+0vu7/ysPu/3jE7v8VxO7/PsTu//vD7v+Rw+7/q8Tu/6vE7v+rxO7/+8Pu/7HE7v/7w+7/28Pu/4vE7v+LxO7/28Pu/5XE7v/bw+7/Rcnu/87J7v9nye7/mMnu/8PK7v9Ly+7/6Mru/xHL7v82zO7/RdPu/8/S7v/40u7/d87u/9rP7v9bz+7/lM/u/2zQ7v/50O7/kNDu/7vQ7v9VbmFibGUgdG8gYWxsb2NhdGUgYW5vdGhlciBzcGFuc3BhbiBtdXN0IGFscmVhZHkgZXhpc3QhL3Jvb3QvLmNhcmdvL3JlZ2lzdHJ5L3NyYy9pbmRleC5jcmF0ZXMuaW8tNmYxN2QyMmJiYTE1MDAxZi90cmFjaW5nLWVycm9yLTAuMi4wL3NyYy9sYXllci5yc1VuYWJsZSB0byBmaW5kIEZvcm1hdHRlZEZpZWxkcyBpbiBleHRlbnNpb25zOyB0aGlzIGlzIGEgYnVnZmllbGRfZXJyb3JmaWVsZCB3YXMgbm8gYSB2YWxpZCBvYmplY3RTcGFuIG5vdCBmb3VuZCwgdGhpcyBpcyBhIGJ1Zy9yb290Ly5jYXJnby9yZWdpc3RyeS9zcmMvaW5kZXguY3JhdGVzLmlvLTZmMTdkMjJiYmExNTAwMWYvdHJhY2luZy1zdWJzY3JpYmVyLTAuMy4xNy9zcmMvZm10L2ZtdF9sYXllci5yc1t0cmFjaW5nLXN1YnNjcmliZXJdIFVuYWJsZSB0byBmb3JtYXQgdGhlIGZvbGxvd2luZyBldmVudCwgaWdub3Jpbmc6IHRpbWUuYnVzeXRpbWUuaWRsZWVudGVyVW5hYmxlIHRvIGZvcm1hdCB0aGUgZm9sbG93aW5nIGV2ZW50LiBOYW1lOiA7IEZpZWxkczogW3RyYWNpbmctc3Vic2NyaWJlcl0gVW5hYmxlIHRvIHdyaXRlIGFuICJldmVudCBmb3JtYXR0aW5nIGVycm9yIiB0byB0aGUgV3JpdGVyIGZvciB0aGlzIFN1YnNjcmliZXIhIEVycm9yOiBbdHJhY2luZy1zdWJzY3JpYmVyXSBVbmFibGUgdG8gd3JpdGUgYW4gZXZlbnQgdG8gdGhlIFdyaXRlciBmb3IgdGhpcyBTdWJzY3JpYmVyISBFcnJvcjogZGF0YSBkaWQgbm90IG1hdGNoIGFueSB2YXJpYW50IG9mIHVudGFnZ2VkIGVudW0gUmVxdWVzdHN1YnNjcmliZXIgc2hvdWxkIGRvd25jYXN0IHRvIGV4cGVjdGVkIHR5cGU7IHRoaXMgaXMgYSBidWchcmVnaXN0cnkgc2hvdWxkIGhhdmUgYSBzcGFuIGZvciB0aGUgY3VycmVudCBJREZsYXR0ZW4gcG9sbGVkIGFmdGVyIGNvbXBsZXRpb24vcm9vdC8uY2FyZ28vcmVnaXN0cnkvc3JjL2luZGV4LmNyYXRlcy5pby02ZjE3ZDIyYmJhMTUwMDFmL2Z1dHVyZXMtdXRpbC0wLjMuMjgvc3JjL2Z1dHVyZS9mdXR1cmUvZmxhdHRlbi5yc2xpbmVfbnVtYmVyc3BhbnN0aHJlYWROYW1lL3Jvb3QvLmNhcmdvL3JlZ2lzdHJ5L3NyYy9pbmRleC5jcmF0ZXMuaW8tNmYxN2QyMmJiYTE1MDAxZi90b2tpby0xLjM4LjEvc3JjL2lvL3V0aWwvcmVhZF91bnRpbC5ycy9yb290Ly5jYXJnby9yZWdpc3RyeS9zcmMvaW5kZXguY3JhdGVzLmlvLTZmMTdkMjJiYmExNTAwMWYvdG9raW8tMS4zOC4xL3NyYy9pby91dGlsL2xpbmVzLnJzZmFpbGVkIHRvIHBhcmsgdGhyZWFkRmFpbGVkIHRvIGBFbnRlcjo6YmxvY2tfb25gYSBzcGF3bmVkIHRhc2sgcGFuaWNrZWQgYW5kIHRoZSBydW50aW1lIGlzIGNvbmZpZ3VyZWQgdG8gc2h1dCBkb3duIG9uIHVuaGFuZGxlZCBwYW5pY051bVN0clRSQUNFSW52YWxpZFJlcXVlc3RNZXRob2ROb3RGb3VuZEludmFsaWRQYXJhbXNWMnRoZXJlIHNob3VsZCBiZSBhbiBlcnJvci9yb290L2J1aWxkL3NjaGVtYS1lbmdpbmUvY29yZS9zcmMvdGltaW5ncy5yczogU3BhbiBjbG9zZWQuIEVsYXBzZWQ6IHNjaGVtYS1lbmdpbmUvY2xpL3NyYy9jb21tYW5kcy5yc0RhdGFiYXNlICcnIHdhcyBzdWNjZXNzZnVsbHkgY3JlYXRlZC5Db25uZWN0aW9uIHN1Y2Nlc3NmdWxUaGUgZGF0YWJhc2Ugd2FzIHN1Y2Nlc3NmdWxseSBkcm9wcGVkLnNjaGVtYS1lbmdpbmUvY2xpL3NyYy9qc29uX3JwY19zdGRpby5yc1Jlc3BvbnNlIGNoYW5uZWwgYnJva2VuRXJyb3IgaW5pdGlhbGl6aW5nIHRoZSBnbG9iYWwgbG9nZ2VyOiBzY2hlbWEtZW5naW5lL2NsaS9zcmMvbG9nZ2VyLnJzPHVua25vd24gcGFuaWM+c2NoZW1hLWVuZ2luZS9jbGkvc3JjL21haW4ucnM8dW5rbm93biBsb2NhdGlvbj5hc3NlcnRpb24gZmFpbGVkOiAhdGV4dC5pc19lbXB0eSgpU3RhcnRpbmcgc2NoZW1hIGVuZ2luZSBSUEMgc2VydmVyNjlkNzQyZWUyMGI4MTVkODhlMTdlNTRkYjRhMmE3YTNiMzAzMjRlM0Vycm9yIHJlYWRpbmcgZGF0YW1vZGVsIGZpbGUgYEVycm9yIG9wZW5pbmcgZGF0YW1vZGVsIGZpbGUgaW4gYFRoZSBjb25uZWN0aW9uIHN0cmluZyB0byB0aGUgZGF0YWJhc2UwLjEuMGV2ZW50IHNjaGVtYS1lbmdpbmUvY2xpL3NyYy9jb21tYW5kcy5yczoyMHNjaGVtYV9lbmdpbmU6OmNvbW1hbmRzY3JlYXRlLWRhdGFiYXNlQ3JlYXRlIGFuIGVtcHR5IGRhdGFiYXNlIGRlZmluZWQgaW4gdGhlIGNvbmZpZ3VyYXRpb24gc3RyaW5nY2FuLWNvbm5lY3QtdG8tZGF0YWJhc2VEb2VzIHRoZSBkYXRhYmFzZSBjb25uZWN0aW9uIHN0cmluZyB3b3JrP2Ryb3AtZGF0YWJhc2VEcm9wIHRoZSBkYXRhYmFzZWRhdGEgZGlkIG5vdCBtYXRjaCBhbnkgdmFyaWFudCBvZiB1bnRhZ2dlZCBlbnVtIE1lc3NhZ2VldmVudCBzY2hlbWEtZW5naW5lL2NsaS9zcmMvbG9nZ2VyLnJzOjI4c2NoZW1hX2VuZ2luZTo6bG9nZ2Vyc2NoZW1hLWVuZ2luZS1jbGlXaGVuIG5vIHN1YmNvbW1hbmQgaXMgc3BlY2lmaWVkLCB0aGUgc2NoZW1hIGVuZ2luZSB3aWxsIGRlZmF1bHQgdG8gc3RhcnRpbmcgYXMgYSBKU09OLVJQQyBzZXJ2ZXIgb3ZlciBzdGRpb0xpc3Qgb2YgcGF0aHMgdG8gdGhlIFByaXNtYSBzY2hlbWEgZmlsZXNkYXRhbW9kZWxzY2xpRG9lc24ndCBzdGFydCBhIHNlcnZlciwgYnV0IGFsbG93cyBydW5uaW5nIHNwZWNpZmljIGNvbW1hbmRzIGFnYWluc3QgUHJpc21hRmFpbGVkIGJ1aWxkaW5nIHRoZSBSdW50aW1lU3RhcnRpbmcgc2NoZW1hIGVuZ2luZSBDTElldmVudCBzY2hlbWEtZW5naW5lL2NsaS9zcmMvbWFpbi5yczo0MXNjaGVtYV9lbmdpbmVldmVudCBzY2hlbWEtZW5naW5lL2NsaS9zcmMvbWFpbi5yczo2MWV2ZW50IHNjaGVtYS1lbmdpbmUvY2xpL3NyYy9tYWluLnJzOjk3L3Jvb3QvLmNhcmdvL3JlZ2lzdHJ5L3NyYy9pbmRleC5jcmF0ZXMuaW8tNmYxN2QyMmJiYTE1MDAxZi9haGFzaC0wLjcuOC9zcmMvcmFuZG9tX3N0YXRlLnJzT3duZWRuZWVkbGVfX20xMjhpX19tMjU2aS9yb290Ly5jYXJnby9yZWdpc3RyeS9zcmMvaW5kZXguY3JhdGVzLmlvLTZmMTdkMjJiYmExNTAwMWYvYWhvLWNvcmFzaWNrLTEuMC4zL3NyYy9hdXRvbWF0b24ucnMgPio+bWF0Y2ggc3RhdGUgbXVzdCBoYXZlIG5vbi1lbXB0eSBwaWRzZGZhOjpERkEoCg=="},"line_number":2081940,"absolute_offset":11159125,"submatches":[{"match":{"text":"hash"},"start":3354,"end":3358}]}}
+
+[97m[101m[1m TypeError [22m[49m[39m[0m[0m undefined is not an object (evaluating 'matchData.lines.text.replace'), 463741, 36, 463741, 36, /$bunfs/root/pochi[0m[0m
+error stack:
+  • [33mpochi[39m[0m[0m	parseRipgrepLine[0m[0m
+	[37m/$bunfs/pochi:463741[39m[0m[0m
+  • [33mpochi[39m[0m[0m	processLine[0m[0m
+	[37m/$bunfs/pochi:463782[39m[0m[0m
+  • [33mpochi[39m[0m[0m	<anonymous>[0m[0m
+	[37m/$bunfs/pochi:463813[39m[0m[0m
+  • [33mevents[39m[0m[0m	emit[0m[0m
+	[37mevents:95[39m[0m[0m
+  • [33mreadable[39m[0m[0m	addChunk[0m[0m
+	[37mstreams/readable:264[39m[0m[0m
+  • [33mreadable[39m[0m[0m	readableAddChunkPushByteMode[0m[0m
+	[37mstreams/readable:242[39m[0m[0m
+  • [33mnative-readable[39m[0m[0m	handleNumberResult[0m[0m
+	[37mstreams/native-readable:69[39m[0m[0m
+  • [33mnative-readable[39m[0m[0m	<anonymous>[0m[0m
+	[37mstreams/native-readable:43[39m[0m[0m
+  • [33mnative[39m[0m[0m	processTicksAndRejections[0m[0m
+	[37mnative:7[39m[0m[0m[0m[0m
+[37m2026-08-01 13:33:30.308[39m[0m[0m	[31m[1mERROR[22m[39m[0m[0m	[37m/$bunfs/pochi:463782[39m[0m[0m[1m[37m	RipgrepUtils[39m[22m[0m[0m	Failed to parse rg JSON output line: {"type":"match","data":{"path":{"text":"/home/user/app/node_modules/@prisma/engines/schema-engine-debian-openssl-3.0.x"},"lines":{"bytes":"L3J1c3QvZGVwcy9naW1saS0wLjI5LjAvc3JjL3JlYWQvYWJicmV2LnJzL3Jvb3QvLmNhcmdvL3JlZ2lzdHJ5L3NyYy9pbmRleC5jcmF0ZXMuaW8tNmYxN2QyMmJiYTE1MDAxZi9naW1saS0wLjI3LjMvc3JjL3JlYWQvYWJicmV2LnJzL3J1c3QvZGVwcy9oYXNoYnJvd24tMC4xNC41L3NyYy9yYXcvbW9kLnJzSW52YWxpZCBjaGFyYWN0ZXIgIGF0IHBvc2l0aW9uIE9kZCBudW1iZXIgb2YgZGlnaXRzSW52YWxpZCBzdHJpbmcgbGVuZ3RoL3Jvb3QvLmNhcmdvL3JlZ2lzdHJ5L3NyYy9pbmRleC5jcmF0ZXMuaW8tNmYxN2QyMmJiYTE1MDAxZi9mdXR1cmVzLWNoYW5uZWwtMC4zLjI4L3NyYy9vbmVzaG90LnJzT2tFcnJTcGVjaWZpY2F0aW9uRXJyb3JEaXNjb25uZWN0ZWRCYWRTaXplRXh0cmFQYWRkaW5nV3JhcExlbmd0aFdyYXBXaWR0aEZyb21Ub0FycmF5VmVjOjpleHRlbmRfZnJvbV9zbGljZT4gdG90YWwgbGVuZ3RoICBleGNlZWRzIGNhcGFjaXR5IFRyeVNlbmRFcnJvcnNlbmQgZmFpbGVkIGJlY2F1c2UgcmVjZWl2ZXIgaXMgZ29uZXNlbmQgZmFpbGVkIGJlY2F1c2UgY2hhbm5lbCBpcyBmdWxsY2Fubm90IGNsb25lIGBTZW5kZXJgIC0tIHRvbyBtYW55IG91dHN0YW5kaW5nIHNlbmRlcnN0aGVyZSB3YXMgYW4gU1NMIGVycm9yOiAvcm9vdC8uY2FyZ28vcmVnaXN0cnkvc3JjL2luZGV4LmNyYXRlcy5pby02ZjE3ZDIyYmJhMTUwMDFmL2hpY2tvcnktcHJvdG8tMC4yNC4xL3NyYy9vcC9lZG5zLnJzcnJfdHlwZSBkb2Vzbid0IG1hdGNoIHRoZSBSRGF0YTogYXNzZXJ0aW9uIGZhaWxlZDogbGVuIDw9IHUxNjo6bWF4X3ZhbHVlKCkgYXMgdXNpemV2ZXJzaW9uOiAgZG5zc2VjX29rOiAgbWF4X3BheWxvYWQ6ICBvcHRzOiBSRENEVENBQVJBQURhc3NlcnRpb24gZmFpbGVkOiBjb3VudHMucXVlcnlfY291bnQgPD0gdTE2OjptYXhfdmFsdWUoKSBhcyB1c2l6ZWFzc2VydGlvbiBmYWlsZWQ6IGNvdW50cy5hbnN3ZXJfY291bnQgPD0gdTE2OjptYXhfdmFsdWUoKSBhcyB1c2l6ZWFzc2VydGlvbiBmYWlsZWQ6IGNvdW50cy5uYW1lc2VydmVyX2NvdW50IDw9IHUxNjo6bWF4X3ZhbHVlKCkgYXMgdXNpemVhc3NlcnRpb24gZmFpbGVkOiBjb3VudHMuYWRkaXRpb25hbF9jb3VudCA8PSB1MTY6Om1heF92YWx1ZSgpIGFzIHVzaXplbW9yZSB0aGFuIG9uZSBlZG5zIHJlY29yZCBwcmVzZW50TWlzdXNlZCBOb29wTWVzc2FnZUZpbmFsaXplciwgTm9uZSBzaG91bGQgYmUgdXNlZCBpbnN0ZWFkcmVzcG9uc2UgY29kZTogIGZvciByZXF1ZXN0OiAgcmVxdWlyZXMgRUROUyBidXQgbm9uZSBhdmFpbGFibGU7IGhlYWRlciA7IGVkbnMgOyBhbnN3ZXJzIDsgbmFtZXNlcnZlcnMgOyBhZGRpdGlvbmFscyA7OyBOT1RJRllGb3JtIEVycm9yU2VydmVyIEZhaWx1cmVOb24tRXhpc3RlbnQgRG9tYWluTm90IEltcGxlbWVudGVkUXVlcnkgUmVmdXNlZE5hbWUgc2hvdWxkIG5vdCBleGlzdFJSIFNldCBzaG91bGQgbm90IGV4aXN0UlIgU2V0IGRvZXMgbm90IGV4aXN0Tm90IGF1dGhvcml6ZWRCYWQgb3B0aW9uIHZlcmlvbnNUU0lHIEZhaWx1cmVLZXkgbm90IHJlY29nbml6ZWRTaWduYXR1cmUgb3V0IG9mIHRpbWUgd2luZG93QmFkIFRLRVkgbW9kZUR1cGxpY2F0ZSBrZXkgbmFtZUFsZ29yaXRobSBub3Qgc3VwcG9ydGVkQmFkIHRydW5jYXRpb25CYWQgc2VydmVyIGNvb2tpZVVua25vd24gcmVzcG9uc2UgY29kZS9yb290Ly5jYXJnby9yZWdpc3RyeS9zcmMvaW5kZXguY3JhdGVzLmlvLTZmMTdkMjJiYmExNTAwMWYvaGlja29yeS1wcm90by0wLjI0LjEvc3JjL3JyL2RvbWFpbi9sYWJlbC5yc0xhYmVsIHJlcXVpcmVzIGEgbWluaW11bSBsZW5ndGggb2YgMUxhYmVsIGNvbnRhaW5zIGludmFsaWQgY2hhcmFjdGVyczogTWFsZm9ybWVkIGxhYmVsOiB4bi0tIHByZWZpeGVkIHN0cmluZyBkaWQgbm90IHRyYW5zbGF0ZSB2aWEgSUROQSBwcm9wZXJseTogZXJyb3IgY29udmVydGluZyBzb21lIGxhYmVsczogdW5yZWNvZ25pemVkIGNoYXI6IGlsbGVnYWwgY2hhcjogaW4tYWRkcmlwNk5hbWUoImFycGEuL3Jvb3QvLmNhcmdvL3JlZ2lzdHJ5L3NyYy9pbmRleC5jcmF0ZXMuaW8tNmYxN2QyMmJiYTE1MDAxZi9oaWNrb3J5LXByb3RvLTAuMjQuMS9zcmMvcnIvZG9tYWluL3VzYWdlLnJzMTI3MS4wLjAuMC4wLjAuMC4wLjAuMC4wLjAuMC4wLjAuMC4wLjAuMC4wLjAuMC4wLjAuMC4wLjAuMC4wLjAuMC4wbG9jYWwub25pb24uaXNzdWVpc3N1ZXdpbGRpb2RlZmtleSBtaXNzaW5nIHZhbHVlOiBiYWQgY2hhcmFjdGVyIGluIENBQSBpc3N1ZXIga2V5OiBiYWQgY2hhcmFjdGVyIGluIENBQSBpc3N1ZXIgdmFsdWU6ICdDQUEgdGFnIGxlbmd0aCBvdXQgb2YgYm91bmRzLCAxLTE1Q0FBIHRhZyBjaGFyYWN0ZXIocykgb3V0IG9mIGJvdW5kc0NBQSBwcm9wZXJ0eSB0b28gbG9uZzogMTI4aW52YWxpZCByZGF0YSBsZW5ndGggaW4gQ1NZTkNmbGFncyBhcmUgbm90IHdpdGhpbiByYW5nZSBbYS16QS1aMC05XSIgIkFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXowMTIzNDU2Nzg5Ky9BQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWmFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6MDEyMzQ1Njc4OSsvQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrL0FCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXowMTIzNDU2Nzg5Ky+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAPoCAgD80NTY3ODk6Ozw9gICAgoCAgAo="},"line_number":2136992,"absolute_offset":11692476,"submatches":[{"match":{"text":"hash"},"start":143,"end":147}]}}
+
+[97m[101m[1m TypeError [22m[49m[39m[0m[0m undefined is not an object (evaluating 'matchData.lines.text.replace'), 463741, 36, 463741, 36, /$bunfs/root/pochi[0m[0m
+error stack:
+  • [33mpochi[39m[0m[0m	parseRipgrepLine[0m[0m
+	[37m/$bunfs/pochi:463741[39m[0m[0m
+  • [33mpochi[39m[0m[0m	processLine[0m[0m
+	[37m/$bunfs/pochi:463782[39m[0m[0m
+  • [33mpochi[39m[0m[0m	<anonymous>[0m[0m
+	[37m/$bunfs/pochi:463813[39m[0m[0m
+  • [33mevents[39m[0m[0m	emit[0m[0m
+	[37mevents:95[39m[0m[0m
+  • [33mreadable[39m[0m[0m	addChunk[0m[0m
+	[37mstreams/readable:264[39m[0m[0m
+  • [33mreadable[39m[0m[0m	readableAddChunkPushByteMode[0m[0m
+	[37mstreams/readable:242[39m[0m[0m
+  • [33mnative-readable[39m[0m[0m	handleArrayBufferViewResult[0m[0m
+	[37mstreams/native-readable:79[39m[0m[0m
+  • [33mnative-readable[39m[0m[0m	<anonymous>[0m[0m
+	[37mstreams/native-readable:43[39m[0m[0m
+  • [33mnative[39m[0m[0m	processTicksAndRejections[0m[0m
+	[37mnative:7[39m[0m[0m[0m[0m
+[37m2026-08-01 13:33:40.127[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531736[39m[0m[0m[1m[37m	RipgrepUtils[39m[22m[0m[0m	searchFiles /home/user/app/.wasp/ password [90mundefined[39m
+[37m2026-08-01 13:33:40.128[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:531736[39m[0m[0m[1m[37m	RipgrepUtils[39m[22m[0m[0m	command /usr/bin/rg [
+  [32m'--json'[39m,
+  [32m'--case-sensitive'[39m,
+  [32m'--binary'[39m,
+  [32m'--sortr'[39m,
+  [32m'modified'[39m,
+  [32m'password'[39m,
+  [32m'/home/user/app/.wasp'[39m
+]
+[37m2026-08-01 13:35:47.340[39m[0m[0m	[33m[1mWARN[22m[39m[0m[0m	[37m[39m[0m[0m[1m[37m	LiveChatKit[39m[22m[0m[0m	Chat abort signal received; stopping transport {
+  abortOrigin: [32m'external-abort-signal'[39m,
+  taskId: [32m'5851dcc2-d301-499f-bc8d-53404166d7da'[39m
+}
+[37m2026-08-01 13:35:47.341[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/$bunfs/pochi:439419[39m[0m[0m[1m[37m	TaskRunner[39m[22m[0m[0m	Tool call executeCommand (Epavhuqlt58O7Awk) cancelled: user-abort
+Process interrupted by SIGINT
+[37m2026-08-01 13:35:47.786[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m[39m[0m[0m[1m[37m	Pochi[39m[22m[0m[0m	Process exiting with code 130

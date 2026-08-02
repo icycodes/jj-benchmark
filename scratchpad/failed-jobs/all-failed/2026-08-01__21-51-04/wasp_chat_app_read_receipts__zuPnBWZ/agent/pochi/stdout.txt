@@ -1,0 +1,127 @@
+- Initializing MCP connections...
+You
+# Real-Time Chat Application with Typing Indicators and Read Receipts ## Background In modern collaborative chat platforms (like Slack or Discord), real-time communication is critical. Users expect instant message delivery, real-time typing indicators, and immediate read receipt updates when other users read their messages. Wasp.sh (v0.24.0) provides built-in support for Socket.IO-based WebSockets alongside its full-stack Query/Action architecture. In this task, you will build a robust, real-time multi-channel chat application with active user tracking, typing status timeouts, and real-time read receipt updates. ## Requirements ### 1. Database Schema (`schema.prisma`) Define the following entities in your `schema.prisma` file: * **User**: Standard user entity connected to Wasp's auth system. It must have a unique `username` (String) field, and relations to messages and read receipts. * **Channel**: Represents a chat room. It must have a unique `name` (String) field, and relations to messages and read receipts. * **Message**: Represents a message sent in a channel. It must have `content` (String), `senderId` (Int, foreign key to User), `channelId` (Int, foreign key to Channel), and `createdAt` (DateTime, defaults to now). * **ReadReceipt**: Represents the "read cursor" for a user in a channel. It must have `userId` (Int, foreign key to User), `channelId` (Int, foreign key to Channel), and `lastReadMessageId` (Int, foreign key to Message). There must be a unique constraint on the pair of `[userId, channelId]` so each user has at most one read cursor per channel. ### 2. Wasp Configuration (`main.wasp.ts`) Configure the Wasp application spec with the following: * **Authentication**: Enable `usernameAndPassword` auth, using `User` as the user entity, and redirecting failed authentication to `/login`. * **WebSockets**: Enable WebSocket support with `autoConnect: true`, referencing a custom server-side function `webSocketFn` in `src/webSocket.ts`. * **Routes & Pages**: * `/` -> `MainPage` (requires authentication). * `/channel/:id` -> `ChannelPage` (requires authentication). * `/login` -> `LoginPage` (public). * `/signup` -> `SignupPage` (public). * **Operations**: * Query `getChannels` (uses `Channel` entity). * Query `getChannel` (uses `Channel` entity). * Query `getChannelMessages` (uses `Message`, `ReadReceipt`, and `User` entities). * Action `createChannel` (uses `Channel` entity). * Action `createMessage` (uses `Message` and `ReadReceipt` entities). * Action `markAsRead` (uses `ReadReceipt` and `Message` entities). * **Database Seeding**: Register a seed function named `seedDevData` under `db.seeds`. ### 3. Server-Side Operations & WebSocket Integration * **WebSocket Setup (`src/webSocket.ts`)**: * Implement `webSocketFn` to initialize the Socket.IO server. * When a client connects and is authenticated, store their socket/user association. * Implement handlers for: * `joinChannel`: Accepts `{ channelId: number }`. Adds the socket to room `channel-${channelId}`. Tracks that this user is active in this channel, and broadcasts the list of all active usernames in that channel to everyone in the room via the `activeUsers` event. * `leaveChannel`: Accepts `{ channelId: number }`. Removes the socket from room `channel-${channelId}`. Updates the active users tracking and broadcasts the updated list. * `typing`: Accepts `{ channelId: number, isTyping: boolean }`. Broadcasts `{ username: string, isTyping: boolean }` to room `channel-${channelId}` (excluding the sender) via the `typing` event. * `disconnect`: Cleans up the user's active status from all channels they were in, and broadcasts updated active user lists to those channels. * **Critical Seam**: To allow server-side operations (like Actions) to emit WebSocket events, you must store a reference to the Socket.IO `io` server instance globally/module-level and export a helper/getter to retrieve it. * **Query `getChannels`**: Returns all channels. * **Query `getChannel`**: Returns a single channel by ID. * **Query `getChannelMessages`**: Returns all messages for a specific channel, sorted chronologically, along with their sender's details and the read receipts of other users for those messages. * **Action `createChannel`**: Accepts `{ name: string }` and creates a new channel. If a channel with that name already exists, throw an error. * **Action `createMessage`**: * Accepts `{ channelId: number, content: string }`. * Creates a new message linked to the logged-in user and the channel. * Automatically creates or updates the sender's `ReadReceipt` record for this channel to point to this new message as `lastReadMessageId`. * Broadcasts the new message to room `channel-${channelId}` via the `messageCreated` WebSocket event. * Returns the created message. * **Action `markAsRead`**: * Accepts `{ channelId: number, lastReadMessageId: number }`. * Creates or updates the logged-in user's `ReadReceipt` record for this channel to point to `lastReadMessageId`. * Broadcasts a `readReceiptUpdated` WebSocket event to room `channel-${channelId}` with `{ userId: number, username: string, lastReadMessageId: number }`. * Returns the updated/created read receipt. ### 4. Client-Side UI & Test Hooks Implement the pages with the following test hooks (`data-testid`) to ensure deterministic browser verification: * **Login Page (`/login`) & Signup Page (`/signup`)**: Use Wasp's built-in `LoginForm` and `SignupForm` components from `wasp/client/auth`. * **Main Page (`/`)**: * Title: Element with `data-testid="main-title"`. * Create Channel Form: * Input: `<input id="channel-name-input" data-testid="channel-name-input" />`. * Button: `<button id="create-channel-btn" data-testid="create-channel-btn">Create Channel</button>`. * Channels List: * Container: `<div data-testid="channels-list">`. * Each channel item: `<a data-testid="channel-link" data-channel-id="" href="/channel/<channelId>">`. * Logout Button: `<button data-testid="logout-btn">Logout</button>`. * **Channel Page (`/channel/:id`)**: * Channel Title: `<h1 data-testid="channel-title">` showing the channel name (e.g. `#general`). * Active Users List: * Container: `<div data-testid="active-users-list">`. * Each active user: `<span data-testid="active-user-item" data-username="">`. * Typing Indicators: * Container: `<div data-testid="typing-indicators">`. * Each typing user: `<span data-testid="typing-user-item" data-username="">` (displays e.g. "Alice is typing..."). * **Inactivity Timeout**: The typing indicator must disappear if no keystroke is detected from that user for 3 seconds, or when they send a message. When typing, client-side keystroke listeners must emit `{ isTyping: true }` (debounced/throttled) and clear/reset a 3-second local timer that emits `{ isTyping: false }` when it fires. * Messages List: * Container: `<div data-testid="messages-list">`. * Each message item: `<div data-testid="message-item" data-message-id="">`. * Sender: `<span data-testid="message-sender">`. * Content: `<span data-testid="message-content">`. * Read Receipts Container: `<div data-testid="message-read-receipts">`. * Each reader: `<span data-testid="reader-name" data-username="">` (displays username of other users who have read this message. A message is read by user X if their `lastReadMessageId` in this channel is >= the message's ID. Do NOT include the sender's own name in their own message's read receipts list). * Message Input Form: * Input: `<input id="message-input" data-testid="message-input" />`. * Button: `<button id="send-message-btn" data-testid="send-message-btn">Send</button>`. * **Typing Trigger**: Any key down in the input field must trigger the typing indicator state. Sending a message must immediately clear the typing indicator state. * Back Link: `<a data-testid="back-to-channels" href="/">`. ### 5. Database Seeding Implement the seed function `seedDevData` that pre-creates: * User `alice` (password: `password123`) * User `bob` (password: `password123`) * Two Channels: `#general` and `#random`. Use `sanitizeAndSerializeProviderData` from `'wasp/server/auth'` to hash the passwords for the auth identities.   
+
+Pochi
+📂 Listing files in . ✔ 
+💭 Thinking for 282 characters   
+💫 Executing git status ✖ "Command exited with code 128"
+💭 Thinking for 329 characters   
+📂 Listing files in .. ✔ 
+💫 Executing wasp version ✔ 
+💭 Thinking for 284 characters   
+💫 Executing wasp new --help ✔ 
+💭 Thinking for 328 characters   
+💫 Executing wasp new . ✖ "Command exited with code 1"
+💭 Thinking for 285 characters   
+💫 Executing wasp new chat ✔ 
+📂 Listing files in chat ✔ 
+💭 Thinking for 285 characters   
+💫 Executing mv chat/* . && mv chat/.* . ; rmdir chat ✔ 
+📂 Listing files in . ✔ 
+📖 Reading main.wasp.ts ✔ 
+📖 Reading schema.prisma ✔ 
+📂 Listing files in src recursively ✔ 
+💭 Thinking for 745 characters   
+🔎 Searching the web for wasp.sh auth usernameAndPassword spec ✔ 
+🔎 Searching the web for wasp.sh websockets socket.io spec ✔ 
+🔎 Searching the web for site:wasp.sh useSocket useSocketListener ✔ 
+💭 Thinking for 447 characters   
+🔎 Searching the web for site:wasp.sh "webSocketFn" ✔ 
+💭 Thinking for 283 characters   
+🔎 Searching the web for site:wasp.sh "socket.data.user" ✔ 
+💭 Thinking for 1493 characters   
+✏️  Writing schema.prisma ✔ 
+💭 Thinking for 863 characters   
+🔎 Searching the web for wasp.sh route page ts spec authRequired ✔ 
+💭 Thinking for 632 characters   
+🔎 Searching the web for site:wasp.sh db seeds spec ✔ 
+💭 Thinking for 328 characters   
+✏️  Writing main.wasp.ts ✔ 
+💭 Thinking for 3300 characters   
+✏️  Writing src/webSocket.ts ✔ 
+💭 Thinking for 1937 characters   
+✏️  Writing src/queries.ts ✔ 
+💭 Thinking for 1579 characters   
+✏️  Writing src/actions.ts ✔ 
+💭 Thinking for 202 characters   
+🔎 Searching the web for wasp "sanitizeAndSerializeProviderData" seed ✔ 
+🔎 Searching the web for wasp "createUser" "sanitizeAndSerializeProviderData" seed ✔ 
+💭 Thinking for 1162 characters   
+✏️  Writing src/dbSeeds.ts ✔ 
+💭 Thinking for 264 characters   
+🔎 Searching the web for wasp/client/auth LoginForm SignupForm ✔ 
+💭 Thinking for 287 characters   
+✏️  Writing src/LoginPage.tsx ✔ 
+✏️  Writing src/SignupPage.tsx ✔ 
+💭 Thinking for 260 characters   
+🔎 Searching the web for wasp useQuery client operations ✔ 
+💭 Thinking for 236 characters   
+🔎 Searching the web for wasp useAuth client hook ✔ 
+💭 Thinking for 1538 characters   
+✏️  Writing src/MainPage.tsx ✔ 
+💭 Thinking for 6462 characters   
+✏️  Writing src/ChannelPage.tsx ✔ 
+💫 Executing wasp compile ✖ "Command exited with code 1"
+💭 Thinking for 224 characters   
+📖 Reading src/App.tsx ✔ 
+📖 Reading package.json ✔ 
+💭 Thinking for 744 characters   
+💫 Executing rm -rf src/tags src/tasks src/auth/email ✔ 
+✏️  Writing src/LoginPage.tsx ✔ 
+✏️  Writing src/SignupPage.tsx ✔ 
+✏️  Writing src/MainPage.tsx ✔ 
+✏️  Writing src/ChannelPage.tsx ✔ 
+💭 Thinking for 207 characters   
+📖 Reading src/shared/components/Header.tsx ✔ 
+💭 Thinking for 609 characters   
+✏️  Writing src/App.tsx ✔ 
+💫 Executing wasp compile ✖ "Command exited with code 1"
+💭 Thinking for 291 characters   
+✏️  Writing src/webSocket.ts ✔ 
+💫 Executing wasp compile ✔ 
+💭 Thinking for 215 characters   
+💫 Executing wasp db migrate-dev ✖ "Command execution timed out after 60 seconds."
+💭 Thinking for 285 characters   
+💫 Executing wasp db migrate-dev --name init ✖ "Command exited with code 1"
+💭 Thinking for 253 characters   
+💫 Executing wasp db migrate-dev --name init ✖ "Command exited with code 1"
+💫 Executing ps aux | grep -E "wasp|node|prisma" ✔ 
+💭 Thinking for 185 characters   
+💫 Executing pkill -9 -f wasp-bin ; pkill -9 -f prisma ; pkill -9 -f schema-engine ✖ "Command exited with code 1"
+💫 Executing ps aux | grep -E "wasp|node|prisma" ✔ 
+💫 Executing kill -9 3624 3685 ✔ 
+💫 Executing ps aux | grep -E "wasp|node|prisma" ✔ 
+💫 Executing wasp db migrate-dev --name init ✔ 
+💫 Executing wasp db seed seedDevData ✔ 
+💭 Thinking for 2243 characters   
+🎉 Task Completed
+I have successfully implemented the Real-Time Chat Application with Typing Indicators and Read Receipts using Wasp.sh (v0.24.0), Socket.IO WebSockets, and a Prisma/SQLite database.
+
+Here is a summary of the implementation:
+
+1. **Database Schema (`schema.prisma`)**:
+   - Defined `User`, `Channel`, `Message`, and `ReadReceipt` models with all required fields, relations, and unique constraints.
+
+2. **Wasp Configuration (`main.wasp.ts`)**:
+   - Configured `usernameAndPassword` authentication.
+   - Enabled WebSockets with `autoConnect: true` and pointed to our custom server-side `webSocketFn` handler.
+   - Defined paths and public/private access rules for `/`, `/channel/:id`, `/login`, and `/signup`.
+   - Registered all queries (`getChannels`, `getChannel`, `getChannelMessages`), actions (`createChannel`, `createMessage`, `markAsRead`), and the `seedDevData` function.
+
+3. **Server-Side Operations & WebSocket Integration**:
+   - **`src/webSocket.ts`**: Initialized Socket.IO server and exported `getIO()` helper to allow server-side actions to emit events. Implemented handlers for `joinChannel`, `leaveChannel`, `typing`, and `disconnect` (with robust multi-tab and active user tracking).
+   - **`src/queries.ts`**: Implemented `getChannels`, `getChannel`, and `getChannelMessages` (which maps messages to include other users' read receipts).
+   - **`src/actions.ts`**: Implemented `createChannel` (with uniqueness checks), `createMessage` (with automatic sender read receipt creation/update and socket broadcast), and `markAsRead` (with read receipt upsert and socket broadcast).
+
+4. **Client-Side UI & Test Hooks**:
+   - **`src/LoginPage.tsx` & `src/SignupPage.tsx`**: Used Wasp's built-in `LoginForm` and `SignupForm`.
+   - **`src/MainPage.tsx`**: Features channel creation form, active channel listing with correct links, and logout functionality. Includes all required `data-testid` attributes.
+   - **`src/ChannelPage.tsx`**: Features real-time messages list, active users list, typing indicators with a 3-second inactivity timeout, and message input form. Includes all required `data-testid` attributes.
+
+5. **Database Seeding (`src/dbSeeds.ts`)**:
+   - Seeded users `alice` and `bob` (with hashed passwords using `sanitizeAndSerializeProviderData`) and channels `#general` and `#random`.
+   - Successfully ran database migration and seeding.
+
+The entire application compiles successfully under `wasp compile` and is ready for production.   
+  

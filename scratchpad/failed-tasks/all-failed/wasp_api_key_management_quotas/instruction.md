@@ -1,0 +1,116 @@
+# Developer API Key Management Portal with Custom Quotas and Rate Limits
+
+## Background
+Developers of modern SaaS platforms require a secure, reliable way to generate API keys, define custom usage quotas, and enforce rate limits on incoming API requests. Wasp.sh (v0.24.0) provides a spec-driven full-stack framework with built-in authentication, database integration via Prisma, and custom HTTP API endpoints. In this task, you will build a complete Developer API Key Management Portal that tracks key usage, logs API requests, and enforces both lifetime usage quotas and rolling rate limits.
+
+## Requirements
+
+### 1. Database Schema (`schema.prisma`)
+Define the following entities in your `schema.prisma` file:
+- `User`:
+  - `id`: Int, primary key, autoincrement.
+  - `username`: String, unique.
+  - `password`: String.
+  - `apiKeys`: Relation to `ApiKey` (one-to-many).
+- `ApiKey`:
+  - `id`: Int, primary key, autoincrement.
+  - `key`: String, unique (a secure random token starting with `sk_`, e.g., `sk_` followed by 32 characters or a UUID).
+  - `name`: String.
+  - `quota`: Int (the maximum number of successful requests allowed for this key).
+  - `usage`: Int, defaults to 0.
+  - `userId`: Int.
+  - `user`: Relation to `User`.
+  - `logs`: Relation to `ApiLog` (one-to-many, with cascade delete).
+  - `createdAt`: DateTime, defaults to `now()`.
+- `ApiLog`:
+  - `id`: Int, primary key, autoincrement.
+  - `endpoint`: String (e.g., `"GET /api/request"`).
+  - `status`: Int (HTTP status code, e.g., 200, 401, or 429).
+  - `apiKeyId`: Int.
+  - `apiKey`: Relation to `ApiKey`.
+  - `timestamp`: DateTime, defaults to `now()`.
+
+### 2. Wasp Configuration (`main.wasp.ts`)
+Configure the Wasp application spec with the following:
+- **Wasp Version**: Target Wasp `^0.24.0` using the TypeScript configuration spec (`main.wasp.ts`) and `@wasp.sh/spec` package.
+- **Authentication**: Enable `usernameAndPassword` auth, using `User` as the user entity, and redirecting failed authentication to `/login`.
+- **Routes & Pages**:
+  - `/` -> `MainPage` (requires authentication).
+  - `/login` -> `LoginPage` (public).
+  - `/signup` -> `SignupPage` (public).
+- **Operations**:
+  - Query `getApiKeys` (associated with the `ApiKey` and `ApiLog` entities).
+  - Action `createApiKey` (associated with the `ApiKey` entity).
+  - Action `deleteApiKey` (associated with the `ApiKey` and `ApiLog` entities).
+- **Custom API Endpoint**:
+  - Declare a custom API endpoint in `main.wasp.ts` using the `api` constructor:
+    `api("GET", "/api/request", apiRequestHandler, { entities: ["ApiKey", "ApiLog"], auth: false })`
+- **Database Seeds**:
+  - Register a seed function named `devSeedSimple` under `db.seeds`.
+
+### 3. Server-Side Operations & Custom API Middleware
+- **Query `getApiKeys`**:
+  - Returns all API keys belonging to the logged-in user, including their nested logs (sorted by `timestamp` descending).
+- **Action `createApiKey`**:
+  - Input: `{ name: string, quota: number }`
+  - Behavior: Generates a secure random key starting with `sk_` (e.g. `sk_` + UUID or random 32-character string), creates a new `ApiKey` record linked to the authenticated user, and returns it.
+- **Action `deleteApiKey`**:
+  - Input: `{ id: number }`
+  - Behavior: Deletes the API key with the given ID belonging to the authenticated user.
+- **Custom API Endpoint `GET /api/request` (implemented in `src/apis.ts`)**:
+  - Authenticates the request via the `Authorization` header using the `Bearer <api_key>` format (or optionally via query parameter `?apiKey=<api_key>` as a fallback).
+  - If the API key is missing or does not exist in the database:
+    - Returns HTTP 401 Unauthorized with JSON `{ "error": "Invalid API key" }`.
+    - Note: Since the key is invalid, do not create an `ApiLog` record in the database.
+  - If the API key is valid:
+    - **Rate Limit Check**: Enforce a rolling rate limit of **maximum 3 requests within the last 10 seconds** per API key.
+      - Query the `ApiLog` table for entries associated with this `apiKeyId` where the `timestamp` is within the last 10 seconds.
+      - If the count of logs in the last 10 seconds is **3 or more**:
+        - Create an `ApiLog` entry in the database with `endpoint: "GET /api/request"`, `status: 429`, and linked to the `ApiKey`.
+        - Returns HTTP 429 Too Many Requests with JSON `{ "error": "Rate limit exceeded" }`.
+    - **Quota Check**: Enforce the lifetime usage quota.
+      - If `usage` is greater than or equal to `quota`:
+        - Create an `ApiLog` entry in the database with `endpoint: "GET /api/request"`, `status: 429`, and linked to the `ApiKey`.
+        - Returns HTTP 429 Too Many Requests with JSON `{ "error": "Quota exceeded" }`.
+    - **Successful Request**:
+      - Increment the key's `usage` by 1 in the database.
+      - Create an `ApiLog` entry in the database with `endpoint: "GET /api/request"`, `status: 200`, and linked to the `ApiKey`.
+      - Returns HTTP 200 OK with JSON `{ "success": true, "message": "Request successful", "usage": newUsage, "quota": quota }`.
+
+### 4. Client-Side UI & Test Hooks
+Implement the pages with the following test hooks (`data-testid`) to ensure deterministic browser verification:
+- **Login Page (`/login`) & Signup Page (`/signup`)**: Use Wasp's built-in `LoginForm` and `SignupForm` components from `wasp/client/auth`.
+- **Main Page (`/`)**:
+  - Add a logout button or link.
+  - **Create API Key Form**:
+    - Input field for key name: `<input type="text" id="key-name" data-testid="key-name" />`
+    - Input field for quota: `<input type="number" id="key-quota" data-testid="key-quota" />`
+    - Button to generate key: `<button id="generate-key-btn" data-testid="generate-key-btn">Generate Key</button>`
+  - **API Keys List**:
+    - Render each API key item inside an element with `data-testid="api-key-item"`.
+    - Within each `api-key-item`, display:
+      - Key Name: `data-testid="key-name-display"`
+      - Key Value: `data-testid="key-value-display"` (must render the exact generated `sk_...` key so the test can copy/use it)
+      - Key Usage: `data-testid="key-usage-display"` (must display the current usage and quota, e.g., `0 / 5` or `5 / 5`)
+      - Delete Button: `data-testid="delete-key-btn"`
+      - Logs List: `data-testid="key-logs-list"` containing elements with `data-testid="log-item"` for each request log showing its endpoint and status code (e.g., `GET /api/request - 200` or `GET /api/request - 429`).
+  - **Test API Key Section**:
+    - Add an interactive section to let users/tests easily make requests to the custom API endpoint from the browser.
+    - Input field for API Key: `<input type="text" id="test-api-key" data-testid="test-api-key" />`
+    - Button to send request: `<button id="send-test-request-btn" data-testid="send-test-request-btn">Send Test Request</button>`
+    - Response Status Display: element with `data-testid="test-response-status"` (must display the exact HTTP status code returned, e.g., `200` or `429` or `401`).
+    - Response Body Display: element with `data-testid="test-response-body"` (must display the response JSON text or error message).
+  - **Refresh Button**:
+    - Provide a button with `data-testid="refresh-btn"` that manually refetches/reloads the API keys and logs from the server.
+
+### 5. Database Seeding
+- Implement a seed function `devSeedSimple` that creates a test user with username `devuser` and password `password123`.
+- Use `sanitizeAndSerializeProviderData` from `'wasp/server/auth'` to hash the password for the auth identities.
+
+## Implementation Hints
+- **Project Path**: `/home/user/app`
+- **Start Command**: `wasp start`
+- **Port**: `3000`
+- **Database**: SQLite (default). Run migrations using `wasp db migrate-dev` before starting.
+- **Wasp Spec Imports**: Ensure all references in `main.wasp.ts` (like pages, queries, actions, custom APIs) use `with { type: "ref" }` imports.
+

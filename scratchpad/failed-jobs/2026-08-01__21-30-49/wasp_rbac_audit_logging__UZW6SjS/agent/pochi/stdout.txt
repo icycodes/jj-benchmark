@@ -1,0 +1,90 @@
+- Initializing MCP connections...
+You
+# Wasp RBAC and Audit Logging Enterprise App ## Background You are building an enterprise user and document management system using Wasp (v0.24.0). The system requires strict Role-Based Access Control (RBAC) with hierarchical roles (`ANALYST`, `MANAGER`, `ADMIN`) and automated audit logging of all database write operations to an `AuditLog` entity. ## Requirements 1. **Database Schema (`schema.prisma`)**: Define the following models in your Prisma schema file: * `User`: Must represent the application user. It should have an `id` (Int, primary key, autoincrement) and a `role` field (String, default `"ANALYST"`). It has a one-to-many relationship with `Document` and `AuditLog` models. * `Document`: Represents enterprise documents. It should have an `id` (Int, primary key, autoincrement), `title` (String), `content` (String), `ownerId` (Int), and `owner` (relation to `User`). * `AuditLog`: Represents the system's tamper-proof audit trail. It must have an `id` (Int, primary key, autoincrement), `action` (String, e.g., `"CREATE"`, `"UPDATE"`, `"DELETE"`), `entityName` (String, e.g., `"Document"`), `entityId` (Int), `userId` (Int), `user` (relation to `User`), `timestamp` (DateTime, default `now()`), and `payload` (String, storing a JSON string representation of the document state or operation data). 2. **Authentication & Custom Hooks**: * Configure Wasp's `usernameAndPassword` auth in `main.wasp.ts`. * The signup process must accept an extra field `role` (valid values: `"ANALYST"`, `"MANAGER"`, `"ADMIN"`). Configure `userSignupFields` to validate and save this field to the `User` entity, defaulting to `"ANALYST"` if not provided or invalid. * Implement a custom auth hook `onBeforeSignup` in `main.wasp.ts` that enforces a strict registration rule: users signing up with the `"ADMIN"` role must have a username ending with `_admin` (e.g., `super_admin`). If a user attempts to sign up with the `"ADMIN"` role and a username that does not end with `_admin`, the hook must throw an error, preventing the signup. 3. **Hierarchical RBAC & Operations**: * Implement the following operations (Queries & Actions) and declare them in your `main.wasp.ts` spec: * `getDocuments` (Query): Returns all documents. Access is allowed for any authenticated user (`ANALYST`, `MANAGER`, `ADMIN`). * `getAuditLogs` (Query): Returns all audit logs. Access is restricted ONLY to `ADMIN` users. Non-ADMIN users must be rejected with an `HttpError(403)`. * `createDocument` (Action): Creates a new document. Access is allowed for `MANAGER` and `ADMIN` users. `ANALYST` users must be rejected with an `HttpError(403)`. This operation must automatically create a corresponding `AuditLog` entry with `action: "CREATE"`, `entityName: "Document"`, and `payload: JSON.stringify({ title, content })`. * `updateDocument` (Action): Updates an existing document's title and content. Access is allowed for `MANAGER` and `ADMIN` users. `ANALYST` users must be rejected with an `HttpError(403)`. This operation must automatically create a corresponding `AuditLog` entry with `action: "UPDATE"`, `entityName: "Document"`, and `payload: JSON.stringify({ title, content })`. * `deleteDocument` (Action): Deletes a document. Access is restricted ONLY to `ADMIN` users. `ANALYST` and `MANAGER` users must be rejected with an `HttpError(403)`. This operation must automatically create a corresponding `AuditLog` entry with `action: "DELETE"`, `entityName: "Document"`, and `payload: JSON.stringify({ id })`. 4. **Frontend & Routes**: * Create a single-page application dashboard on `/` (MainPage), `/login`, and `/signup` routes. * Use specific element attributes and IDs to allow deterministic end-to-end browser verification: * **Signup Page (`/signup`)**: * Username input: `id="username"` * Password input: `id="password"` * Role select or input: `id="role"` * Submit button: `type="submit"` or `id="signup-btn"` * **Login Page (`/login`)**: * Username input: `id="username"` * Password input: `id="password"` * Submit button: `type="submit"` or `id="login-btn"` * **Dashboard Page (`/`)**: * Display the logged-in user's role in a text element containing `Role: <ROLE_NAME>` (e.g., `Role: ANALYST`, `Role: MANAGER`, `Role: ADMIN`). * Display a Logout button: `id="logout-btn"`. * **Document Creation Form** (only visible/enabled for `MANAGER` and `ADMIN` roles): * Title input: `id="doc-title"` * Content input: `id="doc-content"` * Create button: `id="create-doc-btn"` * **Document List**: * For each document with ID `X`: * Display its title and content. * Display an Update button: `data-testid="update-doc-btn-X"`. Clicking it must update the document's title to `<original_title> (updated)` and content to `<original_content> (updated)`. * Display a Delete button: `data-testid="delete-doc-btn-X"` (only visible/enabled for `ADMIN` role). Clicking it must delete the document. * **Audit Logs Section** (only visible/accessible for `ADMIN` role): * Display a list of all audit logs. * Each audit log item must have the attribute `data-testid="audit-log-item"` and show the action, entity name, entity ID, user ID, and payload. ## Implementation Hints * Project path: `/home/user/app` * Start command: `wasp start` * Port: `3000` * Ensure you run database migrations using `wasp db migrate-dev` after modifying `schema.prisma`. * All reference imports in `main.wasp.ts` must use the `with { type: "ref" }` syntax. * Make sure all server-side operations import from `wasp/server/operations` and check `context.user` for authentication and authorization.   
+
+Pochi
+💭 Thinking for 207 characters   
+📂 Listing files in /home/user/app ✔ 
+📖 Reading /home/user/app/schema.prisma ✔ 
+📖 Reading /home/user/app/main.wasp.ts ✔ 
+📂 Listing files in /home/user/app/src ✔ 
+📖 Reading /home/user/app/package.json ✔ 
+💭 Thinking for 594 characters   
+🔎 Searching the web for "wasp-lang" auth schema.prisma User ✔ 
+🔎 Searching the web for "userSignupFields" wasp OR "onBeforeSignup" wasp ✔ 
+💭 Thinking for 298 characters   
+🔎 Searching the web for "onBeforeSignup" "usernameAndPassword" OR username wasp ✔ 
+💭 Thinking for 1188 characters   
+🔎 Searching the web for "onBeforeSignup" "req" wasp OR "onBeforeSignup" "body" ✔ 
+💭 Thinking for 1769 characters   
+🔎 Searching the web for "schema.prisma" "User" "Auth" "wasp" ✔ 
+💭 Thinking for 504 characters   
+✏️  Writing /home/user/app/schema.prisma ✔ 
+💭 Thinking for 980 characters   
+🔎 Searching the web for "main.wasp.ts" "spec" "query" OR "action" wasp ✔ 
+💭 Thinking for 767 characters   
+🔎 Searching the web for "wasp/server/operations" "HttpError" OR "context.user" ✔ 
+💭 Thinking for 2036 characters   
+✏️  Writing /home/user/app/src/auth/signup.ts ✔ 
+💭 Thinking for 619 characters   
+✏️  Writing /home/user/app/src/auth/hooks.ts ✔ 
+✏️  Writing /home/user/app/src/queries.ts ✔ 
+✏️  Writing /home/user/app/src/actions.ts ✔ 
+💭 Thinking for 595 characters   
+🔎 Searching the web for wasp login signup client API OR "wasp/client/auth" ✔ 
+💭 Thinking for 368 characters   
+🔎 Searching the web for "useAuth" wasp/client/auth ✔ 
+💭 Thinking for 1245 characters   
+📖 Reading /home/user/app/src/MainPage.tsx ✔ 
+💭 Thinking for 597 characters   
+✏️  Writing /home/user/app/src/auth/SignupPage.tsx ✔ 
+✏️  Writing /home/user/app/src/auth/LoginPage.tsx ✔ 
+💭 Thinking for 481 characters   
+✏️  Writing /home/user/app/main.wasp.ts ✔ 
+💭 Thinking for 558 characters   
+🔎 Searching the web for "wasp/client/operations" useQuery OR "import" ✔ 
+💭 Thinking for 4435 characters   
+✏️  Writing /home/user/app/src/MainPage.tsx ✔ 
+💭 Thinking for 261 characters   
+💫 Executing wasp db migrate-dev --name init ✔ 
+💭 Thinking for 301 characters   
+💫 Executing wasp db migrate-dev ✔ 
+💭 Thinking for 226 characters   
+🛠️ Tool startBackgroundJob ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+🛠️ Tool readBackgroundJobOutput ✔ 
+💭 Thinking for 1560 characters   
+🎉 Task Completed
+I have successfully built and configured the Wasp Enterprise RBAC and Audit Logging Application according to your specifications.
+
+Here is a summary of the implemented features:
+
+1. **Database Schema (`schema.prisma`)**:
+   - Defined `User` with fields `id` and `role` (defaulting to `"ANALYST"`), and one-to-many relationships to `Document` and `AuditLog`.
+   - Defined `Document` with fields `id`, `title`, `content`, `ownerId`, and `owner` (relation to `User`).
+   - Defined `AuditLog` with fields `id`, `action`, `entityName`, `entityId`, `userId`, `user` (relation to `User`), `timestamp` (defaulting to `now()`), and `payload` (storing a JSON string representation of the action data).
+
+2. **Authentication & Custom Hooks**:
+   - Enabled Wasp's `usernameAndPassword` auth in `main.wasp.ts` and configured `userSignupFields` to validate and save the custom `role` field on signup, defaulting to `"ANALYST"` if not provided or invalid.
+   - Implemented a custom auth hook `onBeforeSignup` (in `src/auth/hooks.ts` and declared in `main.wasp.ts`) that enforces the rule that users signing up with the `"ADMIN"` role must have a username ending with `_admin`.
+
+3. **Hierarchical RBAC & Operations**:
+   - `getDocuments` (Query): Returns all documents and is accessible to any authenticated user.
+   - `getAuditLogs` (Query): Returns all audit logs and is restricted ONLY to `ADMIN` users (non-ADMIN users get an `HttpError(403)`).
+   - `createDocument` (Action): Creates a document; restricted to `MANAGER` and `ADMIN` users. Automatically logs a `"CREATE"` action to the `AuditLog` with the document state in the payload.
+   - `updateDocument` (Action): Updates title and content; restricted to `MANAGER` and `ADMIN` users. Automatically logs an `"UPDATE"` action to the `AuditLog`.
+   - `deleteDocument` (Action): Deletes a document; restricted ONLY to `ADMIN` users. Automatically logs a `"DELETE"` action to the `AuditLog`.
+
+4. **Frontend & Routes**:
+   - Created `/login` and `/signup` pages with proper form fields and IDs (`id="username"`, `id="password"`, `id="role"`, `id="signup-btn"`, `id="login-btn"`).
+   - Created the `/` dashboard (MainPage) which displays the logged-in user's role (e.g., `Role: ANALYST`), a Logout button (`id="logout-btn"`), and conditional components based on user role (e.g., the Document Creation Form is only visible to `MANAGER` and `ADMIN` users, and the Audit Logs Section is only visible to `ADMIN` users).
+   - Added appropriate test IDs (`data-testid="update-doc-btn-X"`, `data-testid="delete-doc-btn-X"`, and `data-testid="audit-log-item"`) for deterministic E2E verification.
+
+The application compiles perfectly and the database migrations have been successfully applied. The server is actively running and listening on port `3000` (frontend) and `3001` (backend).   
+- Waiting for background jobs to complete (timeout: 60000ms)...
+✖ Async wait timeout reached. Remaining: 1 job(s)
+  

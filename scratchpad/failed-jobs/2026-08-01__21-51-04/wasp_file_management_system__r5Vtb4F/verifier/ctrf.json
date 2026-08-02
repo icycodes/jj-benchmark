@@ -1,0 +1,41 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-08-01T14:06:28.647818+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 1,
+            "passed": 0,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1785592928482,
+            "stop": 1785593188647
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_task_verification",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 260076,
+                "start": 1785592928571,
+                "stop": 1785593188647,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "start_app = None\nbrowser_verifier = <pochi_verifier.verifier.PochiVerifier object at 0x7a9ef9b715e0>\n\n    def test_task_verification(start_app, browser_verifier):\n        reason = \"File management system must correctly support folder structures, sharing links, and access logs.\"\n        truth = (\n            \"Navigate to http://127.0.0.1:3000. Sign up with a username containing the run-id (read from /logs/artifacts/run-id) \"\n            \"and a secure password. Log in, create a folder named with the run-id, navigate into it, and upload a file. \"\n            \"Then generate a password-protected sharing link with an expiration time. Open an unauthenticated session, \"\n            \"navigate to the sharing link, verify that the password prompt is shown, enter incorrect password to verify error, \"\n            \"enter correct password to unlock, and download the file to verify the content matches. Finally, log back in as \"\n            \"the registered user, navigate to the access logs page, and verify that the file access is correctly logged with \"\n            \"the correct timestamp, IP, and User-Agent.\"\n        )\n        result = browser_verifier.verify(\n            reason=reason,\n            truth=truth,\n            use_browser_agent=True,\n            trajectory_dir=\"/logs/verifier/pochi/test_task_verification\"\n        )\n>       assert result.status == \"pass\", f\"Browser verification failed: {result.reason}\"\nE       AssertionError: Browser verification failed: The verification test failed because of a bug in the web application's frontend-to-backend proxy configuration or code. Specifically:\nE         1. When entering an incorrect password on the sharing page, the frontend attempts to verify the password by calling `fetch('/api/download/...?password=...')`. Because there is no proxy configured in Vite for the `/api` route from port 3000 to port 3001, the fetch request falls back to the Single Page Application (SPA) HTML fallback, which returns a status code of 200 OK.\nE         2. As a result, the frontend incorrectly treats any password (including an incorrect one) as valid, immediately unlocking the download section and saying 'File is ready for download!' instead of showing an error.\nE         3. Clicking 'Download File' attempts to download from port 3000, which again returns the SPA index.html content instead of the actual file. Thus, the downloaded file content does not match the uploaded file content.\nE         4. Directly calling the backend API on port 3001 returns the correct file content for the correct password and a JSON error for the incorrect password, and logs these accesses in the Access Logs. However, the web interface itself is broken due to the missing proxy/route mapping.\nE       assert 'fail' == 'pass'\nE         - pass\nE         + fail\n\n/tests/test_final_state.py:74: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}
