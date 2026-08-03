@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
 2:"$Sreact.suspense"
 3:I[42654,["/wasp-benchmark/_next/static/chunks/babff0e7418ab052.js","/wasp-benchmark/_next/static/chunks/3ecbb78a8ff87549.js","/wasp-benchmark/_next/static/chunks/6b2073bb465ef60e.js","/wasp-benchmark/_next/static/chunks/2ee232ed1e88c469.js"],"TasksPageClient"]
-12:I[75049,["/wasp-benchmark/_next/static/chunks/d2c13bb33c4fcd54.js","/wasp-benchmark/_next/static/chunks/c21188132e0e0d48.js"],"OutletBoundary"]
+1b:I[75049,["/wasp-benchmark/_next/static/chunks/d2c13bb33c4fcd54.js","/wasp-benchmark/_next/static/chunks/c21188132e0e0d48.js"],"OutletBoundary"]
 4:T51e,# Wasp Auth Hooks (onBeforeSignup)
 
 ## Background
@@ -403,8 +403,789 @@ Wasp provides built-in authentication and authorization. In this task, you will 
 - **Project Path**: `/home/user/user-roles`
 - **Start Command**: `wasp start`
 - **Port**: 3000
-0:{"buildId":"c2TyB-hBGMHjHqLNHxkKE","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-background text-foreground font-sans selection:bg-primary/20","children":[["$","div",null,{"className":"fixed inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#2a2a2a_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 dark:opacity-40"}],["$","$2",null,{"fallback":["$","div",null,{"className":"container mx-auto py-8 text-center","children":"Loading tasks..."}],"children":["$","$L3",null,{"tasksData":[{"taskName":"auth_hooks","instruction":"$4","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"auth_hooks__SqLK5st","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":395.774,"latency_breakdown":{"env_setup":1.627,"agent_setup":0.695,"agent_exec":258.27,"verifier":124.189},"taskName":"auth_hooks","exec_duration":258.27},{"job_name":"2026-04-01__08-41-05","trial_name":"auth_hooks__XyBFf2T","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":758.095,"latency_breakdown":{"env_setup":1.641,"agent_setup":0.676,"agent_exec":449.375,"verifier":295.418},"taskName":"auth_hooks","exec_duration":449.375},{"job_name":"2026-04-01__09-21-27","trial_name":"auth_hooks__vxfamia","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":722.892,"latency_breakdown":{"env_setup":1.428,"agent_setup":0.701,"agent_exec":402.894,"verifier":306.924},"taskName":"auth_hooks","exec_duration":402.894},{"job_name":"2026-04-01__10-07-09","trial_name":"auth_hooks__GiPGgvH","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":711.552,"latency_breakdown":{"env_setup":1.209,"agent_setup":0.588,"agent_exec":571.687,"verifier":127.035},"taskName":"auth_hooks","exec_duration":571.687},{"job_name":"2026-04-01__10-43-19","trial_name":"auth_hooks__btbijkz","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":724.072,"latency_breakdown":{"env_setup":1.493,"agent_setup":0.699,"agent_exec":559.349,"verifier":151.486},"taskName":"auth_hooks","exec_duration":559.349}]},{"taskName":"background_jobs","instruction":"$5","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"background_jobs__U5DtZi4","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":764.962,"latency_breakdown":{"env_setup":1.682,"agent_setup":0.704,"agent_exec":600.002,"verifier":151.456},"taskName":"background_jobs","exec_duration":600.002},{"job_name":"2026-04-01__08-41-05","trial_name":"background_jobs__bsLZ5ga","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":765.598,"latency_breakdown":{"env_setup":1.64,"agent_setup":0.612,"agent_exec":600.001,"verifier":151.381},"taskName":"background_jobs","exec_duration":600.001},{"job_name":"2026-04-01__09-21-27","trial_name":"background_jobs__zVBvS7N","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":551.329,"latency_breakdown":{"env_setup":1.436,"agent_setup":0.604,"agent_exec":386.418,"verifier":151.334},"taskName":"background_jobs","exec_duration":386.418},{"job_name":"2026-04-01__10-07-09","trial_name":"background_jobs__i47HvPK","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1336.205,"latency_breakdown":{"env_setup":1.57,"agent_setup":0.777,"agent_exec":121.93,"verifier":1201.006},"taskName":"background_jobs","exec_duration":121.93},{"job_name":"2026-04-01__10-43-19","trial_name":"background_jobs__W26Ai4v","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":1064.288,"latency_breakdown":{"env_setup":1.445,"agent_setup":0.694,"agent_exec":600.005,"verifier":451.173},"taskName":"background_jobs","exec_duration":600.005}]},{"taskName":"counter_app","instruction":"$6","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"counter_app__LLzCjRh","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":538.204,"latency_breakdown":{"env_setup":1.494,"agent_setup":0.652,"agent_exec":275.792,"verifier":249.402},"taskName":"counter_app","exec_duration":275.792},{"job_name":"2026-04-01__08-41-05","trial_name":"counter_app__dxo54ci","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1703.056,"latency_breakdown":{"env_setup":1.507,"agent_setup":0.656,"agent_exec":488.674,"verifier":1201.107},"taskName":"counter_app","exec_duration":488.674},{"job_name":"2026-04-01__09-21-27","trial_name":"counter_app__ZvFNS3g","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":460.515,"latency_breakdown":{"env_setup":1.242,"agent_setup":0.675,"agent_exec":313.275,"verifier":134.206},"taskName":"counter_app","exec_duration":313.275},{"job_name":"2026-04-01__10-07-09","trial_name":"counter_app__C8atkJn","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":630.55,"latency_breakdown":{"env_setup":1.623,"agent_setup":0.668,"agent_exec":492.474,"verifier":124.845},"taskName":"counter_app","exec_duration":492.474},{"job_name":"2026-04-01__10-43-19","trial_name":"counter_app__qgKeg9K","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":840.42,"latency_breakdown":{"env_setup":1.596,"agent_setup":0.691,"agent_exec":600.002,"verifier":227.212},"taskName":"counter_app","exec_duration":600.002}]},{"taskName":"crud_override","instruction":"$7","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"crud_override__ChAGJ6k","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":616.432,"latency_breakdown":{"env_setup":3.034,"agent_setup":0.591,"agent_exec":296.597,"verifier":305.195},"taskName":"crud_override","exec_duration":296.597},{"job_name":"2026-04-01__08-41-05","trial_name":"crud_override__E5gwsXN","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":1097.752,"latency_breakdown":{"env_setup":2.991,"agent_setup":0.606,"agent_exec":355.704,"verifier":727.401},"taskName":"crud_override","exec_duration":355.704},{"job_name":"2026-04-01__09-21-27","trial_name":"crud_override__2Rwo9CL","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":488.888,"latency_breakdown":{"env_setup":2.971,"agent_setup":0.608,"agent_exec":360.088,"verifier":114.254},"taskName":"crud_override","exec_duration":360.088},{"job_name":"2026-04-01__10-07-09","trial_name":"crud_override__ADZfguR","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":690.134,"latency_breakdown":{"env_setup":2.87,"agent_setup":0.632,"agent_exec":282.305,"verifier":393.338},"taskName":"crud_override","exec_duration":282.305},{"job_name":"2026-04-01__10-43-19","trial_name":"crud_override__98LYZBj","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":615.874,"latency_breakdown":{"env_setup":3.067,"agent_setup":0.611,"agent_exec":600,"verifier":1.241},"taskName":"crud_override","exec_duration":600}]},{"taskName":"custom_auth_ui","instruction":"$8","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"custom_auth_ui__ipKtgac","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1499.739,"latency_breakdown":{"env_setup":2.962,"agent_setup":0.664,"agent_exec":283.979,"verifier":1201.004},"taskName":"custom_auth_ui","exec_duration":283.979},{"job_name":"2026-04-01__08-41-05","trial_name":"custom_auth_ui__Zq8mv2F","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":true,"latency_sec":757.141,"latency_breakdown":{"env_setup":2.992,"agent_setup":0.605,"agent_exec":600.004,"verifier":142.425},"taskName":"custom_auth_ui","exec_duration":600.004},{"job_name":"2026-04-01__09-21-27","trial_name":"custom_auth_ui__vSVY8s9","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":939.117,"latency_breakdown":{"env_setup":2.853,"agent_setup":0.61,"agent_exec":569.644,"verifier":354.898},"taskName":"custom_auth_ui","exec_duration":569.644},{"job_name":"2026-04-01__10-07-09","trial_name":"custom_auth_ui__F66Brpf","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":641.144,"latency_breakdown":{"env_setup":3.032,"agent_setup":0.606,"agent_exec":474.992,"verifier":151.44},"taskName":"custom_auth_ui","exec_duration":474.992},{"job_name":"2026-04-01__10-43-19","trial_name":"custom_auth_ui__U67AkKg","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":919.501,"latency_breakdown":{"env_setup":2.898,"agent_setup":0.622,"agent_exec":600.003,"verifier":305.019},"taskName":"custom_auth_ui","exec_duration":600.003}]},{"taskName":"hello_world","instruction":"# Wasp Hello World\n\n## Background\nIn Wasp, you define pages and routes in the `.wasp` file. A `page` declaration specifies the React component to render, and a `route` declaration specifies the path.\n\n## Requirements\n- Create a new page named `HelloPage` that renders a React component displaying the text \"Hello Wasp!\".\n- Define a route named `HelloRoute` that maps the path `/hello` to the `HelloPage`.\n- The React component should be exported from `src/HelloPage.tsx`.\n\n## Implementation\n1. The project is already initialized at `/home/user/my-app`.\n2. Open `main.wasp` and add the `page` and `route` declarations.\n3. Create `src/HelloPage.tsx` with the React component.\n4. Ensure the app is running.\n\n## Output\n- Project path: /home/user/my-app\n- Start command: wasp start\n- Port: 3000\n","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"hello_world__pwXnPBK","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":228.517,"latency_breakdown":{"env_setup":3.079,"agent_setup":0.612,"agent_exec":153.82,"verifier":59.9},"taskName":"hello_world","exec_duration":153.82},{"job_name":"2026-04-01__08-41-05","trial_name":"hello_world__wbjufme","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":247.801,"latency_breakdown":{"env_setup":2.776,"agent_setup":0.64,"agent_exec":143.053,"verifier":90.334},"taskName":"hello_world","exec_duration":143.053},{"job_name":"2026-04-01__09-21-27","trial_name":"hello_world__3cvAzEy","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":257.167,"latency_breakdown":{"env_setup":2.737,"agent_setup":0.644,"agent_exec":89.444,"verifier":153.384},"taskName":"hello_world","exec_duration":89.444},{"job_name":"2026-04-01__10-07-09","trial_name":"hello_world__DYUMLXJ","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":259.928,"latency_breakdown":{"env_setup":3.01,"agent_setup":0.631,"agent_exec":181.894,"verifier":63.303},"taskName":"hello_world","exec_duration":181.894},{"job_name":"2026-04-01__10-43-19","trial_name":"hello_world__uCpEhd7","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":280.631,"latency_breakdown":{"env_setup":3.06,"agent_setup":0.603,"agent_exec":179.793,"verifier":86.102},"taskName":"hello_world","exec_duration":179.793}]},{"taskName":"many_to_many_labels","instruction":"$9","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"many_to_many_labels__naqLvc8","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":550.427,"latency_breakdown":{"env_setup":1.4,"agent_setup":0.638,"agent_exec":46.416,"verifier":490.875},"taskName":"many_to_many_labels","exec_duration":46.416},{"job_name":"2026-04-01__08-41-05","trial_name":"many_to_many_labels__A88oLZU","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":639.201,"latency_breakdown":{"env_setup":1.405,"agent_setup":0.657,"agent_exec":442.889,"verifier":183.221},"taskName":"many_to_many_labels","exec_duration":442.889},{"job_name":"2026-04-01__09-21-27","trial_name":"many_to_many_labels__ny9JsGp","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":1028.091,"latency_breakdown":{"env_setup":1.558,"agent_setup":0.693,"agent_exec":491.544,"verifier":523.294},"taskName":"many_to_many_labels","exec_duration":491.544},{"job_name":"2026-04-01__10-07-09","trial_name":"many_to_many_labels__zZKziLF","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":522.211,"latency_breakdown":{"env_setup":1.23,"agent_setup":0.588,"agent_exec":358.005,"verifier":151.307},"taskName":"many_to_many_labels","exec_duration":358.005},{"job_name":"2026-04-01__10-43-19","trial_name":"many_to_many_labels__KVBvPpc","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":true,"reward":1,"error":true,"latency_sec":1192.058,"latency_breakdown":{"env_setup":1.615,"agent_setup":0.68,"agent_exec":600.005,"verifier":578.536},"taskName":"many_to_many_labels","exec_duration":600.005}]},{"taskName":"optimistic_reorder","instruction":"$a","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"optimistic_reorder__xnkxCGk","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":276.45,"latency_breakdown":{"env_setup":1.214,"agent_setup":0.585,"agent_exec":112.461,"verifier":151.228},"taskName":"optimistic_reorder","exec_duration":112.461},{"job_name":"2026-04-01__08-41-05","trial_name":"optimistic_reorder__GjcCQKe","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1156.923,"latency_breakdown":{"env_setup":1.555,"agent_setup":0.592,"agent_exec":394.265,"verifier":749.331},"taskName":"optimistic_reorder","exec_duration":394.265},{"job_name":"2026-04-01__09-21-27","trial_name":"optimistic_reorder__6MLgvHY","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1798.592,"latency_breakdown":{"env_setup":1.406,"agent_setup":0.588,"agent_exec":584.49,"verifier":1201.157},"taskName":"optimistic_reorder","exec_duration":584.49},{"job_name":"2026-04-01__10-07-09","trial_name":"optimistic_reorder__4MiHYga","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":532.319,"latency_breakdown":{"env_setup":1.21,"agent_setup":0.59,"agent_exec":375.078,"verifier":144.608},"taskName":"optimistic_reorder","exec_duration":375.078},{"job_name":"2026-04-01__10-43-19","trial_name":"optimistic_reorder__AaHbdSz","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":627.987,"latency_breakdown":{"env_setup":1.465,"agent_setup":0.691,"agent_exec":463.408,"verifier":151.425},"taskName":"optimistic_reorder","exec_duration":463.408}]},{"taskName":"task_deadlines","instruction":"$b","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"task_deadlines__LCtsZ4G","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":308.231,"latency_breakdown":{"env_setup":1.559,"agent_setup":0.719,"agent_exec":143.829,"verifier":151.138},"taskName":"task_deadlines","exec_duration":143.829},{"job_name":"2026-04-01__08-41-05","trial_name":"task_deadlines__WAy5UGC","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1156.006,"latency_breakdown":{"env_setup":1.437,"agent_setup":0.73,"agent_exec":379.668,"verifier":763.108},"taskName":"task_deadlines","exec_duration":379.668},{"job_name":"2026-04-01__09-21-27","trial_name":"task_deadlines__JayXZoT","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":1400.604,"latency_breakdown":{"env_setup":1.441,"agent_setup":0.584,"agent_exec":600.002,"verifier":787.437},"taskName":"task_deadlines","exec_duration":600.002},{"job_name":"2026-04-01__10-07-09","trial_name":"task_deadlines__t872KVC","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1413.951,"latency_breakdown":{"env_setup":1.21,"agent_setup":0.589,"agent_exec":470.231,"verifier":930.971},"taskName":"task_deadlines","exec_duration":470.231},{"job_name":"2026-04-01__10-43-19","trial_name":"task_deadlines__ENQQxGR","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":776.168,"latency_breakdown":{"env_setup":1.436,"agent_setup":0.679,"agent_exec":600.005,"verifier":163.076},"taskName":"task_deadlines","exec_duration":600.005}]},{"taskName":"task_priority","instruction":"$c","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"task_priority__NLWebby","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":487.144,"latency_breakdown":{"env_setup":1.698,"agent_setup":0.712,"agent_exec":276.268,"verifier":197.47},"taskName":"task_priority","exec_duration":276.268},{"job_name":"2026-04-01__08-41-05","trial_name":"task_priority__ZW9Mft8","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":465.877,"latency_breakdown":{"env_setup":1.496,"agent_setup":0.795,"agent_exec":132.766,"verifier":319.85},"taskName":"task_priority","exec_duration":132.766},{"job_name":"2026-04-01__09-21-27","trial_name":"task_priority__TKoKQh5","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":692.261,"latency_breakdown":{"env_setup":1.616,"agent_setup":0.712,"agent_exec":554.181,"verifier":124.71},"taskName":"task_priority","exec_duration":554.181},{"job_name":"2026-04-01__10-07-09","trial_name":"task_priority__NpBzzuP","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":491.657,"latency_breakdown":{"env_setup":1.612,"agent_setup":0.728,"agent_exec":368.453,"verifier":109.922},"taskName":"task_priority","exec_duration":368.453},{"job_name":"2026-04-01__10-43-19","trial_name":"task_priority__juor4uW","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1300.053,"latency_breakdown":{"env_setup":1.514,"agent_setup":0.607,"agent_exec":548.526,"verifier":738.431},"taskName":"task_priority","exec_duration":548.526}]},{"taskName":"todo_app","instruction":"$d","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"todo_app__gErnjFt","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1193.702,"latency_breakdown":{"env_setup":2.891,"agent_setup":0.728,"agent_exec":313.628,"verifier":865.41},"taskName":"todo_app","exec_duration":313.628},{"job_name":"2026-04-01__08-41-05","trial_name":"todo_app__rdTQZyD","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":525.428,"latency_breakdown":{"env_setup":2.824,"agent_setup":0.611,"agent_exec":271.837,"verifier":239.202},"taskName":"todo_app","exec_duration":271.837},{"job_name":"2026-04-01__09-21-27","trial_name":"todo_app__kQ74ZeW","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":1142.72,"latency_breakdown":{"env_setup":2.895,"agent_setup":0.607,"agent_exec":600,"verifier":528.185},"taskName":"todo_app","exec_duration":600},{"job_name":"2026-04-01__10-07-09","trial_name":"todo_app__Uc97otC","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":437.348,"latency_breakdown":{"env_setup":2.798,"agent_setup":0.673,"agent_exec":266.909,"verifier":155.92},"taskName":"todo_app","exec_duration":266.909},{"job_name":"2026-04-01__10-43-19","trial_name":"todo_app__e2Hrtvt","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":1754.693,"latency_breakdown":{"env_setup":2.95,"agent_setup":0.596,"agent_exec":600.001,"verifier":1140.001},"taskName":"todo_app","exec_duration":600.001}]},{"taskName":"user_roles","instruction":"$e","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"user_roles__EBDRugK","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1188.068,"latency_breakdown":{"env_setup":2.925,"agent_setup":0.702,"agent_exec":398.079,"verifier":775.583},"taskName":"user_roles","exec_duration":398.079},{"job_name":"2026-04-01__08-41-05","trial_name":"user_roles__EaxBkjr","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1310.999,"latency_breakdown":{"env_setup":2.881,"agent_setup":0.626,"agent_exec":380.81,"verifier":915.63},"taskName":"user_roles","exec_duration":380.81},{"job_name":"2026-04-01__09-21-27","trial_name":"user_roles__fLA5Goc","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":true,"latency_sec":790.567,"latency_breakdown":{"env_setup":2.805,"agent_setup":0.639,"agent_exec":600,"verifier":176.22},"taskName":"user_roles","exec_duration":600},{"job_name":"2026-04-01__10-07-09","trial_name":"user_roles__EvZXDio","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1792.636,"latency_breakdown":{"env_setup":3.05,"agent_setup":0.605,"agent_exec":576.917,"verifier":1201.019},"taskName":"user_roles","exec_duration":576.917},{"job_name":"2026-04-01__10-43-19","trial_name":"user_roles__5e7RzqL","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":703.041,"latency_breakdown":{"env_setup":2.885,"agent_setup":0.631,"agent_exec":536.778,"verifier":151.597},"taskName":"user_roles","exec_duration":536.778}]}]}]}]]}],["$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
-f:["$","script","script-0",{"src":"/wasp-benchmark/_next/static/chunks/6b2073bb465ef60e.js","async":true}]
-10:["$","script","script-1",{"src":"/wasp-benchmark/_next/static/chunks/2ee232ed1e88c469.js","async":true}]
-11:["$","$L12",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]
-13:null
+f:T1836,# Financial Analytics Dashboard with CSV Export
+
+## Background
+Financial analysts need to visualize transaction histories, track savings rates, and export aggregated summaries for reporting. You will build a Financial Analytics Dashboard using the Wasp framework (v0.24.0), which leverages React, Node.js, and Prisma.
+
+## Requirements
+- **Authentication**: Secure the dashboard so only logged-in users can access their own financial analytics.
+- **Database Schema**: Store user transactions with dates, amounts, types (INCOME/EXPENSE), categories, and descriptions.
+- **Complex Backend Aggregations**: Implement a custom Wasp Query that aggregates transaction data over a user-selected date range and resolution (day, week, or month) using Prisma raw queries on SQLite.
+- **Interactive Frontend**: Build a responsive React dashboard displaying aggregate summaries (Total Income, Total Expense, Net Savings, Savings Rate), a time-series table, and interactive controls for filtering by date range and resolution.
+- **Data Export**: Implement a client-side or server-side CSV export feature that downloads the current filtered time-series data as a CSV file.
+
+## Implementation Hints
+- **Project Path**: `/home/user/app`
+- **Start Command**: `wasp start`
+- **Port**: `3000`
+- **Wasp Version**: Target Wasp `^0.24.0` using the TypeScript configuration spec (`main.wasp.ts`).
+- **Database Schema (`schema.prisma`)**:
+  - Define a `User` model with an autoincrementing integer ID.
+  - Define a `Transaction` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `date` (DateTime)
+    - `amount` (Float)
+    - `type` (String, must accept "INCOME" or "EXPENSE")
+    - `category` (String)
+    - `description` (String)
+    - `user` (User, relation to `User` via `userId`)
+    - `userId` (Int)
+- **Wasp Configuration (`main.wasp.ts`)**:
+  - Configure username and password authentication with `userEntity: "User"` and `onAuthFailedRedirectTo: "/login"`.
+  - Export routes and pages for `/` (`MainPage`, requires auth), `/login` (`LoginPage`), and `/signup` (`SignupPage`).
+  - Register a Query `getAnalytics` and an Action `createTransaction`, both associated with the `Transaction` entity.
+  - Register a seed function named `seedData` under `db.seeds`.
+- **Operations**:
+  - **Query `getAnalytics`**:
+    - Input: `{ startDate: string, endDate: string, resolution: "day" | "week" | "month" }` (where dates are ISO strings like `YYYY-MM-DD`).
+    - Behavior: The query must use Prisma raw queries (e.g., `context.entities.Transaction.$queryRaw` or `$queryRawUnsafe`) to perform the time-series aggregation in SQLite. It must filter transactions by the current logged-in user, the date range (inclusive), and group them by the chosen resolution.
+    - Output format:
+      ```typescript
+      {
+        timeSeries: Array<{
+          date: string; // "YYYY-MM-DD" for day, "YYYY-MM" for month, "YYYY-Www" for week (e.g., "2026-W31")
+          income: number;
+          expense: number;
+          net: number;
+        }>,
+        categoryBreakdown: Array<{
+          category: string;
+          amount: number;
+          type: "INCOME" | "EXPENSE";
+        }>,
+        summary: {
+          totalIncome: number;
+          totalExpense: number;
+          netSavings: number;
+          savingsRate: number; // calculated as (netSavings / totalIncome) * 100, or 0 if totalIncome is 0
+        }
+      }
+      ```
+  - **Action `createTransaction`**:
+    - Input: `{ date: string, amount: number, type: "INCOME" | "EXPENSE", category: string, description: string }`
+    - Behavior: Creates and returns a new transaction linked to the logged-in user.
+- **Database Seeding**:
+  - Implement a seed function `seedData` that creates a test user with username `testuser` and password `password123`, and seeds exactly the following 4 transactions for this user:
+    1. Date: `2026-07-01`, Amount: `5000.0`, Type: `INCOME`, Category: `Sales`, Description: `Project payment`
+    2. Date: `2026-07-15`, Amount: `1200.0`, Type: `EXPENSE`, Category: `Marketing`, Description: `Ad campaign`
+    3. Date: `2026-07-20`, Amount: `800.0`, Type: `EXPENSE`, Category: `Software`, Description: `SaaS subscriptions`
+    4. Date: `2026-07-25`, Amount: `2500.0`, Type: `INCOME`, Category: `Investment`, Description: `Dividend payout`
+- **Frontend UI & Test IDs**:
+  - **`LoginPage` and `SignupPage`**: Use Wasp's built-in `LoginForm` and `SignupForm` components from `wasp/client/auth`.
+  - **`MainPage`**:
+    - Add a logout button or link.
+    - Start Date Input: `<input type="date" id="start-date" data-testid="start-date" />` (default: `2026-07-01`)
+    - End Date Input: `<input type="date" id="end-date" data-testid="end-date" />` (default: `2026-07-31`)
+    - Resolution Select: `<select id="resolution" data-testid="resolution">` with options `day`, `week`, `month` (default: `day`)
+    - Summary displays:
+      - Total Income: element with `data-testid="total-income"` (must display or contain `7500` or `7,500.00` with default filters)
+      - Total Expense: element with `data-testid="total-expense"` (must display or contain `2000` or `2,000.00` with default filters)
+      - Net Savings: element with `data-testid="net-savings"` (must display or contain `5500` or `5,500.00` with default filters)
+      - Savings Rate: element with `data-testid="savings-rate"` (must display or contain `73.33` with default filters)
+    - Analytics Table: `<table data-testid="analytics-table">` where each aggregated row has `data-testid="analytics-row"` displaying the date, income, expense, and net values.
+    - Export Button: `<button id="export-csv" data-testid="export-csv">Export CSV</button>`
+- **CSV Export Format**:
+  - File name: `analytics_export.csv`
+  - Headers: `Date,Income,Expense,Net`
+  - Rows: Only include rows for dates that have non-zero activity (income or expense) within the selected date range, sorted chronologically. For the default range `2026-07-01` to `2026-07-31` with `day` resolution, the CSV must contain exactly the following lines:
+    ```csv
+    Date,Income,Expense,Net
+    2026-07-01,5000,0,5000
+    2026-07-15,0,1200,-1200
+    2026-07-20,0,800,-800
+    2026-07-25,2500,0,2500
+    ```
+
+10:Tc5c,# Wasp E-commerce Checkout with Inventory Tracking and Concurrency
+
+## Background
+Create a highly robust e-commerce shopping cart and checkout application using Wasp (`^0.24.0`). The application must manage a product catalog, handle shopping carts, validate and apply coupon codes, process checkouts, and maintain inventory consistency under concurrent checkout requests.
+
+## Requirements
+- **Data Model & Seeding**:
+  - Define entities for `Product`, `Coupon`, `Order`, and `OrderItem` in the database schema.
+  - Seed the database with the following initial data:
+    - Products:
+      1. "Premium Wireless Headphones" (Price: $100.00, Inventory: 10)
+      2. "Ergonomic Mechanical Keyboard" (Price: $150.00, Inventory: 1)
+    - Coupons:
+      1. "SAVE20": 20% percentage discount on the entire cart subtotal.
+      2. "FLAT50": $50.00 flat discount on the entire cart total (the total cannot go below $0.00).
+- **Shopping Cart & Checkout**:
+  - Users can add items to their cart.
+  - Users can apply a coupon code to get a discount on their cart.
+  - Users can initiate checkout to place an order.
+  - **Concurrency & Transaction Safety**: The checkout operation must be transaction-safe. If multiple concurrent checkout requests are made for a product with limited stock (e.g., the keyboard with inventory of 1), only one request must succeed and decrement the inventory, while the other concurrent requests must fail with a clear out-of-stock error, and any database changes must roll back.
+- **Frontend UI**:
+  - Homepage (`/`):
+    - Displays the product catalog with name, price, and current available inventory.
+    - Contains an "Add to Cart" button next to each product.
+    - Displays a cart section showing selected items, quantities, subtotal, discount, and grand total.
+    - Contains a coupon input field with placeholder "Enter Coupon Code" or id `coupon-input`.
+    - Contains an "Apply Coupon" button with text "Apply Coupon" or id `apply-coupon-btn`.
+    - Displays coupon application success/error messages.
+    - Contains a "Place Order" button with text "Place Order" or id `checkout-btn`.
+    - Displays checkout status/error messages. On success, show a message containing "Order placed successfully! Order ID: <id>" or similar. On failure (e.g., out of stock), show a clear error containing "Insufficient inventory" or "Out of stock".
+
+## Implementation Hints
+- **Project Path**: `/home/user/app`
+- **Wasp Version**: `^0.24.0` (uses `main.wasp.ts` instead of `.wasp` DSL)
+- **Start Command**: `wasp start`
+- **Port**: `3000`
+- **Database**: PostgreSQL. The application must connect to PostgreSQL using the `DATABASE_URL` environment variable. A local PostgreSQL server will be running on port 5432 in the test environment.
+- **Concurrency & Locking**: To ensure transaction-safe inventory adjustments under concurrent requests, you should implement appropriate database locking (e.g., using Prisma interactive transactions `$transaction` or raw database queries like `SELECT ... FOR UPDATE` on the `Product` table).
+- **API & Operations**: Declare all queries and actions in `main.wasp.ts` and implement them in `src/` using TypeScript.
+
+11:T1098,# Wasp File Management System (Google Drive Clone)
+
+## Background
+In this task, you will build a local file management system (a Google Drive clone) using the Wasp.sh full-stack framework (v0.24.0). Wasp uses React on the frontend, Node.js on the backend, and Prisma for the database ORM.
+
+## Requirements
+- **Authentication**: User registration and login using Wasp's built-in username and password authentication.
+- **Hierarchical Folder Structure**: Users can create folders and navigate into them. Folders can contain subfolders and files. The dashboard must show a breadcrumb trail of the current folder path.
+- **Local File Uploads**: Users can upload files inside any folder (or the root). Files must be saved locally on the server in `/home/user/app/uploads/` and metadata stored in the database.
+- **Sharing Links**: Users can generate sharing links for any file. A sharing link can optionally be password-protected and have an expiration time (in minutes).
+- **Access Control**: Anyone with the link can access the public share page. If password-protected, they must enter the correct password to unlock and download the file. If expired, the link must show an error.
+- **Access Logs**: The system must log every successful file download, recording the access timestamp, IP address, and User-Agent. Users can view these logs on a dedicated page.
+
+## Implementation Hints
+- **Project Path**: `/home/user/app`
+- **Start Command**: `wasp start`
+- **Port**: `3000`
+- **Wasp Version**: `^0.24.0` (uses TypeScript configuration `main.wasp.ts` with `@wasp.sh/spec` package).
+- **Database**: SQLite (configured in `schema.prisma`). Run migrations using `wasp db migrate-dev`.
+- **Uploads Directory**: Save files inside `/home/user/app/uploads/` on the server. Ensure the directory is created if it does not exist.
+- **Run ID**: Read the `run-id` from `/logs/artifacts/run-id` and use it to suffix created folder names (e.g., `Documents-${run-id}`) and usernames (e.g., `user-${run-id}`) to avoid conflicts.
+
+### Routes and Pages
+- `/signup` - Signup page.
+- `/login` - Login page.
+- `/` - Main dashboard. Displays root folders and files. Allows folder creation and file uploads.
+- `/folder/:folderId` - Folder view. Displays folders and files inside the specified folder. Allows subfolder creation and file uploads.
+- `/logs` - Access logs page. Lists all download logs for the logged-in user's files.
+- `/share/:linkId` - Public share page. Accessible without authentication.
+
+### API Endpoints
+- `GET /api/download/:linkId` - Custom API endpoint to download the file. Accepts an optional `password` query parameter. It must verify password and expiration, serve the actual file content with correct headers, and create an `AccessLog` entry.
+
+### Required UI Elements (with `data-testid` attributes)
+- **Create Folder Form**:
+  - Folder Name input: `data-testid="folder-name-input"`
+  - Create Folder button: `data-testid="create-folder-btn"`
+- **Upload File Form**:
+  - File input: `data-testid="file-upload-input"`
+  - Upload File button: `data-testid="upload-file-btn"`
+- **Folder List**:
+  - Folder link: `data-testid="folder-link-<folderId>"` (or class `folder-link` containing the folder name)
+- **File List**:
+  - File item: `data-testid="file-item-<fileId>"` (or class `file-item` containing the file name)
+  - Share button: `data-testid="share-btn-<fileId>"` (or class `share-btn` next to the file)
+- **Share Link Form**:
+  - Password input: `data-testid="share-password-input"`
+  - Expires In (minutes) input: `data-testid="share-expires-input"`
+  - Create Link button: `data-testid="create-share-link-btn"`
+  - Displayed Link: `data-testid="share-link-display"` (must contain the full sharing URL or the path `/share/<linkId>`)
+- **Public Share Page (`/share/:linkId`)**:
+  - Password input (if protected): `data-testid="unlock-password-input"`
+  - Unlock button: `data-testid="unlock-btn"`
+  - Error message: `data-testid="share-error"`
+  - Download button/link: `data-testid="download-btn"` (must trigger the download via `GET /api/download/:linkId`)
+- **Access Logs Page (`/logs`)**:
+  - Logs container: `data-testid="logs-container"`
+  - Individual log item: class `log-item` containing file name, timestamp, IP, and User-Agent.
+
+12:T1e21,# Wasp Product Catalog with Full-Text Search, Multi-Faceted Filtering, and Sorting
+
+## Background
+In modern e-commerce applications, a robust product catalog search is crucial. It requires combining full-text search, multi-faceted filtering (e.g., category, brand, price, stock availability), and dynamic sorting, all while maintaining high performance using pagination and database-level aggregations.
+
+In this task, you will build a Product Catalog web application using the **Wasp framework (^0.24.0)** with **PostgreSQL** as the database. You will implement a custom query that performs PostgreSQL full-text search via Prisma, calculates dynamic facet counts matching the current search/filter criteria, and supports cursor-based pagination.
+
+## Requirements
+
+### 1. Database Schema (`schema.prisma`)
+Define a `Product` entity in `schema.prisma` with the following fields:
+- `id`: Int @id @default(autoincrement())
+- `name`: String
+- `description`: String
+- `category`: String
+- `brand`: String
+- `price`: Float
+- `rating`: Float
+- `inStock`: Boolean
+- `createdAt`: DateTime @default(now())
+
+Configure your Prisma client generator to enable PostgreSQL full-text search:
+```prisma
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearchPostgres"]
+}
+```
+
+### 2. Database Seeding
+Your application must seed the database with the following 6 products when initialized or started:
+1. **Product 1**:
+   - Name: `SuperFast Wireless Charger`
+   - Description: `A high-speed wireless charging pad for all Qi-enabled smartphones and devices.`
+   - Category: `Electronics`
+   - Brand: `VoltCharge`
+   - Price: `29.99`
+   - Rating: `4.5`
+   - InStock: `true`
+2. **Product 2**:
+   - Name: `UltraQuiet Blending Machine`
+   - Description: `Professional grade blender with sound dampening shield and 1200W motor.`
+   - Category: `Home & Kitchen`
+   - Brand: `NutriBlend`
+   - Price: `89.99`
+   - Rating: `4.8`
+   - InStock: `true`
+3. **Product 3**:
+   - Name: `Ergonomic Office Desk Chair`
+   - Description: `High-back mesh chair with adjustable lumbar support and 3D armrests.`
+   - Category: `Furniture`
+   - Brand: `ErgoComfort`
+   - Price: `149.99`
+   - Rating: `4.2`
+   - InStock: `false`
+4. **Product 4**:
+   - Name: `VoltCharge Portable Power Bank`
+   - Description: `Compact 20000mAh external battery pack with dual USB-C fast charging.`
+   - Category: `Electronics`
+   - Brand: `VoltCharge`
+   - Price: `39.99`
+   - Rating: `4.6`
+   - InStock: `true`
+5. **Product 5**:
+   - Name: `NutriBlend Compact Juicer`
+   - Description: `Centrifugal juicing machine with wide feed chute, easy to clean.`
+   - Category: `Home & Kitchen`
+   - Brand: `NutriBlend`
+   - Price: `49.99`
+   - Rating: `4.0`
+   - InStock: `true`
+6. **Product 6**:
+   - Name: `Leather Executive Swivel Chair`
+   - Description: `Premium genuine leather office chair with padded armrests and tilt lock.`
+   - Category: `Furniture`
+   - Brand: `ErgoComfort`
+   - Price: `249.99`
+   - Rating: `4.7`
+   - InStock: `true`
+
+### 3. Backend Query (`getProductsWithFilters`)
+Declare and implement a Wasp query named `getProductsWithFilters` that reads from the `Product` entity.
+- **Input arguments object**:
+  ```typescript
+  {
+    search?: string;     // Full-text search term across name and description
+    category?: string;   // Exact category match
+    brand?: string;      // Exact brand match
+    minPrice?: number;   // Minimum price (inclusive)
+    maxPrice?: number;   // Maximum price (inclusive)
+    inStock?: boolean;   // If true, only return products where inStock is true
+    sortBy?: 'price_asc' | 'price_desc' | 'rating_desc' | 'createdAt_desc';
+    limit?: number;      // Number of items to return (default 10)
+    cursor?: number;     // Product ID cursor for pagination
+  }
+  ```
+- **Output object**:
+  ```typescript
+  {
+    products: Product[];
+    nextCursor: number | null;
+    facets: {
+      categories: { name: string; count: number }[];
+      brands: { name: string; count: number }[];
+    };
+  }
+  ```
+- **Full-Text Search Logic**: Search must perform PostgreSQL full-text search across `name` and `description` using Prisma's `search` modifier (e.g. `name: { search: searchQuery }`), or fallback gracefully if search is empty or invalid.
+- **Facet Counts Logic**: The `facets` counts must dynamically reflect the counts of products matching the *current search query and all active filters* (category, brand, price, stock). For example, if a user filters by `inStock: true` and searches for `chair`, the category and brand facet counts must only count products that match both criteria (which would exclude Product 3 since it is out of stock).
+- **Pagination**: Implement cursor-based pagination using the product `id`. Return the `nextCursor` representing the last product's ID on the current page if there are more products, or `null` if there are no more products.
+
+### 4. Frontend UI
+Create a clean, responsive frontend page in React (`src/MainPage.tsx`) that uses the `getProductsWithFilters` query. The UI elements must use the following `data-testid` attributes to allow deterministic testing:
+- **Search input**: `data-testid="search-input"` (input element)
+- **Category filter**: `data-testid="category-filter"` (select element with options for categories, plus an "All" option)
+- **Brand filter**: `data-testid="brand-filter"` (select element with options for brands, plus an "All" option)
+- **Min Price input**: `data-testid="min-price-input"` (input element)
+- **Max Price input**: `data-testid="max-price-input"` (input element)
+- **In Stock checkbox**: `data-testid="instock-checkbox"` (checkbox input)
+- **Sort select**: `data-testid="sort-select"` (select element with options: `price_asc`, `price_desc`, `rating_desc`, `createdAt_desc`)
+- **Product list**: `data-testid="product-list"` (container element for the products)
+- **Product item**: `data-testid="product-item"` (for each product element, must have a `data-product-id` attribute containing the product's ID)
+- **Product name**: `data-testid="product-name"` (within each product item)
+- **Product price**: `data-testid="product-price"` (within each product item, displaying the price)
+- **Product rating**: `data-testid="product-rating"` (within each product item, displaying the rating)
+- **Product category**: `data-testid="product-category"` (within each product item)
+- **Product brand**: `data-testid="product-brand"` (within each product item)
+- **Facet categories container**: `data-testid="facet-categories"` containing elements with `data-testid="facet-category-item"` and `data-category-name` attribute (e.g. `data-category-name="Electronics"`) showing the category name and its count.
+- **Facet brands container**: `data-testid="facet-brands"` containing elements with `data-testid="facet-brand-item"` and `data-brand-name` attribute (e.g. `data-brand-name="VoltCharge"`) showing the brand name and its count.
+- **Load More button**: `data-testid="load-more-button"` (button to load the next page of results using cursor pagination; should only be visible/enabled if `nextCursor` is not null).
+
+## Implementation Hints
+- Project path: `/home/user/app`
+- Start command: `wasp start`
+- Port: `3000`
+- Configuration: Define the Wasp Spec in `main.wasp.ts` using `@wasp.sh/spec` package. Define the schema in `schema.prisma` in the project root.
+- Database: A local PostgreSQL server is available and configured. You must set the database URL in the environment or `.env` file as `DATABASE_URL=postgresql://postgres:postgres@localhost:5432/wasp_search` (or similar, depending on the test environment).
+- Make sure the app starts successfully and seeds the database correctly before starting the dev server.
+
+13:T21f4,# Warehouse Inventory & Fulfillment Tracker with Automated Supplier Ordering
+
+## Background
+Warehouse managers need a robust inventory management platform to track stock levels, safely fulfill customer orders, and automatically trigger supplier purchase orders and low-stock alerts. You will build this platform using the Wasp framework (v0.24.0), which leverages React, Node.js, and Prisma.
+
+## Requirements
+- **Authentication**: Secure the platform so only logged-in users can manage inventory, fulfill orders, and view alerts.
+- **Database Schema**: Store suppliers, products, customer orders, order items, automatic purchase orders, and low-stock alerts.
+- **Transaction-Safe Order Fulfillment**: Implement a custom Wasp Action `fulfillOrder` that processes a pending order. It must decrement the inventory of each product in the order in a transaction-safe manner (using Prisma's `$transaction`). If any product does not have enough stock, the entire transaction must roll back, no stock levels should change, and a clear error must be returned.
+- **Automatic Supplier Reordering**: During order fulfillment, if a product's stock falls below its `lowStockThreshold`:
+  1. Create a low-stock `Alert` record for that product.
+  2. Automatically generate a `PurchaseOrder` to the product's supplier for the product's `reorderQuantity`, **unless** there is already an existing `PurchaseOrder` for that product with status `"SENT"` (to prevent duplicate reorders).
+- **Interactive Frontend UI**: Build a responsive React dashboard displaying products, customer orders, alerts, and supplier purchase orders with appropriate interaction controls.
+
+## Implementation Hints
+- **Project Path**: `/home/user/app`
+- **Start Command**: `wasp start`
+- **Port**: `3000`
+- **Wasp Version**: Target Wasp `^0.24.0` using the TypeScript configuration spec (`main.wasp.ts`).
+- **Database Schema (`schema.prisma`)**:
+  - Define a `User` model with an autoincrementing integer ID, `username` (String, unique), and `password` (String).
+  - Define a `Supplier` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `name` (String)
+    - `email` (String)
+    - `products` (Product relation)
+    - `purchaseOrders` (PurchaseOrder relation)
+  - Define a `Product` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `sku` (String, unique)
+    - `name` (String)
+    - `stock` (Int)
+    - `lowStockThreshold` (Int)
+    - `reorderQuantity` (Int)
+    - `supplier` (Supplier, relation to `Supplier` via `supplierId`)
+    - `supplierId` (Int)
+    - `orderItems` (OrderItem relation)
+    - `purchaseOrders` (PurchaseOrder relation)
+    - `alerts` (Alert relation)
+  - Define an `Order` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `customerName` (String)
+    - `status` (String, must accept `"PENDING"` or `"FULFILLED"`)
+    - `createdAt` (DateTime, default `now()`)
+    - `orderItems` (OrderItem relation)
+  - Define an `OrderItem` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `order` (Order, relation to `Order` via `orderId`)
+    - `orderId` (Int)
+    - `product` (Product, relation to `Product` via `productId`)
+    - `productId` (Int)
+    - `quantity` (Int)
+  - Define a `PurchaseOrder` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `supplier` (Supplier, relation to `Supplier` via `supplierId`)
+    - `supplierId` (Int)
+    - `product` (Product, relation to `Product` via `productId`)
+    - `productId` (Int)
+    - `quantity` (Int)
+    - `status` (String, must accept `"SENT"`)
+    - `createdAt` (DateTime, default `now()`)
+  - Define an `Alert` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `product` (Product, relation to `Product` via `productId`)
+    - `productId` (Int)
+    - `message` (String)
+    - `isRead` (Boolean, default `false`)
+    - `createdAt` (DateTime, default `now()`)
+- **Wasp Configuration (`main.wasp.ts`)**:
+  - Configure username and password authentication with `userEntity: "User"` and `onAuthFailedRedirectTo: "/login"`.
+  - Export routes and pages for `/` (`MainPage`, requires auth), `/login` (`LoginPage`), and `/signup` (`SignupPage`).
+  - Register Queries: `getProducts`, `getOrders`, `getAlerts`, `getPurchaseOrders` (all with appropriate entity associations).
+  - Register Action: `fulfillOrder` (associated with all relevant entities to allow automatic PO/Alert creation and stock updates).
+  - Register a seed function named `seedData` under `db.seeds`.
+- **Operations**:
+  - **Query `getProducts`**: Returns all products including their supplier name.
+  - **Query `getOrders`**: Returns all orders including their items (with product SKU/name).
+  - **Query `getAlerts`**: Returns all alerts.
+  - **Query `getPurchaseOrders`**: Returns all purchase orders including supplier name and product SKU.
+  - **Action `fulfillOrder`**:
+    - Input: `{ orderId: number }`
+    - Behavior: The entire operation must execute inside a Prisma interactive transaction (e.g., `prisma.$transaction(async (tx) => { ... })` where `prisma` is imported from `wasp/server` or `@wasp/dbClient`).
+      1. Fetch the order with its items. If order is already fulfilled, throw an error.
+      2. For each item in the order, check if the product has sufficient stock. If any product stock is less than the requested quantity, throw an error to trigger a full transaction rollback.
+      3. Decrement each product's stock by the ordered quantity.
+      4. For each product, if the new stock level is strictly less than `lowStockThreshold`:
+         - Create an `Alert` record: `"Low stock alert for <Product Name> (SKU: <SKU>). Current stock: <Stock>."`
+         - Check if there is already an existing `PurchaseOrder` for this product with status `"SENT"`. If none exists, create a new `PurchaseOrder` with status `"SENT"` and quantity equal to the product's `reorderQuantity`.
+      5. Set the order status to `"FULFILLED"`.
+- **Database Seeding (`seedData`)**:
+  - Implement a seed function `seedData` that creates a test user with username `warehouse_manager` and password `password123`.
+  - Seed exactly the following 2 Suppliers:
+    1. ID: `1`, Name: `Global Tech Distributors`, Email: `supply@globaltech.com`
+    2. ID: `2`, Name: `Apex Logistics`, Email: `orders@apexlogistics.com`
+  - Seed exactly the following 2 Products:
+    1. SKU: `PROD-001`, Name: `Wireless Mouse`, Stock: `15`, Low Stock Threshold: `10`, Reorder Quantity: `50`, Supplier ID: `1`
+    2. SKU: `PROD-002`, Name: `Mechanical Keyboard`, Stock: `8`, Low Stock Threshold: `5`, Reorder Quantity: `20`, Supplier ID: `2`
+  - Seed exactly the following 2 Customer Orders:
+    - **Order 1** (Status: `"PENDING"`, Customer: `"TechCorp Solutions"`):
+      - Item 1: `PROD-001`, Quantity: `8`
+      - Item 2: `PROD-002`, Quantity: `2`
+    - **Order 2** (Status: `"PENDING"`, Customer: `"RetailHub"`):
+      - Item 1: `PROD-001`, Quantity: `10`
+      - Item 2: `PROD-002`, Quantity: `2`
+- **Frontend UI & Test IDs**:
+  - **`LoginPage` and `SignupPage`**: Use Wasp's built-in `LoginForm` and `SignupForm` components from `wasp/client/auth`.
+  - **`MainPage`**:
+    - Include a logout button.
+    - **Products List**: Table or list container with `data-testid="products-table"`. Each product row must display the SKU, name, current stock, and supplier name. The current stock value for each product must be inside an element with `data-testid="product-stock-<sku>"` (e.g., `data-testid="product-stock-PROD-001"` and `data-testid="product-stock-PROD-002"`).
+    - **Orders List**: Container with `data-testid="orders-list"`. Each order must be in a card/element with `data-testid="order-card-<id>"` (e.g., `data-testid="order-card-1"` and `data-testid="order-card-2"`). Inside each card:
+      - Display the customer name.
+      - Display the order status in an element with `data-testid="order-status-<id>"` (e.g., `data-testid="order-status-1"`).
+      - If the order is `"PENDING"`, render a button `<button data-testid="fulfill-btn-<id>">Fulfill Order</button>` (e.g., `data-testid="fulfill-btn-1"`). Clicking this button calls `fulfillOrder` for that order.
+    - **Fulfillment Error**: Display any action error messages inside an element with `data-testid="fulfillment-error"`.
+    - **Alerts List**: Container with `data-testid="alerts-list"`. Each low-stock alert must be displayed in an element with `data-testid="alert-item"` containing the alert message.
+    - **Purchase Orders List**: Container with `data-testid="purchase-orders-list"`. Each purchase order must be displayed in an element with `data-testid="purchase-order-item"` containing the supplier name, product SKU, and quantity ordered.
+
+14:T1926,# Real-Time Notification Center with Preferences in Wasp.sh
+
+## Background
+In modern web applications, real-time notifications are essential for keeping users engaged and informed. However, users must also have granular control over what notifications they receive to prevent alert fatigue. Wasp.sh (v0.24.0) provides built-in support for Socket.IO-based WebSockets alongside its full-stack Query/Action architecture. In this task, you will build a robust, real-time notification center that respects user preferences and supports batch status updates.
+
+## Requirements
+
+### 1. Database Schema (schema.prisma)
+Define the following entities in your schema.prisma file:
+- User entity:
+  - Must have an autoincrementing integer id as primary key.
+  - Must have a one-to-many relation to Notification.
+  - Must have a one-to-one relation to NotificationPreference.
+- Notification entity:
+  - id: Autoincrementing integer primary key.
+  - userId: Integer, foreign key to User.
+  - type: String (one of 'SYSTEM', 'SECURITY', 'ACTIVITY').
+  - title: String.
+  - message: String.
+  - isRead: Boolean, defaults to false.
+  - createdAt: DateTime, defaults to now().
+- NotificationPreference entity:
+  - id: Autoincrementing integer primary key.
+  - userId: Integer, unique, foreign key to User.
+  - systemEnabled: Boolean, defaults to true.
+  - securityEnabled: Boolean, defaults to true.
+  - activityEnabled: Boolean, defaults to true.
+
+### 2. Wasp Configuration (main.wasp.ts)
+Configure the Wasp application spec with the following:
+- Authentication: Enable usernameAndPassword auth, using User as the user entity, and redirecting failed authentication to /login.
+- WebSockets: Enable WebSocket support with autoConnect: true, referencing a custom server-side function webSocketFn in src/webSocket.ts.
+- Routes & Pages:
+  - / -> MainPage (requires authentication).
+  - /login -> LoginPage (public).
+  - /signup -> SignupPage (public).
+- Operations:
+  - Query getNotifications (uses Notification entity).
+  - Action batchUpdateNotificationStatus (uses Notification entity).
+  - Query getNotificationPreferences (uses NotificationPreference entity).
+  - Action updateNotificationPreferences (uses NotificationPreference and User entities).
+  - Action triggerNotificationEvent (uses Notification, NotificationPreference, and User entities).
+
+### 3. Server-Side Operations & WebSocket Integration
+- WebSocket Setup (src/webSocket.ts):
+  - Implement webSocketFn to initialize the Socket.IO server.
+  - When a user connects, if they are authenticated, they should automatically join a Socket.IO room scoped to their user ID (e.g., user-${userId}).
+  - Critical Seam: To allow server-side operations (like Actions) to emit WebSocket events, you must store a reference to the io server instance globally/module-level and export a helper/getter to retrieve it.
+- Query getNotifications:
+  - Returns all notifications for the authenticated user, ordered by createdAt descending.
+- Action batchUpdateNotificationStatus:
+  - Accepts { ids: number[], isRead: boolean }.
+  - Updates the isRead status of all specified notifications belonging to the authenticated user, and returns the count of updated records.
+- Query getNotificationPreferences:
+  - Returns the NotificationPreference for the authenticated user.
+  - If no preference record exists yet, the server must automatically create one with all preferences (systemEnabled, securityEnabled, activityEnabled) set to true and return it.
+- Action updateNotificationPreferences:
+  - Accepts { systemEnabled: boolean, securityEnabled: boolean, activityEnabled: boolean }.
+  - Updates and returns the user's preferences.
+- Action triggerNotificationEvent:
+  - Accepts { type: 'SYSTEM' | 'SECURITY' | 'ACTIVITY', title: string, message: string }.
+  - Checks the authenticated user's preferences. If the preference for the given type is enabled:
+    - Creates a new Notification in the database.
+    - Emits a real-time 'notification' event to the user's Socket.IO room/socket with the newly created Notification object as payload.
+    - Returns { success: true, created: true }.
+  - If the preference for the given type is disabled:
+    - Does NOT create a notification in the database.
+    - Does NOT emit any WebSocket event.
+    - Returns { success: true, created: false }.
+
+### 4. Client-Side UI & Test Hooks
+Implement the pages with the following test hooks (data-testid) to ensure deterministic browser verification:
+- Login Page (/login): Uses Wasp's built-in <LoginForm />.
+- Signup Page (/signup): Uses Wasp's built-in <SignupForm />.
+- Main Page (/):
+  - Preferences Section:
+    - Checkbox for System notifications: data-testid="pref-system"
+    - Checkbox for Security notifications: data-testid="pref-security"
+    - Checkbox for Activity notifications: data-testid="pref-activity"
+    - Button to save preferences: data-testid="save-pref-btn"
+  - Trigger Notification Form:
+    - Select dropdown for type: data-testid="trigger-type" (options: 'SYSTEM', 'SECURITY', 'ACTIVITY')
+    - Input field for title: data-testid="trigger-title"
+    - Input field for message: data-testid="trigger-message"
+    - Button to trigger notification: data-testid="trigger-btn"
+  - Real-Time Alerts List:
+    - A live list displaying notifications received instantly via Socket.IO: data-testid="realtime-alerts".
+    - Each live alert should be rendered in an element with data-testid="alert-item".
+  - Stored Notifications List:
+    - A list of historical notifications fetched via query: data-testid="notifications-list".
+    - Each item must be rendered in an element with data-testid="notification-item".
+    - Within each item, display the title (data-testid="notification-title"), message (data-testid="notification-message"), type (data-testid="notification-type"), and status (data-testid="notification-status" as either 'Read' or 'Unread').
+    - Each item must have a checkbox with data-testid="notification-checkbox" and a data-notification-id attribute set to its database ID.
+    - Batch action buttons: data-testid="mark-read-btn" and data-testid="mark-unread-btn".
+  - Logout Button: data-testid="logout-btn".
+
+## Implementation Hints
+- Project path: /home/user/app
+- Start command: wasp start
+- Port: 3000
+- Ensure you run database migrations using wasp db migrate-dev before starting the application.
+- Make sure all reference imports in main.wasp.ts use the correct with { type: "ref" } syntax.
+
+15:T169d,# Wasp RBAC and Audit Logging Enterprise App
+
+## Background
+You are building an enterprise user and document management system using Wasp (v0.24.0). The system requires strict Role-Based Access Control (RBAC) with hierarchical roles (`ANALYST`, `MANAGER`, `ADMIN`) and automated audit logging of all database write operations to an `AuditLog` entity.
+
+## Requirements
+1. **Database Schema (`schema.prisma`)**:
+   Define the following models in your Prisma schema file:
+   - `User`: Must represent the application user. It should have an `id` (Int, primary key, autoincrement) and a `role` field (String, default `"ANALYST"`). It has a one-to-many relationship with `Document` and `AuditLog` models.
+   - `Document`: Represents enterprise documents. It should have an `id` (Int, primary key, autoincrement), `title` (String), `content` (String), `ownerId` (Int), and `owner` (relation to `User`).
+   - `AuditLog`: Represents the system's tamper-proof audit trail. It must have an `id` (Int, primary key, autoincrement), `action` (String, e.g., `"CREATE"`, `"UPDATE"`, `"DELETE"`), `entityName` (String, e.g., `"Document"`), `entityId` (Int), `userId` (Int), `user` (relation to `User`), `timestamp` (DateTime, default `now()`), and `payload` (String, storing a JSON string representation of the document state or operation data).
+
+2. **Authentication & Custom Hooks**:
+   - Configure Wasp's `usernameAndPassword` auth in `main.wasp.ts`.
+   - The signup process must accept an extra field `role` (valid values: `"ANALYST"`, `"MANAGER"`, `"ADMIN"`). Configure `userSignupFields` to validate and save this field to the `User` entity, defaulting to `"ANALYST"` if not provided or invalid.
+   - Implement a custom auth hook `onBeforeSignup` in `main.wasp.ts` that enforces a strict registration rule: users signing up with the `"ADMIN"` role must have a username ending with `_admin` (e.g., `super_admin`). If a user attempts to sign up with the `"ADMIN"` role and a username that does not end with `_admin`, the hook must throw an error, preventing the signup.
+
+3. **Hierarchical RBAC & Operations**:
+   - Implement the following operations (Queries & Actions) and declare them in your `main.wasp.ts` spec:
+     - `getDocuments` (Query): Returns all documents. Access is allowed for any authenticated user (`ANALYST`, `MANAGER`, `ADMIN`).
+     - `getAuditLogs` (Query): Returns all audit logs. Access is restricted ONLY to `ADMIN` users. Non-ADMIN users must be rejected with an `HttpError(403)`.
+     - `createDocument` (Action): Creates a new document. Access is allowed for `MANAGER` and `ADMIN` users. `ANALYST` users must be rejected with an `HttpError(403)`. This operation must automatically create a corresponding `AuditLog` entry with `action: "CREATE"`, `entityName: "Document"`, and `payload: JSON.stringify({ title, content })`.
+     - `updateDocument` (Action): Updates an existing document's title and content. Access is allowed for `MANAGER` and `ADMIN` users. `ANALYST` users must be rejected with an `HttpError(403)`. This operation must automatically create a corresponding `AuditLog` entry with `action: "UPDATE"`, `entityName: "Document"`, and `payload: JSON.stringify({ title, content })`.
+     - `deleteDocument` (Action): Deletes a document. Access is restricted ONLY to `ADMIN` users. `ANALYST` and `MANAGER` users must be rejected with an `HttpError(403)`. This operation must automatically create a corresponding `AuditLog` entry with `action: "DELETE"`, `entityName: "Document"`, and `payload: JSON.stringify({ id })`.
+
+4. **Frontend & Routes**:
+   - Create a single-page application dashboard on `/` (MainPage), `/login`, and `/signup` routes.
+   - Use specific element attributes and IDs to allow deterministic end-to-end browser verification:
+     - **Signup Page (`/signup`)**:
+       - Username input: `id="username"`
+       - Password input: `id="password"`
+       - Role select or input: `id="role"`
+       - Submit button: `type="submit"` or `id="signup-btn"`
+     - **Login Page (`/login`)**:
+       - Username input: `id="username"`
+       - Password input: `id="password"`
+       - Submit button: `type="submit"` or `id="login-btn"`
+     - **Dashboard Page (`/`)**:
+       - Display the logged-in user's role in a text element containing `Role: <ROLE_NAME>` (e.g., `Role: ANALYST`, `Role: MANAGER`, `Role: ADMIN`).
+       - Display a Logout button: `id="logout-btn"`.
+       - **Document Creation Form** (only visible/enabled for `MANAGER` and `ADMIN` roles):
+         - Title input: `id="doc-title"`
+         - Content input: `id="doc-content"`
+         - Create button: `id="create-doc-btn"`
+       - **Document List**:
+         - For each document with ID `X`:
+           - Display its title and content.
+           - Display an Update button: `data-testid="update-doc-btn-X"`. Clicking it must update the document's title to `<original_title> (updated)` and content to `<original_content> (updated)`.
+           - Display a Delete button: `data-testid="delete-doc-btn-X"` (only visible/enabled for `ADMIN` role). Clicking it must delete the document.
+       - **Audit Logs Section** (only visible/accessible for `ADMIN` role):
+         - Display a list of all audit logs.
+         - Each audit log item must have the attribute `data-testid="audit-log-item"` and show the action, entity name, entity ID, user ID, and payload.
+
+## Implementation Hints
+- Project path: `/home/user/app`
+- Start command: `wasp start`
+- Port: `3000`
+- Ensure you run database migrations using `wasp db migrate-dev` after modifying `schema.prisma`.
+- All reference imports in `main.wasp.ts` must use the `with { type: "ref" }` syntax.
+- Make sure all server-side operations import from `wasp/server/operations` and check `context.user` for authentication and authorization.
+
+16:T1513,# Real-time Collaborative Document Editor in Wasp.sh
+
+## Background
+In this task, you will build a full-stack real-time collaborative document editor using Wasp.sh (^0.24.0), React, Node.js, and WebSockets (Socket.IO). Wasp is a full-stack, spec-driven framework where high-level configuration is defined in `main.wasp.ts` using `@wasp.sh/spec`, and data models are defined in `schema.prisma`.
+
+## Requirements
+
+### 1. Authentication & Signup
+- Use Wasp's built-in `usernameAndPassword` authentication.
+- Map the user's username to the `username` field on the `User` entity during signup using `userSignupFields`.
+- Implement a `/signup` page (with `SignupForm` from `wasp/client/auth`) and a `/login` page (with `LoginForm` from `wasp/client/auth`).
+- Protect all other routes so that only authenticated users can access them, redirecting to `/login` if unauthenticated.
+
+### 2. Document Management
+- Logged-in users can view a list of documents they own or have been shared with on the homepage (`/`).
+- Provide a form on the homepage to create a new document. It must have an input field for the document title (`id="document-title-input"`) and a button to submit (`id="create-document-btn"` or text "Create Document").
+- Each listed document must link to `/document/:id`.
+
+### 3. Collaborative Editor
+- On the document page (`/document/:id`), display the document's title.
+- Provide a textarea with `id="document-content-textarea"` for editing the document's content.
+- Multiple users must be able to view and edit the same document concurrently. Changes made by any user must be synchronized and reflected in real-time in all other active sessions viewing that document using Wasp's WebSocket integration.
+- **Permissions check**: 
+  - Only the owner, or users with a shared permission ("VIEW" or "EDIT") can access the document page. Other users must see "Access Denied" or be redirected to `/`.
+  - If a user has "VIEW" permission, they can only view the document. The textarea (`id="document-content-textarea"`) must be disabled or read-only (`disabled` or `readOnly` attribute present).
+  - If a user is the owner or has "EDIT" permission, they can edit the document content. The textarea must be editable.
+
+### 4. Version History
+- Users with edit/owner access can save the current document content as a new version. Provide a button with `id="save-version-btn"` or text "Save Version".
+- When clicked, it must save the current content as a new `Version` in the database, with the current user as the author, and update the document's primary content.
+- Display a list of saved versions in chronological order under `id="version-history-list"`. Each version item must display:
+  - The author's username.
+  - The version ID or index.
+  - A button/link to restore this version with `class="restore-version-btn"` or text "Restore" (only visible to users with edit/owner access).
+- Clicking "Restore" must update the document's active content to that version's content and broadcast the change to all other active WebSocket clients immediately.
+
+### 5. Document Sharing (Permissions)
+- The document owner (and only the owner) must see a sharing section on the document page.
+- Provide an input with `id="share-username-input"` to enter a username, a dropdown/select with `id="share-role-select"` to choose "VIEW" or "EDIT", and a button with `id="share-document-btn"` or text "Share" to share the document.
+- Provide a list of users with current permissions under `id="permissions-list"`, including a button to revoke access.
+
+## Implementation Hints
+- Project path: `/home/user/app`
+- Start command: `wasp start`
+- Port: `3000`
+- Configuration must be in `main.wasp.ts` and data models in `schema.prisma`.
+
+### Database Schema
+Your `schema.prisma` must define the following models:
+- `User`:
+  - `id`: Int, `@id`, `@default(autoincrement())`
+  - `username`: String, `@unique`
+  - `documents`: `Document[]` (relation `@relation("DocumentOwner")`)
+  - `versions`: `Version[]`
+  - `permissions`: `Permission[]`
+- `Document`:
+  - `id`: Int, `@id`, `@default(autoincrement())`
+  - `title`: String
+  - `content`: String, `@default("")`
+  - `ownerId`: Int
+  - `owner`: `User` (relation `@relation("DocumentOwner", fields: [ownerId], references: [id])`)
+  - `versions`: `Version[]`
+  - `permissions`: `Permission[]`
+  - `createdAt`: DateTime, `@default(now())`
+  - `updatedAt`: DateTime, `@updatedAt`
+- `Version`:
+  - `id`: Int, `@id`, `@default(autoincrement())`
+  - `documentId`: Int
+  - `document`: `Document` (relation `fields: [documentId], references: [id], onDelete: Cascade`)
+  - `content`: String
+  - `authorId`: Int
+  - `author`: `User` (relation `fields: [authorId], references: [id]`)
+  - `createdAt`: DateTime, `@default(now())`
+- `Permission`:
+  - `id`: Int, `@id`, `@default(autoincrement())`
+  - `documentId`: Int
+  - `document`: `Document` (relation `fields: [documentId], references: [id], onDelete: Cascade`)
+  - `userId`: Int
+  - `user`: `User` (relation `fields: [userId], references: [id]`)
+  - `role`: String // "VIEW" or "EDIT"
+  - `@@unique([documentId, userId])`
+
+### Routing I/O
+- `/signup` -> `SignupRoute` (renders `SignupPage` component)
+- `/login` -> `LoginRoute` (renders `LoginPage` component)
+- `/` -> `RootRoute` (renders `MainPage` component, `authRequired: true`)
+- `/document/:id` -> `DocumentRoute` (renders `DocumentPage` component, `authRequired: true`)
+
+17:T179a,# Customer Support Ticket System with SLA Countdowns & Automatic Assignment
+
+## Background
+Customer support teams rely on strict Service Level Agreements (SLAs) to ensure that high-priority client issues are addressed rapidly. You will build a Customer Support Ticket System with SLA countdowns and automatic, workload-based assignment using the Wasp framework (v0.24.0), which leverages React, Node.js, and Prisma.
+
+## Requirements
+- **Authentication**: Secure the application so only logged-in users can access the ticketing system. Enable username and password authentication.
+- **User Roles**: Users can have roles: `CUSTOMER`, `AGENT`, or `MANAGER`.
+- **Database Schema (`schema.prisma`)**:
+  - A `User` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `username` (String, unique)
+    - `password` (String)
+    - `role` (String, must support "CUSTOMER", "AGENT", and "MANAGER")
+  - A `Ticket` model with fields:
+    - `id` (Int, primary key, autoincrement)
+    - `title` (String)
+    - `description` (String)
+    - `priority` (String, must accept "HIGH", "MEDIUM", or "LOW")
+    - `status` (String, must accept "OPEN" or "RESOLVED", default is "OPEN")
+    - `createdAt` (DateTime, default to `now()`)
+    - `slaDeadline` (DateTime)
+    - `isEscalated` (Boolean, default to `false`)
+    - `assignee` (User, optional relation to `User` via `assigneeId`)
+    - `assigneeId` (Int, optional)
+    - `creator` (User, relation to `User` via `creatorId`)
+    - `creatorId` (Int)
+- **SLA Calculation**:
+  - When a ticket is created, its `slaDeadline` must be automatically calculated based on its priority:
+    - `HIGH`: 1 hour (3600 seconds) from creation time
+    - `MEDIUM`: 4 hours (14400 seconds) from creation time
+    - `LOW`: 24 hours (86400 seconds) from creation time
+- **Automatic Workload-based Assignment**:
+  - When a ticket is created, it must be automatically assigned to the AGENT (User with role "AGENT") who has the lowest number of active (unresolved, i.e., status is not "RESOLVED") tickets assigned to them.
+  - If there is a tie (multiple agents have the same lowest workload), assign the ticket to the agent with the smallest `id`.
+  - If no AGENT exists in the system, the assignee should remain null (unassigned).
+- **Operations**:
+  - **Query `getTickets`**: Returns all tickets, including assignee and creator relations.
+  - **Query `getAgents`**: Returns all agents (Users with role "AGENT") along with their workload count (number of active/unresolved tickets assigned to them).
+  - **Action `createTicket`**:
+    - Input: `{ title: string, description: string, priority: "HIGH" | "MEDIUM" | "LOW" }`
+    - Behavior: Creates and returns a new ticket linked to the logged-in user as the creator, calculates the SLA deadline, and assigns it automatically to the agent with the lowest workload.
+  - **Action `simulateSlaBreach`**:
+    - Input: `{ ticketId: number }`
+    - Behavior: For the given ticket, subtracts exactly 2 hours from both `createdAt` and `slaDeadline` in the database to simulate time passing. Then, checks if the SLA has been breached (i.e., `slaDeadline` is in the past, status is not "RESOLVED", and `isEscalated` is false). If breached:
+      - Sets `isEscalated` to `true`.
+      - Reassigns the ticket to the manager (User with role "MANAGER"). If multiple managers exist, assign to the one with the smallest `id`. If no manager exists, keep the current assignee but still set `isEscalated` to `true`.
+      - Returns the updated ticket.
+- **Database Seeding**:
+  - Implement a seed function `seedData` that creates:
+    1. A manager: username `manager`, password `password123`, role `MANAGER`.
+    2. Two agents:
+       - `agent1`, password `password123`, role `AGENT`
+       - `agent2`, password `password123`, role `AGENT`
+    3. A customer: username `customer1`, password `password123`, role `CUSTOMER`.
+- **Frontend UI & Test IDs**:
+  - **`LoginPage` and `SignupPage`**: Use Wasp's built-in `LoginForm` and `SignupForm` components from `wasp/client/auth`.
+  - **`MainPage`**:
+    - Displays the logged-in user's username and role, and a logout button.
+    - Displays a list of agents and their workloads. Each agent displayed must have an element with `data-testid="agent-workload-{username}"` displaying their current active ticket count (e.g., `0`, `1`, etc.).
+    - Ticket Creation Form:
+      - Title input: `<input type="text" id="ticket-title" data-testid="ticket-title" />`
+      - Description textarea: `<textarea id="ticket-desc" data-testid="ticket-desc"></textarea>`
+      - Priority select: `<select id="ticket-priority" data-testid="ticket-priority">` with options `HIGH`, `MEDIUM`, `LOW`.
+      - Submit button: `<button id="submit-ticket" data-testid="submit-ticket">Submit Ticket</button>`
+    - Ticket List:
+      - Contains elements with `data-testid="ticket-item"` for each ticket.
+      - Displays the ticket's title, priority, status, and assignee.
+      - Displays SLA deadline: element with `data-testid="ticket-sla-deadline-{id}"` containing the ISO string or formatted date.
+      - Displays assignee: element with `data-testid="ticket-assignee-{id}"` containing the assignee's username (or "Unassigned").
+      - Displays escalation status: element with `data-testid="ticket-escalated-{id}"` containing either "Yes" (if escalated) or "No" (if not).
+      - Displays ticket status badge: element with `data-testid="ticket-status-badge-{id}"` which displays "ESCALATED" if `isEscalated` is true, or the ticket's status (e.g. "OPEN" / "RESOLVED") otherwise.
+      - Contains a "Simulate SLA Breach" button: `<button data-testid="simulate-breach-{id}">Simulate SLA Breach</button>` that triggers the `simulateSlaBreach` action for that ticket.
+
+## Implementation Hints
+- **Project Path**: `/home/user/app`
+- **Start Command**: `wasp start`
+- **Port**: `3000`
+- **Wasp Version**: Target Wasp `^0.24.0` using the TypeScript configuration spec (`main.wasp.ts`). All configuration must be defined in `main.wasp.ts` using the `@wasp.sh/spec` package.
+
+0:{"buildId":"UzlgXGcDCjBFLArkj5PHN","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-background text-foreground font-sans selection:bg-primary/20","children":[["$","div",null,{"className":"fixed inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#2a2a2a_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 dark:opacity-40"}],["$","$2",null,{"fallback":["$","div",null,{"className":"container mx-auto py-8 text-center","children":"Loading tasks..."}],"children":["$","$L3",null,{"tasksData":[{"taskName":"auth_hooks","instruction":"$4","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"auth_hooks__SqLK5st","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":395.774,"latency_breakdown":{"env_setup":1.627,"agent_setup":0.695,"agent_exec":258.27,"verifier":124.189},"taskName":"auth_hooks","exec_duration":258.27},{"job_name":"2026-04-01__08-41-05","trial_name":"auth_hooks__XyBFf2T","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":758.095,"latency_breakdown":{"env_setup":1.641,"agent_setup":0.676,"agent_exec":449.375,"verifier":295.418},"taskName":"auth_hooks","exec_duration":449.375},{"job_name":"2026-04-01__09-21-27","trial_name":"auth_hooks__vxfamia","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":722.892,"latency_breakdown":{"env_setup":1.428,"agent_setup":0.701,"agent_exec":402.894,"verifier":306.924},"taskName":"auth_hooks","exec_duration":402.894},{"job_name":"2026-04-01__10-07-09","trial_name":"auth_hooks__GiPGgvH","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":711.552,"latency_breakdown":{"env_setup":1.209,"agent_setup":0.588,"agent_exec":571.687,"verifier":127.035},"taskName":"auth_hooks","exec_duration":571.687},{"job_name":"2026-04-01__10-43-19","trial_name":"auth_hooks__btbijkz","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":724.072,"latency_breakdown":{"env_setup":1.493,"agent_setup":0.699,"agent_exec":559.349,"verifier":151.486},"taskName":"auth_hooks","exec_duration":559.349}]},{"taskName":"background_jobs","instruction":"$5","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"background_jobs__U5DtZi4","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":764.962,"latency_breakdown":{"env_setup":1.682,"agent_setup":0.704,"agent_exec":600.002,"verifier":151.456},"taskName":"background_jobs","exec_duration":600.002},{"job_name":"2026-04-01__08-41-05","trial_name":"background_jobs__bsLZ5ga","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":765.598,"latency_breakdown":{"env_setup":1.64,"agent_setup":0.612,"agent_exec":600.001,"verifier":151.381},"taskName":"background_jobs","exec_duration":600.001},{"job_name":"2026-04-01__09-21-27","trial_name":"background_jobs__zVBvS7N","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":551.329,"latency_breakdown":{"env_setup":1.436,"agent_setup":0.604,"agent_exec":386.418,"verifier":151.334},"taskName":"background_jobs","exec_duration":386.418},{"job_name":"2026-04-01__10-07-09","trial_name":"background_jobs__i47HvPK","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1336.205,"latency_breakdown":{"env_setup":1.57,"agent_setup":0.777,"agent_exec":121.93,"verifier":1201.006},"taskName":"background_jobs","exec_duration":121.93},{"job_name":"2026-04-01__10-43-19","trial_name":"background_jobs__W26Ai4v","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":1064.288,"latency_breakdown":{"env_setup":1.445,"agent_setup":0.694,"agent_exec":600.005,"verifier":451.173},"taskName":"background_jobs","exec_duration":600.005}]},{"taskName":"counter_app","instruction":"$6","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"counter_app__LLzCjRh","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":538.204,"latency_breakdown":{"env_setup":1.494,"agent_setup":0.652,"agent_exec":275.792,"verifier":249.402},"taskName":"counter_app","exec_duration":275.792},{"job_name":"2026-04-01__08-41-05","trial_name":"counter_app__dxo54ci","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1703.056,"latency_breakdown":{"env_setup":1.507,"agent_setup":0.656,"agent_exec":488.674,"verifier":1201.107},"taskName":"counter_app","exec_duration":488.674},{"job_name":"2026-04-01__09-21-27","trial_name":"counter_app__ZvFNS3g","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":460.515,"latency_breakdown":{"env_setup":1.242,"agent_setup":0.675,"agent_exec":313.275,"verifier":134.206},"taskName":"counter_app","exec_duration":313.275},{"job_name":"2026-04-01__10-07-09","trial_name":"counter_app__C8atkJn","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":630.55,"latency_breakdown":{"env_setup":1.623,"agent_setup":0.668,"agent_exec":492.474,"verifier":124.845},"taskName":"counter_app","exec_duration":492.474},{"job_name":"2026-04-01__10-43-19","trial_name":"counter_app__qgKeg9K","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":840.42,"latency_breakdown":{"env_setup":1.596,"agent_setup":0.691,"agent_exec":600.002,"verifier":227.212},"taskName":"counter_app","exec_duration":600.002}]},{"taskName":"crud_override","instruction":"$7","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"crud_override__ChAGJ6k","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":616.432,"latency_breakdown":{"env_setup":3.034,"agent_setup":0.591,"agent_exec":296.597,"verifier":305.195},"taskName":"crud_override","exec_duration":296.597},{"job_name":"2026-04-01__08-41-05","trial_name":"crud_override__E5gwsXN","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":1097.752,"latency_breakdown":{"env_setup":2.991,"agent_setup":0.606,"agent_exec":355.704,"verifier":727.401},"taskName":"crud_override","exec_duration":355.704},{"job_name":"2026-04-01__09-21-27","trial_name":"crud_override__2Rwo9CL","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":488.888,"latency_breakdown":{"env_setup":2.971,"agent_setup":0.608,"agent_exec":360.088,"verifier":114.254},"taskName":"crud_override","exec_duration":360.088},{"job_name":"2026-04-01__10-07-09","trial_name":"crud_override__ADZfguR","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":690.134,"latency_breakdown":{"env_setup":2.87,"agent_setup":0.632,"agent_exec":282.305,"verifier":393.338},"taskName":"crud_override","exec_duration":282.305},{"job_name":"2026-04-01__10-43-19","trial_name":"crud_override__98LYZBj","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":615.874,"latency_breakdown":{"env_setup":3.067,"agent_setup":0.611,"agent_exec":600,"verifier":1.241},"taskName":"crud_override","exec_duration":600}]},{"taskName":"custom_auth_ui","instruction":"$8","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"custom_auth_ui__ipKtgac","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1499.739,"latency_breakdown":{"env_setup":2.962,"agent_setup":0.664,"agent_exec":283.979,"verifier":1201.004},"taskName":"custom_auth_ui","exec_duration":283.979},{"job_name":"2026-04-01__08-41-05","trial_name":"custom_auth_ui__Zq8mv2F","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":true,"latency_sec":757.141,"latency_breakdown":{"env_setup":2.992,"agent_setup":0.605,"agent_exec":600.004,"verifier":142.425},"taskName":"custom_auth_ui","exec_duration":600.004},{"job_name":"2026-04-01__09-21-27","trial_name":"custom_auth_ui__vSVY8s9","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":939.117,"latency_breakdown":{"env_setup":2.853,"agent_setup":0.61,"agent_exec":569.644,"verifier":354.898},"taskName":"custom_auth_ui","exec_duration":569.644},{"job_name":"2026-04-01__10-07-09","trial_name":"custom_auth_ui__F66Brpf","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":641.144,"latency_breakdown":{"env_setup":3.032,"agent_setup":0.606,"agent_exec":474.992,"verifier":151.44},"taskName":"custom_auth_ui","exec_duration":474.992},{"job_name":"2026-04-01__10-43-19","trial_name":"custom_auth_ui__U67AkKg","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":919.501,"latency_breakdown":{"env_setup":2.898,"agent_setup":0.622,"agent_exec":600.003,"verifier":305.019},"taskName":"custom_auth_ui","exec_duration":600.003}]},{"taskName":"hello_world","instruction":"# Wasp Hello World\n\n## Background\nIn Wasp, you define pages and routes in the `.wasp` file. A `page` declaration specifies the React component to render, and a `route` declaration specifies the path.\n\n## Requirements\n- Create a new page named `HelloPage` that renders a React component displaying the text \"Hello Wasp!\".\n- Define a route named `HelloRoute` that maps the path `/hello` to the `HelloPage`.\n- The React component should be exported from `src/HelloPage.tsx`.\n\n## Implementation\n1. The project is already initialized at `/home/user/my-app`.\n2. Open `main.wasp` and add the `page` and `route` declarations.\n3. Create `src/HelloPage.tsx` with the React component.\n4. Ensure the app is running.\n\n## Output\n- Project path: /home/user/my-app\n- Start command: wasp start\n- Port: 3000\n","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"hello_world__pwXnPBK","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":228.517,"latency_breakdown":{"env_setup":3.079,"agent_setup":0.612,"agent_exec":153.82,"verifier":59.9},"taskName":"hello_world","exec_duration":153.82},{"job_name":"2026-04-01__08-41-05","trial_name":"hello_world__wbjufme","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":247.801,"latency_breakdown":{"env_setup":2.776,"agent_setup":0.64,"agent_exec":143.053,"verifier":90.334},"taskName":"hello_world","exec_duration":143.053},{"job_name":"2026-04-01__09-21-27","trial_name":"hello_world__3cvAzEy","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":257.167,"latency_breakdown":{"env_setup":2.737,"agent_setup":0.644,"agent_exec":89.444,"verifier":153.384},"taskName":"hello_world","exec_duration":89.444},{"job_name":"2026-04-01__10-07-09","trial_name":"hello_world__DYUMLXJ","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":259.928,"latency_breakdown":{"env_setup":3.01,"agent_setup":0.631,"agent_exec":181.894,"verifier":63.303},"taskName":"hello_world","exec_duration":181.894},{"job_name":"2026-04-01__10-43-19","trial_name":"hello_world__uCpEhd7","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":280.631,"latency_breakdown":{"env_setup":3.06,"agent_setup":0.603,"agent_exec":179.793,"verifier":86.102},"taskName":"hello_world","exec_duration":179.793}]},{"taskName":"many_to_many_labels","instruction":"$9","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"many_to_many_labels__naqLvc8","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":550.427,"latency_breakdown":{"env_setup":1.4,"agent_setup":0.638,"agent_exec":46.416,"verifier":490.875},"taskName":"many_to_many_labels","exec_duration":46.416},{"job_name":"2026-04-01__08-41-05","trial_name":"many_to_many_labels__A88oLZU","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":639.201,"latency_breakdown":{"env_setup":1.405,"agent_setup":0.657,"agent_exec":442.889,"verifier":183.221},"taskName":"many_to_many_labels","exec_duration":442.889},{"job_name":"2026-04-01__09-21-27","trial_name":"many_to_many_labels__ny9JsGp","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":1028.091,"latency_breakdown":{"env_setup":1.558,"agent_setup":0.693,"agent_exec":491.544,"verifier":523.294},"taskName":"many_to_many_labels","exec_duration":491.544},{"job_name":"2026-04-01__10-07-09","trial_name":"many_to_many_labels__zZKziLF","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":522.211,"latency_breakdown":{"env_setup":1.23,"agent_setup":0.588,"agent_exec":358.005,"verifier":151.307},"taskName":"many_to_many_labels","exec_duration":358.005},{"job_name":"2026-04-01__10-43-19","trial_name":"many_to_many_labels__KVBvPpc","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":true,"reward":1,"error":true,"latency_sec":1192.058,"latency_breakdown":{"env_setup":1.615,"agent_setup":0.68,"agent_exec":600.005,"verifier":578.536},"taskName":"many_to_many_labels","exec_duration":600.005}]},{"taskName":"optimistic_reorder","instruction":"$a","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"optimistic_reorder__xnkxCGk","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":276.45,"latency_breakdown":{"env_setup":1.214,"agent_setup":0.585,"agent_exec":112.461,"verifier":151.228},"taskName":"optimistic_reorder","exec_duration":112.461},{"job_name":"2026-04-01__08-41-05","trial_name":"optimistic_reorder__GjcCQKe","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1156.923,"latency_breakdown":{"env_setup":1.555,"agent_setup":0.592,"agent_exec":394.265,"verifier":749.331},"taskName":"optimistic_reorder","exec_duration":394.265},{"job_name":"2026-04-01__09-21-27","trial_name":"optimistic_reorder__6MLgvHY","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1798.592,"latency_breakdown":{"env_setup":1.406,"agent_setup":0.588,"agent_exec":584.49,"verifier":1201.157},"taskName":"optimistic_reorder","exec_duration":584.49},{"job_name":"2026-04-01__10-07-09","trial_name":"optimistic_reorder__4MiHYga","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":532.319,"latency_breakdown":{"env_setup":1.21,"agent_setup":0.59,"agent_exec":375.078,"verifier":144.608},"taskName":"optimistic_reorder","exec_duration":375.078},{"job_name":"2026-04-01__10-43-19","trial_name":"optimistic_reorder__AaHbdSz","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":627.987,"latency_breakdown":{"env_setup":1.465,"agent_setup":0.691,"agent_exec":463.408,"verifier":151.425},"taskName":"optimistic_reorder","exec_duration":463.408}]},{"taskName":"task_deadlines","instruction":"$b","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"task_deadlines__LCtsZ4G","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":308.231,"latency_breakdown":{"env_setup":1.559,"agent_setup":0.719,"agent_exec":143.829,"verifier":151.138},"taskName":"task_deadlines","exec_duration":143.829},{"job_name":"2026-04-01__08-41-05","trial_name":"task_deadlines__WAy5UGC","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1156.006,"latency_breakdown":{"env_setup":1.437,"agent_setup":0.73,"agent_exec":379.668,"verifier":763.108},"taskName":"task_deadlines","exec_duration":379.668},{"job_name":"2026-04-01__09-21-27","trial_name":"task_deadlines__JayXZoT","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":1400.604,"latency_breakdown":{"env_setup":1.441,"agent_setup":0.584,"agent_exec":600.002,"verifier":787.437},"taskName":"task_deadlines","exec_duration":600.002},{"job_name":"2026-04-01__10-07-09","trial_name":"task_deadlines__t872KVC","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1413.951,"latency_breakdown":{"env_setup":1.21,"agent_setup":0.589,"agent_exec":470.231,"verifier":930.971},"taskName":"task_deadlines","exec_duration":470.231},{"job_name":"2026-04-01__10-43-19","trial_name":"task_deadlines__ENQQxGR","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":776.168,"latency_breakdown":{"env_setup":1.436,"agent_setup":0.679,"agent_exec":600.005,"verifier":163.076},"taskName":"task_deadlines","exec_duration":600.005}]},{"taskName":"task_priority","instruction":"$c","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"task_priority__NLWebby","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":487.144,"latency_breakdown":{"env_setup":1.698,"agent_setup":0.712,"agent_exec":276.268,"verifier":197.47},"taskName":"task_priority","exec_duration":276.268},{"job_name":"2026-04-01__08-41-05","trial_name":"task_priority__ZW9Mft8","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":465.877,"latency_breakdown":{"env_setup":1.496,"agent_setup":0.795,"agent_exec":132.766,"verifier":319.85},"taskName":"task_priority","exec_duration":132.766},{"job_name":"2026-04-01__09-21-27","trial_name":"task_priority__TKoKQh5","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":692.261,"latency_breakdown":{"env_setup":1.616,"agent_setup":0.712,"agent_exec":554.181,"verifier":124.71},"taskName":"task_priority","exec_duration":554.181},{"job_name":"2026-04-01__10-07-09","trial_name":"task_priority__NpBzzuP","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":491.657,"latency_breakdown":{"env_setup":1.612,"agent_setup":0.728,"agent_exec":368.453,"verifier":109.922},"taskName":"task_priority","exec_duration":368.453},{"job_name":"2026-04-01__10-43-19","trial_name":"task_priority__juor4uW","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1300.053,"latency_breakdown":{"env_setup":1.514,"agent_setup":0.607,"agent_exec":548.526,"verifier":738.431},"taskName":"task_priority","exec_duration":548.526}]},{"taskName":"todo_app","instruction":"$d","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"todo_app__gErnjFt","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1193.702,"latency_breakdown":{"env_setup":2.891,"agent_setup":0.728,"agent_exec":313.628,"verifier":865.41},"taskName":"todo_app","exec_duration":313.628},{"job_name":"2026-04-01__08-41-05","trial_name":"todo_app__rdTQZyD","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":525.428,"latency_breakdown":{"env_setup":2.824,"agent_setup":0.611,"agent_exec":271.837,"verifier":239.202},"taskName":"todo_app","exec_duration":271.837},{"job_name":"2026-04-01__09-21-27","trial_name":"todo_app__kQ74ZeW","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":1142.72,"latency_breakdown":{"env_setup":2.895,"agent_setup":0.607,"agent_exec":600,"verifier":528.185},"taskName":"todo_app","exec_duration":600},{"job_name":"2026-04-01__10-07-09","trial_name":"todo_app__Uc97otC","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":437.348,"latency_breakdown":{"env_setup":2.798,"agent_setup":0.673,"agent_exec":266.909,"verifier":155.92},"taskName":"todo_app","exec_duration":266.909},{"job_name":"2026-04-01__10-43-19","trial_name":"todo_app__e2Hrtvt","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":true,"latency_sec":1754.693,"latency_breakdown":{"env_setup":2.95,"agent_setup":0.596,"agent_exec":600.001,"verifier":1140.001},"taskName":"todo_app","exec_duration":600.001}]},{"taskName":"user_roles","instruction":"$e","trials":[{"job_name":"2026-04-01__08-10-57","trial_name":"user_roles__EBDRugK","model":"gemini-3-flash","rawModel":"google/gemini-3-flash","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1188.068,"latency_breakdown":{"env_setup":2.925,"agent_setup":0.702,"agent_exec":398.079,"verifier":775.583},"taskName":"user_roles","exec_duration":398.079},{"job_name":"2026-04-01__08-41-05","trial_name":"user_roles__EaxBkjr","model":"gemini-3.1-pro","rawModel":"google/gemini-3.1-pro","agent":"Pochi","passed":true,"reward":1,"error":false,"latency_sec":1310.999,"latency_breakdown":{"env_setup":2.881,"agent_setup":0.626,"agent_exec":380.81,"verifier":915.63},"taskName":"user_roles","exec_duration":380.81},{"job_name":"2026-04-01__09-21-27","trial_name":"user_roles__fLA5Goc","model":"gpt-5.2-codex","rawModel":"openai/gpt-5.2-codex","agent":"Pochi","passed":true,"reward":1,"error":true,"latency_sec":790.567,"latency_breakdown":{"env_setup":2.805,"agent_setup":0.639,"agent_exec":600,"verifier":176.22},"taskName":"user_roles","exec_duration":600},{"job_name":"2026-04-01__10-07-09","trial_name":"user_roles__EvZXDio","model":"claude-4-6-sonnet","rawModel":"anthropic/claude-4-6-sonnet","agent":"Pochi","passed":false,"reward":null,"error":true,"latency_sec":1792.636,"latency_breakdown":{"env_setup":3.05,"agent_setup":0.605,"agent_exec":576.917,"verifier":1201.019},"taskName":"user_roles","exec_duration":576.917},{"job_name":"2026-04-01__10-43-19","trial_name":"user_roles__5e7RzqL","model":"glm-4.7","rawModel":"zai/glm-4.7","agent":"Pochi","passed":false,"reward":0,"error":false,"latency_sec":703.041,"latency_breakdown":{"env_setup":2.885,"agent_setup":0.631,"agent_exec":536.778,"verifier":151.597},"taskName":"user_roles","exec_duration":536.778}]},{"taskName":"wasp_dashboard_analytics_export","instruction":"$f","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_dashboard_analytics_export__7Kz5VfH","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":736.022,"latency_breakdown":{"env_setup":4.871,"agent_setup":5.322,"agent_exec":609.499,"verifier":36.354},"taskName":"wasp_dashboard_analytics_export","exec_duration":609.499},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_dashboard_analytics_export__ywvmYE8","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":766.32,"latency_breakdown":{"env_setup":77.018,"agent_setup":5.383,"agent_exec":405.709,"verifier":245.36},"taskName":"wasp_dashboard_analytics_export","exec_duration":405.709},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_dashboard_analytics_export__iVGxCyE","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":836.479,"latency_breakdown":{"env_setup":4.725,"agent_setup":5.32,"agent_exec":605.598,"verifier":190.873},"taskName":"wasp_dashboard_analytics_export","exec_duration":605.598}]},{"taskName":"wasp_ecommerce_checkout_inventory","instruction":"$10","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_ecommerce_checkout_inventor__kvhXcBG","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":790.888,"latency_breakdown":{"env_setup":5.031,"agent_setup":5.537,"agent_exec":477.09,"verifier":264.579},"taskName":"wasp_ecommerce_checkout_inventory","exec_duration":477.09},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_ecommerce_checkout_inventor__vG2f9os","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":823.788,"latency_breakdown":{"env_setup":4.956,"agent_setup":5.592,"agent_exec":570.494,"verifier":208.157},"taskName":"wasp_ecommerce_checkout_inventory","exec_duration":570.494},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_ecommerce_checkout_inventor__bvsExZC","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":1124.944,"latency_breakdown":{"env_setup":4.891,"agent_setup":5.622,"agent_exec":605.542,"verifier":309.409},"taskName":"wasp_ecommerce_checkout_inventory","exec_duration":605.542}]},{"taskName":"wasp_file_management_system","instruction":"$11","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_file_management_system__WUSRKzi","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":false,"reward":null,"error":true,"latency_sec":698.053,"latency_breakdown":{"env_setup":5.06,"agent_setup":5.496,"agent_exec":609.207,"verifier":19.564},"taskName":"wasp_file_management_system","exec_duration":609.207},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_file_management_system__Gi6nC6n","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":true,"latency_sec":1173.706,"latency_breakdown":{"env_setup":4.99,"agent_setup":5.534,"agent_exec":606.739,"verifier":522.221},"taskName":"wasp_file_management_system","exec_duration":606.739},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_file_management_system__muCVhzy","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":true,"latency_sec":1316.881,"latency_breakdown":{"env_setup":5.557,"agent_setup":5.552,"agent_exec":604.666,"verifier":501.272},"taskName":"wasp_file_management_system","exec_duration":604.666}]},{"taskName":"wasp_fulltext_search_filters","instruction":"$12","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_fulltext_search_filters__X62Js6W","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":781.974,"latency_breakdown":{"env_setup":5.052,"agent_setup":5.519,"agent_exec":574.843,"verifier":164.048},"taskName":"wasp_fulltext_search_filters","exec_duration":574.843},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_fulltext_search_filters__n2aXsYA","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":719.479,"latency_breakdown":{"env_setup":5.097,"agent_setup":5.454,"agent_exec":482.703,"verifier":180.527},"taskName":"wasp_fulltext_search_filters","exec_duration":482.703},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_fulltext_search_filters__igoeCeo","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":840.707,"latency_breakdown":{"env_setup":4.802,"agent_setup":5.449,"agent_exec":605.381,"verifier":13.945},"taskName":"wasp_fulltext_search_filters","exec_duration":605.381}]},{"taskName":"wasp_inventory_fulfillment_alerts","instruction":"$13","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_inventory_fulfillment_alert__8D4zPLz","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":117.121,"latency_breakdown":{"env_setup":6.229,"agent_setup":7.189,"agent_exec":9.956,"verifier":56.689},"taskName":"wasp_inventory_fulfillment_alerts","exec_duration":9.956},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_inventory_fulfillment_alert__MccmPgK","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":false,"latency_sec":692.716,"latency_breakdown":{"env_setup":5.636,"agent_setup":7.618,"agent_exec":456.345,"verifier":184.318},"taskName":"wasp_inventory_fulfillment_alerts","exec_duration":456.345},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_inventory_fulfillment_alert__CkQeyjs","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":1023.293,"latency_breakdown":{"env_setup":7.217,"agent_setup":7.615,"agent_exec":604.679,"verifier":298.477},"taskName":"wasp_inventory_fulfillment_alerts","exec_duration":604.679}]},{"taskName":"wasp_notification_center_preferences","instruction":"$14","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_notification_center_prefere__uUG7cWQ","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":true,"latency_sec":1011.914,"latency_breakdown":{"env_setup":5.016,"agent_setup":5.637,"agent_exec":608.846,"verifier":357.466},"taskName":"wasp_notification_center_preferences","exec_duration":608.846},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_notification_center_prefere__5wZaQKt","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":689.758,"latency_breakdown":{"env_setup":87.716,"agent_setup":5.5,"agent_exec":400.302,"verifier":158.91},"taskName":"wasp_notification_center_preferences","exec_duration":400.302},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_notification_center_prefere__47j7e9k","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":false,"reward":null,"error":true,"latency_sec":1324.784,"latency_breakdown":{"env_setup":5.533,"agent_setup":5.573,"agent_exec":605.062,"verifier":600.001},"taskName":"wasp_notification_center_preferences","exec_duration":605.062}]},{"taskName":"wasp_rbac_audit_logging","instruction":"$15","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_rbac_audit_logging__tLQNVaJ","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":false,"latency_sec":909.46,"latency_breakdown":{"env_setup":4.789,"agent_setup":5.536,"agent_exec":562.895,"verifier":303.474},"taskName":"wasp_rbac_audit_logging","exec_duration":562.895},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_rbac_audit_logging__NgFp6m7","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":672.051,"latency_breakdown":{"env_setup":5.007,"agent_setup":5.475,"agent_exec":368.469,"verifier":258.418},"taskName":"wasp_rbac_audit_logging","exec_duration":368.469},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_rbac_audit_logging__r5nPkgk","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":1158.045,"latency_breakdown":{"env_setup":5.542,"agent_setup":5.454,"agent_exec":604.997,"verifier":432.964},"taskName":"wasp_rbac_audit_logging","exec_duration":604.997}]},{"taskName":"wasp_realtime_collab_editor","instruction":"$16","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_realtime_collab_editor__Q8WYjvR","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":true,"latency_sec":1158.653,"latency_breakdown":{"env_setup":4.952,"agent_setup":5.35,"agent_exec":609.141,"verifier":448.79},"taskName":"wasp_realtime_collab_editor","exec_duration":609.141},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_realtime_collab_editor__A9Xd5KW","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":965.112,"latency_breakdown":{"env_setup":4.906,"agent_setup":5.536,"agent_exec":359.693,"verifier":561.852},"taskName":"wasp_realtime_collab_editor","exec_duration":359.693},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_realtime_collab_editor__ipyrYdr","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":true,"latency_sec":967.933,"latency_breakdown":{"env_setup":5.552,"agent_setup":5.582,"agent_exec":548.159,"verifier":371.842},"taskName":"wasp_realtime_collab_editor","exec_duration":548.159}]},{"taskName":"wasp_support_ticketing_sla","instruction":"$17","trials":[{"job_name":"2026-08-01__19-45-39","trial_name":"wasp_support_ticketing_sla__XAWwAk3","model":"claude-5-sonnet","rawModel":"anthropic/claude-5-sonnet","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":731.852,"latency_breakdown":{"env_setup":5.604,"agent_setup":5.62,"agent_exec":608.279,"verifier":53.281},"taskName":"wasp_support_ticketing_sla","exec_duration":608.279},{"job_name":"2026-08-01__21-10-52","trial_name":"wasp_support_ticketing_sla__HgNNtew","model":"gemini-3.5-flash","rawModel":"google/gemini-3.5-flash","agent":"Agents.pochi:Pochi","passed":true,"reward":1,"error":false,"latency_sec":708.34,"latency_breakdown":{"env_setup":4.955,"agent_setup":5.503,"agent_exec":405.541,"verifier":260.082},"taskName":"wasp_support_ticketing_sla","exec_duration":405.541},{"job_name":"2026-08-01__22-09-12","trial_name":"wasp_support_ticketing_sla__az4Hf3G","model":"deepseek-4-pro","rawModel":"deepseek/deepseek-4-pro","agent":"Agents.pochi:Pochi","passed":false,"reward":0,"error":true,"latency_sec":628.254,"latency_breakdown":{"env_setup":6.606,"agent_setup":5.578,"agent_exec":560.152,"verifier":13.973},"taskName":"wasp_support_ticketing_sla","exec_duration":560.152}]}]}]}]]}],["$L18","$L19"],"$L1a"]}],"loading":null,"isPartial":false}
+18:["$","script","script-0",{"src":"/wasp-benchmark/_next/static/chunks/6b2073bb465ef60e.js","async":true}]
+19:["$","script","script-1",{"src":"/wasp-benchmark/_next/static/chunks/2ee232ed1e88c469.js","async":true}]
+1a:["$","$L1b",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]
+1c:null
